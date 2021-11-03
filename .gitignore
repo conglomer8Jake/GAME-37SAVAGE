@@ -1,0 +1,8 @@
+Return of the Durge/Library/
+*.log
+Return of the Durge/.vs/
+Return of the Durge/.vsconfig
+*.csproj
+*.sln
+*.cache
+Return of the Durge/UserSettings/
