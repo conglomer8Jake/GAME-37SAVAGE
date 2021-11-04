@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - center
+  - north
+  - west
+  - south
+  - east
   layers:
   - Default
   - TransparentFX
