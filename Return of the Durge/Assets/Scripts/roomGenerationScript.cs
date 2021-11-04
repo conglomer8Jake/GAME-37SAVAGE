@@ -7,7 +7,7 @@ public class roomGenerationScript : MonoBehaviour
     public gameManager gM;
     public Global vH;
     public listOfRooms lOR;
-    public GameObject roomCenter;
+    
     public GameObject roomGenerated;
     public int[] numDoorsRemaining;
     public int randNum;
@@ -19,18 +19,17 @@ public class roomGenerationScript : MonoBehaviour
     void Start()
     {
         gM = GameObject.FindObjectOfType<gameManager>();
-        roomCenter = GameObject.FindGameObjectWithTag("center");
-        displacementY = this.gameObject.transform.position.y - roomCenter.transform.position.y;
-        displacementX = this.gameObject.transform.position.x - roomCenter.transform.position.x;
+        displacementY = this.gameObject.transform.position.y - gM.roomCenter.transform.position.y;
+        displacementX = this.gameObject.transform.position.x - gM.roomCenter.transform.position.x;
         if (displacementX != 0)
         {
-            if (displacementX > 0)
+            if (displacementX > 0 && displacementX > displacementY)
             {
                 direction = "right";
                 verticalDiff = 0.0f;
                 horizontalDiff = 34.0569f;
             }
-            if (displacementX < 0)
+            if (displacementX < 0 && displacementX < displacementY)
             {
                 direction = "left";
                 verticalDiff = 0.0f;
@@ -55,17 +54,38 @@ public class roomGenerationScript : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !gM.roomMadeRecent)
         {
             randNum = Random.Range(10, 10);
             Instantiate(lOR.rooms[randNum], new Vector2(this.gameObject.transform.position.x+horizontalDiff, this.gameObject.transform.position.y+verticalDiff), Quaternion.identity);
+            roomGenerated = lOR.rooms[randNum];
+            gM.roomCode = lOR.rooms[randNum].tag;
             if (direction == "right")
             {
-                Debug.Log("right");
+                gM.directionGenerated = "right";
                 gM.updateMap();
             }
-            
+            if (direction == "left")
+            {
+                gM.directionGenerated = "left";
+                gM.updateMap();
+            }
+            if (direction == "up")
+            {
+                gM.directionGenerated = "up";
+                gM.updateMap();
+            }
+            if (direction == "down")
+            {
+                gM.directionGenerated = "down";
+                gM.updateMap();
+            }
             vH.numRooms++;
+            gM.roomMadeRecent = true;
+            Destroy(this.gameObject);
+        }
+        if (other.gameObject.CompareTag("Player") && gM.roomMadeRecent)
+        {
             Destroy(this.gameObject);
         }
     }

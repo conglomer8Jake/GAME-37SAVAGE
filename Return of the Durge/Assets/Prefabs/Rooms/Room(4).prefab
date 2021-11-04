@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!61 &1230270283367612222
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857418815187109639}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &7671307914611391756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857418815187109639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c0e0c04dcc3c14e9f76f8318807487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 0}
+  vH: {fileID: 11400000, guid: 60e56a557c3ead044907529c0f434433, type: 2}
+  lOR: {fileID: 11400000, guid: 17affe910f635a547989848d5b572c6d, type: 2}
+  roomGenerated: {fileID: 0}
+  numDoorsRemaining: 
+  randNum: 0
+  displacementY: 0
+  displacementX: 0
+  verticalDiff: 0
+  horizontalDiff: 0
+  direction: 
 --- !u!1 &923754009765001890
 GameObject:
   m_ObjectHideFlags: 0
@@ -27783,9 +27832,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2444789346025113846}
+  - component: {fileID: 7138923320655964554}
   m_Layer: 0
   m_Name: Room(4)
-  m_TagString: Untagged
+  m_TagString: R4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27813,6 +27863,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7138923320655964554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841091588124249180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcedd2e5f2ace5e4da52c5cfffde4312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 0}
+  spawnerToBeDestroyed: {fileID: 0}
 --- !u!1 &5122306093664037814
 GameObject:
   m_ObjectHideFlags: 0
@@ -27823,6 +27887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4248447863078921243}
   - component: {fileID: 740167036452812634}
+  - component: {fileID: 7321949417095952350}
   m_Layer: 0
   m_Name: RoomCenter
   m_TagString: Untagged
@@ -27896,6 +27961,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7321949417095952350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122306093664037814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b556a756ac7403147819128932c2024a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 0}
 --- !u!1 &6690079733189787623
 GameObject:
   m_ObjectHideFlags: 0
@@ -28009,7 +28087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066990764063944986, guid: ce52e4b1dd085fd4b94a1b96806c7bf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066990764063944986, guid: ce52e4b1dd085fd4b94a1b96806c7bf9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28119,6 +28197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53d46a8e2dd08144a9f2054130e6f436, type: 3}
+--- !u!1 &857418815187109639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6904276082864632534, guid: 53d46a8e2dd08144a9f2054130e6f436, type: 3}
+  m_PrefabInstance: {fileID: 6068252342609376721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3032984304417230681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9088704389601180296, guid: 53d46a8e2dd08144a9f2054130e6f436, type: 3}

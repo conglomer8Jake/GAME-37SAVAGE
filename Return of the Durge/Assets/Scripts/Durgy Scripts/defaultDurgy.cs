@@ -85,4 +85,13 @@ public class defaultDurgy : MonoBehaviour
         desiredDirection.Normalize();
         transform.position += desiredDirection * SpeedPerSecond * Time.deltaTime;
     }
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("tower"))
+        {
+            SpeedPerSecond = 4.5f;
+        }else{
+            SpeedPerSecond = 4.0f;
+        }
+    }
 }
