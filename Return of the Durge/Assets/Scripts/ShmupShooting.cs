@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShipScript : MonoBehaviour
+public class ShmupShooting : MonoBehaviour
 {
 
     public ParticleSystem[] ShotParticleSystems;
