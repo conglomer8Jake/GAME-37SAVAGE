@@ -5,4 +5,5 @@ using UnityEngine;
 public class Global : ScriptableObject
 {
     public int numRooms;
+
 }
