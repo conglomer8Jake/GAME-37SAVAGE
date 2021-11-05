@@ -26,6 +26,7 @@ public class gameManager : MonoBehaviour
     public bool roomMadeRecent = false;
     void Start()
     {
+        roomCenter = GameObject.FindGameObjectWithTag("center");
         for (int row = 0; row < 7; row++)
         {
             for (int col = 0; col < 7; col++)
