@@ -154,6 +154,9 @@ public class playerMovementHandler : MonoBehaviour
             Instantiate(throwableSomething, throwPosRight.position, Quaternion.identity);
 
         }
+
+        //Flip sprite when mouse is to left or right
+        flipSprite();
     }
     public void resetSpeed()
     {
@@ -179,6 +182,21 @@ public class playerMovementHandler : MonoBehaviour
         }
         */
         dashCooldownOff = false;
+    }
+    public void flipSprite()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+        if (direction.x <= 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (direction.x >= 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
