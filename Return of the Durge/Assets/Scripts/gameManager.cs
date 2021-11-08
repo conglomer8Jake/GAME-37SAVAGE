@@ -7,7 +7,10 @@ public class gameManager : MonoBehaviour
 
     public GameObject roomCenter;
 
-    public string[,,] roomMap = new string[7, 7, 2];
+    public const int COLUMN_COUNT = 7;
+    public const int ROW_COUNT = 7;
+
+    public string[,,] roomMap = new string[ROW_COUNT, COLUMN_COUNT, 2];
     //plane 0 = room information
     //plane 1 = player position
 
@@ -24,19 +27,52 @@ public class gameManager : MonoBehaviour
     public float roomGenCooldown = 5.0f;
 
     public bool roomMadeRecent = false;
+
+    private void DebugOutRoomArray()
+    {
+        string outputString = "Map\n";
+        for (int row = 0; row < ROW_COUNT; row++)
+        {
+            for (int col = 0; col < COLUMN_COUNT; col++)
+            {
+                outputString += roomMap[row, col, 0];
+                outputString += " ";
+            }
+            outputString += "\n";
+        }
+        Debug.Log(outputString);
+        
+        outputString = "Player\n";
+        for (int row = 0; row < ROW_COUNT; row++)
+        {
+            for (int col = 0; col < COLUMN_COUNT; col++)
+            {
+                outputString += roomMap[row, col, 1];
+                outputString += " ";
+            }
+            outputString += "\n";
+        }
+        Debug.Log(outputString);
+    }
+
     void Start()
     {
         roomCenter = GameObject.FindGameObjectWithTag("center");
-        for (int row = 0; row < 7; row++)
+        for (int row = 0; row < ROW_COUNT; row++)
         {
-            for (int col = 0; col < 7; col++)
+            for (int col = 0; col < COLUMN_COUNT; col++)
             {
-                roomMap[row, col, 1] = "F";
+                roomMap[row, col, 0] = "F";
+                roomMap[row, col, 1] = " ";
             }
-            Debug.Log("\n");
         }
-        roomMap[4, 4, 1] = "P";
-        roomMap[4, 4, 0] = "R4";
+
+        int centerRow = ROW_COUNT / 2;
+        int centerColumn = COLUMN_COUNT / 2;
+        roomMap[centerRow, centerColumn, 1] = "P";
+        roomMap[centerRow, centerColumn, 0] = "R4";
+
+        DebugOutRoomArray();
     }
     public void updateMap()
     {
@@ -53,32 +89,29 @@ public class gameManager : MonoBehaviour
         }
         if (directionGenerated == "right")
         {
-            roomMap[playerPosX + 1, playerPosY, 0] = (string)roomCode;
-            roomMap[playerPosX + 1, playerPosY, 1] = "P";
+            roomMap[playerPosY, playerPosX, 1] = "p";
+            roomMap[playerPosY, playerPosX + 1, 0] = (string)roomCode;
+            roomMap[playerPosY, playerPosX + 1, 1] = "P";
         }
         if (directionGenerated == "up")
         {
-            roomMap[playerPosX, playerPosY + 1, 0] = (string)roomCode;
-            roomMap[playerPosX, playerPosY + 1, 1] = "P";
+            roomMap[playerPosY, playerPosX, 1] = "p";
+            roomMap[playerPosY - 1, playerPosX, 0] = (string)roomCode;
+            roomMap[playerPosY - 1, playerPosX, 1] = "P";
         }
         if (directionGenerated == "left")
         {
-            roomMap[playerPosX - 1, playerPosY, 0] = (string)roomCode;
-            roomMap[playerPosX - 1, playerPosY, 1] = "P";
+            roomMap[playerPosY, playerPosX, 1] = "p";
+            roomMap[playerPosY, playerPosX - 1, 0] = (string)roomCode;
+            roomMap[playerPosY, playerPosX - 1, 1] = "P";
         }
         if (directionGenerated == "down")
         {
-            roomMap[playerPosX, playerPosY - 1, 0] = (string)roomCode;
-            roomMap[playerPosX, playerPosY - 1, 1] = "P";
+            roomMap[playerPosY, playerPosX, 1] = "p";
+            roomMap[playerPosY + 1, playerPosX, 0] = (string)roomCode;
+            roomMap[playerPosY + 1, playerPosX, 1] = "P";
         }
-        for (int row = 0; row < 7; row++)
-        {
-            for (int col = 0; col < 7; col++)
-            { 
-                Debug.Log(roomMap[row, col,0]);
-            }
-            Debug.Log("\n");
-        }
+        DebugOutRoomArray();
     }
     public void Update()
     {

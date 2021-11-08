@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class roomGenerationScript : MonoBehaviour
 {
+    public playerMovementHandler pMH;
     public gameManager gM;
     public Global vH;
     public listOfRooms lOR;
@@ -18,6 +19,7 @@ public class roomGenerationScript : MonoBehaviour
     public string direction;
     void Start()
     {
+        pMH = GameObject.FindObjectOfType<playerMovementHandler>();
         gM = GameObject.FindObjectOfType<gameManager>();
         displacementY = this.gameObject.transform.position.y - gM.roomCenter.transform.position.y;
         displacementX = this.gameObject.transform.position.x - gM.roomCenter.transform.position.x;
@@ -47,7 +49,7 @@ public class roomGenerationScript : MonoBehaviour
             if (displacementY < 0)
             {
                 direction = "down";
-                verticalDiff = -27.27f;
+                verticalDiff = -30.73f;
                 horizontalDiff = 0.0f;
             }
         }
@@ -86,6 +88,7 @@ public class roomGenerationScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Player") && gM.roomMadeRecent)
         {
+            pMH.recentColl = direction;
             Destroy(this.gameObject);
         }
     }
