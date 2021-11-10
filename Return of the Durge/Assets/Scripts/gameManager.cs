@@ -47,8 +47,6 @@ public class gameManager : MonoBehaviour
         int centerColumn = COLUMN_COUNT / 2;
         roomMap[centerRow, centerColumn, 1] = "P";
         roomMap[centerRow, centerColumn, 0] = "R4";
-        lOR.resetList();
-        neighborRoomCheck();
         DebugOutRoomArray();
     }
     public void updateMap()
@@ -69,24 +67,28 @@ public class gameManager : MonoBehaviour
             roomMap[playerPosY, playerPosX, 1] = "p";
             roomMap[playerPosY, playerPosX + 1, 0] = (string)roomCode;
             roomMap[playerPosY, playerPosX + 1, 1] = "P";
+            playerPosX += 1;
         }
         if (directionGenerated == "up")
         {
             roomMap[playerPosY, playerPosX, 1] = "p";
             roomMap[playerPosY - 1, playerPosX, 0] = (string)roomCode;
             roomMap[playerPosY - 1, playerPosX, 1] = "P";
+            playerPosY -= 1;
         }
         if (directionGenerated == "left")
         {
             roomMap[playerPosY, playerPosX, 1] = "p";
             roomMap[playerPosY, playerPosX - 1, 0] = (string)roomCode;
             roomMap[playerPosY, playerPosX - 1, 1] = "P";
+            playerPosX -= 1;
         }
         if (directionGenerated == "down")
         {
             roomMap[playerPosY, playerPosX, 1] = "p";
             roomMap[playerPosY + 1, playerPosX, 0] = (string)roomCode;
             roomMap[playerPosY + 1, playerPosX, 1] = "P";
+            playerPosY += 1;
         }
         DebugOutRoomArray();
     }
@@ -130,6 +132,8 @@ public class gameManager : MonoBehaviour
     }
     public void neighborRoomCheck()
     {
+        lOR.resetList();
+        Debug.Log("Function Called");
         //checking room's neighbors 
             if (directionGenerated == "right")
             {

@@ -9,5 +9,6 @@ public class centerScript : MonoBehaviour
     {
         gM = GameObject.FindObjectOfType<gameManager>();
         gM.roomCenter = this.gameObject;
+        gM.neighborRoomCheck();
     }
 }

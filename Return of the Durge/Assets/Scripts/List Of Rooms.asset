@@ -37,7 +37,7 @@ MonoBehaviour:
   R2DL: {fileID: 5877194811595198637, guid: c5c49125fa94b3c4baadbff7569b43dd, type: 3}
   R2DR: {fileID: 7636055114011059223, guid: 659d4a87244482a4fbf3446745c73680, type: 3}
   R2LR: {fileID: 8314773738740990300, guid: 23829e557af778e45812dff81886622e, type: 3}
-  R1U: {fileID: 0}
-  R1L: {fileID: 0}
-  R1D: {fileID: 0}
-  R1R: {fileID: 0}
+  R1U: {fileID: 3041622904803544102, guid: d1e1666cd3a701c46b79ef0ed5ee6fe8, type: 3}
+  R1L: {fileID: 3887750077424264764, guid: 567d9a53c5d1a1c479e2ce4425f3d73b, type: 3}
+  R1D: {fileID: 27970894975873055, guid: 821368926f7404a48a29afe8d5399f17, type: 3}
+  R1R: {fileID: 2380913167612853167, guid: 0bc00c9ba84efd84f843688a516f61b4, type: 3}
