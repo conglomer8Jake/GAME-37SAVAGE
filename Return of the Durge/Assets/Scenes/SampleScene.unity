@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc95e2f78cc94f4fbbc133cface3fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recentColl: 
   throwPosRight: {fileID: 0}
   throwableSomething: {fileID: 0}
   velX: 0
@@ -362,6 +363,7 @@ MonoBehaviour:
   dashCooldown: 0
   mousePosX: 0
   mousePosY: 0
+  collCooldown: 3
   health: 5
   invokeCalled: 0
   dashCooldownOff: 1
