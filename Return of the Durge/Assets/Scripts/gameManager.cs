@@ -136,6 +136,10 @@ public class gameManager : MonoBehaviour
     {
         lOR.potentialRooms.Clear();
         Debug.Log("Function Called");
+        if (vH.numRooms == 1)
+        {
+            lOR.potentialRooms.Add(lOR.R4);
+        }
         //checking room's neighbors 
         if (directionGenerated == "right")
             {
@@ -272,26 +276,38 @@ public class gameManager : MonoBehaviour
                 if (topRes && !rightRes && !leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DL);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R3DLR);
                 }
                 if (topRes && rightRes && !leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DL);
                 }
                 if (topRes && !rightRes && leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DR);
                 }
                 if (!topRes && rightRes && leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2UD);
                 }
                 if (!topRes && rightRes && !leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DL);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R3ULD);
                 }
                 if (!topRes && !rightRes && leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R3URD);
                 }
             }
         }
@@ -331,13 +347,139 @@ public class gameManager : MonoBehaviour
                 {
                     lOR.potentialRooms.Add(lOR.R1R);
                 }
+                if (!topRes && !leftRes && !downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2LR);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3DLR);
+                    lOR.potentialRooms.Add(lOR.R3ULR);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+                    lOR.potentialRooms.Add(lOR.R4);
+                }
+                if (topRes && !leftRes && !downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2LR);
+                    lOR.potentialRooms.Add(lOR.R3DLR);
+                }
+                if (topRes && leftRes && !downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                }
+                if (topRes && !leftRes && downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2LR);
+                }
+                if (!topRes && leftRes && downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                }
+                if (!topRes && leftRes && !downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+
+                }
+                if (!topRes && !leftRes && downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2LR);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3ULR);
+                }
             }
         }
         if (directionGenerated == "down")
         {
             //check left, down, right
+            {
+                if (roomMap[playerPosY, playerPosX - 1, 0] == "F")
+                {
 
+                }
+                else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
+                {
+                    leftRes = true;
+                }
+                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F"))
+                {
+                    downRes = false;
+                }
+                else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U"))
+                {
+                    downRes = true;
+                }
+                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F"))
+                {
+                    rightRes = false;
+                }
+                else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
+                {
+                    rightRes = true;
+                }
+            }
             //Add rooms to the restriced room list
+            {
+                if (leftRes && downRes && rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                }
+                if (!leftRes && !downRes && !rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3ULD);
+                    lOR.potentialRooms.Add(lOR.R3ULR);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+                    lOR.potentialRooms.Add(lOR.R4);
+                }
+                if (leftRes && !downRes && !rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+                }
+                if (leftRes && downRes && !rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                }
+                if (leftRes && !downRes && rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                }
+                if (!leftRes && downRes && rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                }
+                if (!leftRes && downRes && !rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3ULR);
+                }
+                if (!leftRes && !downRes && rightRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                    lOR.potentialRooms.Add(lOR.R3ULD);
+                }
+            }
         }
     }
 }
