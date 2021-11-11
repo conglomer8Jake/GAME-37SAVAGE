@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc48153789b6e54f94432bf30201bbb, type: 3}
   m_Name: Variable Handler
   m_EditorClassIdentifier: 
-  numRooms: 0
+  gM: {fileID: 0}
+  numRooms: 1

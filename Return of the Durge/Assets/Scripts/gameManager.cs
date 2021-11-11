@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
+    public Global vH;
     public listOfRooms lOR;
     public GameObject roomCenter;
 
@@ -48,6 +49,7 @@ public class gameManager : MonoBehaviour
         roomMap[centerRow, centerColumn, 1] = "P";
         roomMap[centerRow, centerColumn, 0] = "R4";
         DebugOutRoomArray();
+        vH.restart();
     }
     public void updateMap()
     {
@@ -132,10 +134,10 @@ public class gameManager : MonoBehaviour
     }
     public void neighborRoomCheck()
     {
-        lOR.resetList();
+        lOR.potentialRooms.Clear();
         Debug.Log("Function Called");
         //checking room's neighbors 
-            if (directionGenerated == "right")
+        if (directionGenerated == "right")
             {
             //check up, right, down
             {
@@ -251,53 +253,91 @@ public class gameManager : MonoBehaviour
                 }
             }
             //Add rooms to the restricted room list
-            if (topRes && rightRes && leftRes)
             {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (!topRes && !rightRes && !leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-                lOR.potentialRooms.Add(lOR.R2DL);
-                lOR.potentialRooms.Add(lOR.R2DR);
-                lOR.potentialRooms.Add(lOR.R2UD);
-                lOR.potentialRooms.Add(lOR.R3DLR);
-                lOR.potentialRooms.Add(lOR.R3ULD);
-                lOR.potentialRooms.Add(lOR.R3URD);
-                lOR.potentialRooms.Add(lOR.R4);
-            }
-            if (topRes && !rightRes && !leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (topRes && rightRes && !leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (topRes && !rightRes && leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (!topRes && rightRes && leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (!topRes && rightRes && !leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
-            }
-            if (!topRes && !rightRes && leftRes)
-            {
-                lOR.potentialRooms.Add(lOR.R1D);
+                if (topRes && rightRes && leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (!topRes && !rightRes && !leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DL);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2UD);
+                    lOR.potentialRooms.Add(lOR.R3DLR);
+                    lOR.potentialRooms.Add(lOR.R3ULD);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+                    lOR.potentialRooms.Add(lOR.R4);
+                }
+                if (topRes && !rightRes && !leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (topRes && rightRes && !leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (topRes && !rightRes && leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (!topRes && rightRes && leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (!topRes && rightRes && !leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
+                if (!topRes && !rightRes && leftRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                }
             }
         }
         if (directionGenerated == "left")
         {
             //check up, left, down
+            {
+
+                if (roomMap[playerPosY - 1, playerPosX, 0] == "F")
+                {
+                    topRes = false;
+                }
+                else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
+                {
+                    topRes = true;
+                }
+                if (roomMap[playerPosY, playerPosX - 1, 0] == "F")
+                {
+
+                }
+                else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
+                {
+                    leftRes = true;
+                }
+                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F"))
+                {
+                    downRes = false;
+                }
+                else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U"))
+                {
+                    downRes = true;
+                }
+            }
+            //Add rooms to the restricted room list
+            {
+                if (topRes && leftRes && downRes)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                }
+            }
         }
         if (directionGenerated == "down")
         {
             //check left, down, right
+
+            //Add rooms to the restriced room list
         }
     }
 }

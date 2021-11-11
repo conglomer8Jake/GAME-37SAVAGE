@@ -12,7 +12,7 @@ public class Global : ScriptableObject
 
     public void restart()
     {
-        numRooms = 0;
+        numRooms = 1;
     }
     public void gameStart()
     {
