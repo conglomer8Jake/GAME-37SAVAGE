@@ -58,10 +58,6 @@ public class roomGenerationScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !gM.roomMadeRecent)
         {
-            randNum = Random.Range(0, lOR.potentialRooms.Count);
-            Instantiate(lOR.potentialRooms[randNum], new Vector2(this.gameObject.transform.position.x+horizontalDiff, this.gameObject.transform.position.y+verticalDiff), Quaternion.identity);
-            roomGenerated = lOR.potentialRooms[randNum];
-            gM.roomCode = lOR.potentialRooms[randNum].tag;
             if (direction == "right")
             {
                 gM.directionGenerated = "right";
@@ -82,6 +78,11 @@ public class roomGenerationScript : MonoBehaviour
                 gM.directionGenerated = "down";
                 gM.updateMap();
             }
+            gM.neighborRoomCheck();
+            randNum = Random.Range(0, lOR.potentialRooms.Count);
+            Instantiate(lOR.potentialRooms[randNum], new Vector2(this.gameObject.transform.position.x + horizontalDiff, this.gameObject.transform.position.y + verticalDiff), Quaternion.identity);
+            roomGenerated = lOR.potentialRooms[randNum];
+            gM.roomCode = lOR.potentialRooms[randNum].tag;
             vH.numRooms++;
             gM.roomMadeRecent = true;
             Destroy(this.gameObject);

@@ -22,8 +22,8 @@ public class gameManager : MonoBehaviour
     public int vertical, horizontal;
     public int rowsGenerated;
     public int colsGenerated;
-    public int playerPosX;
-    public int playerPosY;
+    public int playerPosX = 3;
+    public int playerPosY = 3;
 
     public float roomGenCooldown = 5.0f;
 
@@ -104,6 +104,7 @@ public class gameManager : MonoBehaviour
         {
             roomMadeRecent = false;
             roomGenCooldown = 5.0f;
+            lOR.potentialRooms.Clear();
         }
     }
     private void DebugOutRoomArray()
@@ -136,16 +137,12 @@ public class gameManager : MonoBehaviour
     {
         lOR.potentialRooms.Clear();
         Debug.Log("Function Called");
-        if (vH.numRooms == 1)
-        {
-            lOR.potentialRooms.Add(lOR.R4);
-        }
         //checking room's neighbors 
         if (directionGenerated == "right")
             {
             //check up, right, down
             {
-                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F"))
+                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
                 {
                     topRes = false;
                 }
@@ -153,7 +150,7 @@ public class gameManager : MonoBehaviour
                 {
                     topRes = true;
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F"))
+                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
                 {
                     rightRes = false;
                 }
@@ -161,7 +158,7 @@ public class gameManager : MonoBehaviour
                 {
                     rightRes = true;
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F"))
+                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
                 {
                     downRes = false;
                 }
@@ -231,29 +228,35 @@ public class gameManager : MonoBehaviour
         {
             //check, up, right, left
             {
-                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F"))
+                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
                 {
                     topRes = false;
+                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
                 {
                     topRes = true;
+                    Debug.Log("checkPass");
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F"))
+                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
                 {
                     rightRes = false;
+                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
                 {
                     rightRes = true;
+                    Debug.Log("checkPass");
                 }
-                if (roomMap[playerPosY, playerPosX - 1, 0].Contains("F"))
+                if (roomMap[playerPosY, playerPosX - 1, 0].Contains("F") || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
                 {
                     leftRes = false;
+                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
                 {
                     leftRes = true;
+                    Debug.Log("checkPass");
                 }
             }
             //Add rooms to the restricted room list
@@ -264,6 +267,7 @@ public class gameManager : MonoBehaviour
                 }
                 if (!topRes && !rightRes && !leftRes)
                 {
+                    Debug.Log("roomsAdded");
                     lOR.potentialRooms.Add(lOR.R1D);
                     lOR.potentialRooms.Add(lOR.R2DL);
                     lOR.potentialRooms.Add(lOR.R2DR);
@@ -316,7 +320,7 @@ public class gameManager : MonoBehaviour
             //check up, left, down
             {
 
-                if (roomMap[playerPosY - 1, playerPosX, 0] == "F")
+                if (roomMap[playerPosY - 1, playerPosX, 0] == "F" || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
                 {
                     topRes = false;
                 }
@@ -324,15 +328,15 @@ public class gameManager : MonoBehaviour
                 {
                     topRes = true;
                 }
-                if (roomMap[playerPosY, playerPosX - 1, 0] == "F")
+                if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
                 {
-
+                    leftRes = false;
                 }
                 else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
                 {
                     leftRes = true;
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F"))
+                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
                 {
                     downRes = false;
                 }
@@ -401,7 +405,7 @@ public class gameManager : MonoBehaviour
         {
             //check left, down, right
             {
-                if (roomMap[playerPosY, playerPosX - 1, 0] == "F")
+                if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
                 {
 
                 }
@@ -409,7 +413,7 @@ public class gameManager : MonoBehaviour
                 {
                     leftRes = true;
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F"))
+                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
                 {
                     downRes = false;
                 }
@@ -417,7 +421,7 @@ public class gameManager : MonoBehaviour
                 {
                     downRes = true;
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F"))
+                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
                 {
                     rightRes = false;
                 }

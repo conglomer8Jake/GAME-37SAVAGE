@@ -10,6 +10,21 @@ TagManager:
   - west
   - south
   - east
+  - R4
+  - R3ULR
+  - R3ULD
+  - R3URD
+  - R3DLR
+  - R2UD
+  - R2UL
+  - R2UR
+  - R2DL
+  - R2DR
+  - R2LR
+  - R1U
+  - R1L
+  - R1D
+  - R1R
   layers:
   - Default
   - TransparentFX

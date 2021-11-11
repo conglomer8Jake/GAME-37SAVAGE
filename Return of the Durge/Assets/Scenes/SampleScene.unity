@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &385454610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122306093664037814, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+  m_PrefabInstance: {fileID: 905648623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +446,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4248447863078921243, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5836276921363854007, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: m_TagString
       value: west
@@ -480,24 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0dbeb962f1d2314fa181dadc519cb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1341712753 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6690079733189787623, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
-  m_PrefabInstance: {fileID: 905648623}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1341712755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341712753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b556a756ac7403147819128932c2024a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gM: {fileID: 0}
 --- !u!1 &2119614841
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,9 +535,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 17affe910f635a547989848d5b572c6d, type: 2}
     - target: {fileID: 101983915169607652, guid: cd34be5ca60de1b4aa91334656d081fd, type: 3}
+      propertyPath: playerPosX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 101983915169607652, guid: cd34be5ca60de1b4aa91334656d081fd, type: 3}
+      propertyPath: playerPosY
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 101983915169607652, guid: cd34be5ca60de1b4aa91334656d081fd, type: 3}
       propertyPath: roomCenter
       value: 
-      objectReference: {fileID: 1341712753}
+      objectReference: {fileID: 385454610}
     - target: {fileID: 3589679652063738212, guid: cd34be5ca60de1b4aa91334656d081fd, type: 3}
       propertyPath: m_RootOrder
       value: 1
