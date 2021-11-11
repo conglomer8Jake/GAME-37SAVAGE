@@ -6,6 +6,7 @@ public class centerScript : MonoBehaviour
 {
     public GameObject topRight, topLeft, botRight, botLeft;
 
+    public listOfEnemies lOE;
     public Global vH;
     public gameManager gM;
     public int gridPosY;
@@ -36,7 +37,11 @@ public class centerScript : MonoBehaviour
         int randNum = Random.Range(1, 6) * vH.level;
         for (int i = 0; i < randNum; i++)
         {
-
+            int randEnemy = Random.Range(0, lOE.enemies.Count);
+            float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
+            float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
+            Instantiate(lOE.enemies[randEnemy], new Vector3(randX, randY,0), Quaternion.identity);
+            gM.enemiesAlive++;
         }
     }
 }
