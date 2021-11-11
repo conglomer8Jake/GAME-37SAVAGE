@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class centerScript : MonoBehaviour
 {
-    public GameObject topRight, topLeft, botRight, botLeft;
+    public GameObject topRight, topLeft, botRight;
 
     public listOfEnemies lOE;
     public Global vH;
