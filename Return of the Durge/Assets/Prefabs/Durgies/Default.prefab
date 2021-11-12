@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6438575481070168977
 Transform:
   m_ObjectHideFlags: 0
@@ -5000,10 +5000,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
-  CurrentFlockingMode: 2
+  CurrentFlockingMode: 0
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
-  FlockingDistance: 1
+  FlockingDistance: 0
   AvoidWalls: 1
 --- !u!61 &8235186827894968420
 BoxCollider2D:
@@ -5049,7 +5049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8235186828384255112
 Transform:
   m_ObjectHideFlags: 0

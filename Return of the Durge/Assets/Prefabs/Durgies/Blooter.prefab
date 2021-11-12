@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 702261587484493792}
   - component: {fileID: 702261587484493793}
   - component: {fileID: 702261587484493794}
+  - component: {fileID: 8454278345830595142}
   m_Layer: 0
   m_Name: Blooter
   m_TagString: Untagged
@@ -103,3 +104,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8454278345830595142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702261587484493795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedPerSecond: 4
+  FlockingTarget: {fileID: 0}
+  CurrentFlockingMode: 0
+  DesiredDistanceFromTarget_Min: 3.5
+  DesiredDistanceFromTarget_Max: 4.5
+  FlockingDistance: 0
+  AvoidWalls: 1

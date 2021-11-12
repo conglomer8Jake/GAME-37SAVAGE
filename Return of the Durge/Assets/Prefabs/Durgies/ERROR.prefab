@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
-  CurrentFlockingMode: 2
+  CurrentFlockingMode: 0
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
   FlockingDistance: 2
