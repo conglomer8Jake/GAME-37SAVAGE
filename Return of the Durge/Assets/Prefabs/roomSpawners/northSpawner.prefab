@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -123,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c0e0c04dcc3c14e9f76f8318807487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pMH: {fileID: 0}
   gM: {fileID: 0}
   vH: {fileID: 11400000, guid: 60e56a557c3ead044907529c0f434433, type: 2}
   lOR: {fileID: 11400000, guid: 17affe910f635a547989848d5b572c6d, type: 2}
-  roomCenter: {fileID: 0}
   roomGenerated: {fileID: 0}
   numDoorsRemaining: 
   randNum: 0

@@ -29283,6 +29283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3749657625952678275}
+  - component: {fileID: -4154262255822444219}
   m_Layer: 0
   m_Name: Room(2)(Northwest)
   m_TagString: R2UL
@@ -29310,6 +29311,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4154262255822444219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641515392200733993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcedd2e5f2ace5e4da52c5cfffde4312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 0}
+  spawnerToBeDestroyed: {fileID: 0}
 --- !u!1 &8736941075615488258
 GameObject:
   m_ObjectHideFlags: 0
