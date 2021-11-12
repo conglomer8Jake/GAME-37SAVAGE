@@ -17,8 +17,17 @@ public class FlockerScript : MonoBehaviour {
     public FlockingMode CurrentFlockingMode = FlockingMode.ChaseTarget;
     public float DesiredDistanceFromTarget_Min = 3.5f;
     public float DesiredDistanceFromTarget_Max = 4.5f;
+    public MaintainDistance FlockingDistance = MaintainDistance.MidRange;
 
-    public bool AvoidHazards = true;
+
+    public enum MaintainDistance
+    {
+        ShortRange,
+        MidRange,
+        LongRange,
+    }
+
+    public bool AvoidWalls = true;
 
     // Use this for initialization
     void Start () {
@@ -42,6 +51,22 @@ public class FlockerScript : MonoBehaviour {
                 break;
             case FlockingMode.MaintainDistance:
                 {
+                    switch (FlockingDistance)
+                    {
+                        case MaintainDistance.ShortRange:
+                            DesiredDistanceFromTarget_Min = 1.5f;
+                            DesiredDistanceFromTarget_Max = 2.5f;
+                            break;
+                        case MaintainDistance.MidRange:
+                            DesiredDistanceFromTarget_Min = 4.5f;
+                            DesiredDistanceFromTarget_Max = 5.5f;
+                            break;
+                        case MaintainDistance.LongRange:
+                            DesiredDistanceFromTarget_Min = 8.5f;
+                            DesiredDistanceFromTarget_Max = 9.5f;
+                            break;
+                    }
+
                     if (distanceToTarget < DesiredDistanceFromTarget_Min)
                     {
                         desiredDirection = -vectorToTarget;
@@ -56,7 +81,8 @@ public class FlockerScript : MonoBehaviour {
                 break;
         }
 
-        if(AvoidHazards)
+        //Change to avoid walls instead of hazards
+        if(AvoidWalls)
         {
             HazardScript[] hazards = FindObjectsOfType<HazardScript>();
 
