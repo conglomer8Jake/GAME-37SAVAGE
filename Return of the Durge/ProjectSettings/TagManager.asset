@@ -28,6 +28,7 @@ TagManager:
   - anchorTop
   - anchorLeft
   - anchorBot
+  - enemy
   layers:
   - Default
   - TransparentFX
