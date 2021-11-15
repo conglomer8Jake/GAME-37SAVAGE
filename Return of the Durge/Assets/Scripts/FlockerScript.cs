@@ -30,8 +30,9 @@ public class FlockerScript : MonoBehaviour {
     public bool AvoidWalls = true;
 
     // Use this for initialization
-    void Start () {
-    
+    void Start () 
+    {
+        FlockingTarget = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame

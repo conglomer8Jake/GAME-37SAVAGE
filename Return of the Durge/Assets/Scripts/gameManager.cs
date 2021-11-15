@@ -137,7 +137,6 @@ public class gameManager : MonoBehaviour
     public void neighborRoomCheck()
     {
         lOR.potentialRooms.Clear();
-        Debug.Log("Function Called");
         //checking room's neighbors 
         if (directionGenerated == "right")
             {

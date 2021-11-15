@@ -16,7 +16,7 @@ public class centerScript : MonoBehaviour
         gM = GameObject.FindObjectOfType<gameManager>();
         gM.roomCenter = this.gameObject;
         gM.neighborRoomCheck();
-        spawnEnemies();
+        Invoke("spawnEnemies", 10.0f);
         gridPosX = gM.playerPosX;
         gridPosY = gM.playerPosY;
     }
@@ -40,8 +40,11 @@ public class centerScript : MonoBehaviour
             int randEnemy = Random.Range(0, lOE.enemies.Count);
             float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
             float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-            Instantiate(lOE.enemies[randEnemy], new Vector3(randX, randY,0), Quaternion.identity);
-            gM.enemiesAlive++;
+            if (lOE.enemies[randEnemy] != null)
+            {
+                Instantiate(lOE.enemies[randEnemy], new Vector3(randX, randY, 0), Quaternion.identity);
+                gM.enemiesAlive++;
+            }
         }
     }
 }
