@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: List of Enemies
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4219328941001399266, guid: 24b4f75452c7f68448c20c88ea40dfbc, type: 3}
-  - {fileID: 6428625183721630050, guid: 5c27b5a5df753594a8eacaa44ba129dd, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8235186827894968431, guid: 6f2f446dd33ef984da92f5e4d3e470c4, type: 3}
+  - {fileID: 702261587484493795, guid: 1a06724feb29ab24691fa73ce8dd6fbd, type: 3}
+  - {fileID: 3569136093112862790, guid: 1cbd4e19961c82447b30d0f55b970133, type: 3}
+  - {fileID: 2287540301783429589, guid: 221d70d657b837041ac5dd0f1b403d07, type: 3}
+  - {fileID: 12390708731277624, guid: 61e2fa3231eae1349b3ac9e94add66d7, type: 3}
+  - {fileID: 7357257707647534531, guid: 495c9a2b1556cf84e89ab46c2428bdd1, type: 3}
+  - {fileID: 1783005274862396989, guid: 5e6682d4aaee2d745b81402f78e0efda, type: 3}
+  - {fileID: 2515197058134203551, guid: 55024574be8071c44ab283b2eeb5d683, type: 3}
