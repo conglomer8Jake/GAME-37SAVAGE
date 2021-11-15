@@ -59,11 +59,12 @@ public class FlockingLogicSwitcher : MonoBehaviour {
 
     void ToggleHazardAvoidance()
     {
-        FlockersAvoidHazards = !FlockersAvoidHazards;
+        /*FlockersAvoidHazards = !FlockersAvoidHazards;
         FlockerScript[] AllFlockers = FindObjectsOfType<FlockerScript>();
         for (int i = 0; i < AllFlockers.Length; ++i)
         {
             AllFlockers[i].AvoidHazards = FlockersAvoidHazards;
         }
+        */
     }
 }

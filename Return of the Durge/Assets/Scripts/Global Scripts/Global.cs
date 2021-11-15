@@ -8,7 +8,7 @@ public class Global : ScriptableObject
 
 
     public int numRooms;
-
+    public int level = 1;
 
     public void restart()
     {

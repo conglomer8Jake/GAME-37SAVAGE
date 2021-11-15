@@ -179,7 +179,7 @@ public class playerMovementHandler : MonoBehaviour
     }
     public void resetSpeed()
     {
-        dashSpeed = 1;
+        dashSpeed = 5;
         invokeCalled = true;
         //GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
         /*
