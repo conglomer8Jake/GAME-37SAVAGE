@@ -13,6 +13,9 @@ public class centerScript : MonoBehaviour
     public int gridPosX;
     void Start()
     {
+        topRight = GameObject.FindGameObjectWithTag("anchorTop");
+        topLeft = GameObject.FindGameObjectWithTag("anchorLeft");
+        botRight = GameObject.FindGameObjectWithTag("anchorBot");
         gM = GameObject.FindObjectOfType<gameManager>();
         gM.roomCenter = this.gameObject;
         gM.neighborRoomCheck();
@@ -46,5 +49,8 @@ public class centerScript : MonoBehaviour
                 gM.enemiesAlive++;
             }
         }
+        Destroy(topRight);
+        Destroy(topLeft);
+        Destroy(botRight);
     }
 }

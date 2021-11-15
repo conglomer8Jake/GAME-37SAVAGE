@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class playerMovementHandler : MonoBehaviour
 {
-    public Vector3 mousePosition;
-
     public string recentColl = "";
     public Transform throwPosRight;
     public GameObject throwableSomething;
 
     public float velX, velY;
-    public float speed = 5.0f;
+    public float speed = 2.0f;
     public float dashSpeed = 3.0f;
     public float dashCooldown = 0;
     public float mousePosX;
@@ -29,8 +27,6 @@ public class playerMovementHandler : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         //Dash Cooldown
@@ -50,29 +46,31 @@ public class playerMovementHandler : MonoBehaviour
         }
         //Player Movement using WASD
         {
-            //Up
-            if (Input.GetKeyDown(KeyCode.W))
             {
-                isMoving = true;
-                wDown = true;
-            }
-            //Left
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                isMoving = true;
-                aDown = true;
-            }
-            //Down
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                isMoving = true;
-                sDown = true;
-            }
-            //Right
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                isMoving = true;
-                dDown = true;
+                //Up
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    isMoving = true;
+                    wDown = true;
+                }
+                //Left
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    isMoving = true;
+                    aDown = true;
+                }
+                //Down
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    isMoving = true;
+                    sDown = true;
+                }
+                //Right
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    isMoving = true;
+                    dDown = true;
+                }
             }
             //GetKeyUp
             {
@@ -101,73 +99,78 @@ public class playerMovementHandler : MonoBehaviour
                     GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
                 }
             }
-
             //UP
-            if (wDown && !dDown && !aDown)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, speed * dashSpeed);
-            }
-            if (wDown && aDown)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, speed * dashSpeed);
-            }
-            if (wDown && dDown)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, speed * dashSpeed);
+                if (wDown && !dDown && !aDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, speed * dashSpeed);
+                }
+                if (wDown && aDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, speed * dashSpeed);
+                }
+                if (wDown && dDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, speed * dashSpeed);
+                }
             }
             //Left
-            if (aDown && !dDown && !wDown)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, 0.0f);
-            }
-            if (aDown && sDown)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, -1 * speed * dashSpeed);
+                if (aDown && !dDown && !wDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, 0.0f);
+                }
+                if (aDown && sDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed * dashSpeed, -1 * speed * dashSpeed);
+                }
             }
             //Down
-            if (sDown && !dDown && !aDown)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -1 * speed * dashSpeed);
-            }
-            if (sDown && dDown)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, -1 * speed * dashSpeed);
+                if (sDown && !dDown && !aDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -1 * speed * dashSpeed);
+                }
+                if (sDown && dDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, -1 * speed * dashSpeed);
+                }
             }
             //Right
-            if (dDown && !wDown && !sDown)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, 0.0f);
+                if (dDown && !wDown && !sDown)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed * dashSpeed, 0.0f);
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownOff == true)
         {
-            dashSpeed = 4.0f;
-            //GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * dashSpeed, GetComponent<Rigidbody2D>().velocity.y * dashSpeed);
+            dashSpeed = 4.5f;
             isDashing = true;
-            Invoke("resetSpeed", 0.25f);
+            Invoke("resetSpeed", 0.35f);
         }
         velX = GetComponent<Rigidbody2D>().velocity.x;
         velY = GetComponent<Rigidbody2D>().velocity.y;
-
         //Throwing something
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Instantiate(throwableSomething, throwPosRight.position, Quaternion.identity);
-
         }
-
         //Flip sprite when mouse is to left or right
         flipSprite();
     }
     public void resetSpeed()
     {
-        dashSpeed = 5;
+        dashSpeed = 3;
         invokeCalled = true;
         dashCooldownOff = false;
     }
     public void flipSprite()
     {
+        //Change the sprite of the player depending on mouse position
+        Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
@@ -182,10 +185,12 @@ public class playerMovementHandler : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        /*
+        if (!other.gameObject.CompareTag("stairs") && !other.gameObject.CompareTag("north") && !other.gameObject.CompareTag("south") && !other.gameObject.CompareTag("east") && !other.gameObject.CompareTag("west"))
         {
             health--;
             Destroy(other.gameObject);
         }
+        */
     }
 }

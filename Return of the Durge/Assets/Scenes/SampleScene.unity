@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &255626528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7388989543254120806, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
-  m_PrefabInstance: {fileID: 905648623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &385454610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5122306093664037814, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
@@ -487,15 +482,15 @@ PrefabInstance:
     - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: topLeft
       value: 
-      objectReference: {fileID: 255626528}
+      objectReference: {fileID: 0}
     - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: botRight
       value: 
-      objectReference: {fileID: 2116378924}
+      objectReference: {fileID: 0}
     - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: topRight
       value: 
-      objectReference: {fileID: 1117780285}
+      objectReference: {fileID: 0}
     - target: {fileID: 7565330949215947942, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -512,11 +507,6 @@ PrefabInstance:
     - {fileID: 7671307914611391756, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
     - {fileID: 1230270283367612222, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
---- !u!1 &1117780285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2694146292850495991, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
-  m_PrefabInstance: {fileID: 905648623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1164856378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -526,7 +516,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8323150420285520782, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8323150420285520782, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
       propertyPath: dashSpeed
@@ -707,11 +697,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8323150420285520786, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
   m_PrefabInstance: {fileID: 1164856378}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2116378924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5768028439557267762, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
-  m_PrefabInstance: {fileID: 905648623}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119614841
 GameObject:

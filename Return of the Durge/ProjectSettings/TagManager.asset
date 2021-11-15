@@ -25,6 +25,9 @@ TagManager:
   - R1L
   - R1D
   - R1R
+  - anchorTop
+  - anchorLeft
+  - anchorBot
   layers:
   - Default
   - TransparentFX

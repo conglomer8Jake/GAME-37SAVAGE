@@ -56,7 +56,7 @@ public class roomGenerationScript : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !gM.roomMadeRecent && gM.enemiesAlive == 0)
+        if (other.gameObject.CompareTag("Player") && !gM.roomMadeRecent /*&& gM.enemiesAlive == 0*/)
         {
             if (direction == "right")
             {
