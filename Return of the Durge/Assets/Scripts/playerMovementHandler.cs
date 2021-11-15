@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerMovementHandler : MonoBehaviour
 {
+    public Vector3 mousePosition;
+
     public string recentColl = "";
     public Transform throwPosRight;
     public GameObject throwableSomething;
@@ -157,54 +159,15 @@ public class playerMovementHandler : MonoBehaviour
 
         //Flip sprite when mouse is to left or right
         flipSprite();
-        //collision exepmption
-        {
-            if (recentColl == "up")
-            {
-
-            }
-            if (recentColl == "down")
-            {
-
-            }
-            if (recentColl == "left")
-            {
-
-            }
-            if (recentColl == "right")
-            {
-
-            }
-        }
     }
     public void resetSpeed()
     {
         dashSpeed = 5;
         invokeCalled = true;
-        //GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
-        /*
-        if (wDown == true)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 4.0f);
-        }
-        if (aDown == true)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-4.0f, 0.0f);
-        }
-        if (sDown == true)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -4.0f);
-        }
-        if (dDown == true)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(4.0f, 0.0f);
-        }
-        */
         dashCooldownOff = false;
     }
     public void flipSprite()
     {
-        Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
