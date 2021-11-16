@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2287540301783429588}
   - component: {fileID: 2287540301783429585}
   - component: {fileID: 6429929193795805564}
+  - component: {fileID: 3391866640929886327}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: enemy
@@ -146,6 +147,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3391866640929886327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287540301783429589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f911e2d10b5c67143a6a58c2f300c2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ninja: {fileID: 0}
+  ninjaScript: {fileID: 0}
+  ninjaSystem: {fileID: 0}
 --- !u!1 &2735853560940964988
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +210,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
