@@ -22,20 +22,12 @@ public class towerDurgy : MonoBehaviour
         {
             pMH.speed = 2;
         }
-        if (!other.gameObject.CompareTag("Player"))
-        {
-            fS.SpeedPerSecond *= 2;
-        }
     }
     public void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             pMH.speed *= 1.5f;
-        }
-        if (!other.gameObject.CompareTag("Player"))
-        {
-            fS.SpeedPerSecond /= 2;
         }
     }
 }

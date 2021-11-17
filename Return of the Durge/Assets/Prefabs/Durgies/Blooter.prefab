@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 702261587484493794}
   - component: {fileID: 8454278345830595142}
   - component: {fileID: 8782217060886834898}
+  - component: {fileID: -5826390292091541942}
   m_Layer: 0
   m_Name: Blooter
   m_TagString: enemy
@@ -145,3 +146,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5826390292091541942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702261587484493795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ce88d99ab5cce45a3238ec660352a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  SpeedPerSecond: 4
+  randNum: 0
+  FlockingTarget: {fileID: 0}
+  swarmDurgies: {fileID: 8235186827894968431, guid: 6f2f446dd33ef984da92f5e4d3e470c4, type: 3}
+  CurrentFlockingMode: 0
+  DesiredDistanceFromTarget_Min: 3.5
+  DesiredDistanceFromTarget_Max: 4.5
+  AvoidHazards: 1
