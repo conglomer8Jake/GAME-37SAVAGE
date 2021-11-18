@@ -54,9 +54,9 @@ public class gameManager : MonoBehaviour
     }
     public void updateMap()
     {
-        for (int row = 0; row < 7; row++)
+        for (int row = 0; row < ROW_COUNT; row++)
         {
-            for (int col = 0; col < 7; col++)
+            for (int col = 0; col < COLUMN_COUNT; col++)
             {
                 if (roomMap[row,col,1].Contains("P"))
                 {
@@ -169,6 +169,10 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list 
             {
+                if (playerPosX == 5)
+                {
+                    lOR.potentialRooms.Add(lOR.R1L);
+                }
                 if (topRes && rightRes && downRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1L);
@@ -261,6 +265,13 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list
             {
+                if (playerPosY == 1)
+                {
+                    lOR.potentialRooms.Add(lOR.R1D);
+                    lOR.potentialRooms.Add(lOR.R2DL);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R3DLR);
+                }
                 if (topRes && rightRes && leftRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
@@ -347,6 +358,10 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list
             {
+                if (playerPosX == 1)
+                {
+                    lOR.potentialRooms.Add(lOR.R1R);
+                }
                 if (topRes && leftRes && downRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1R);
@@ -432,6 +447,10 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restriced room list
             {
+                if (playerPosY == 5)
+                {
+                    lOR.potentialRooms.Add(lOR.R1U);
+                }
                 if (leftRes && downRes && rightRes)
                 {
                     lOR.potentialRooms.Add(lOR.R1U);
