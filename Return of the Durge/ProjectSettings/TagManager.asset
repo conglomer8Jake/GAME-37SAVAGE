@@ -29,6 +29,7 @@ TagManager:
   - anchorLeft
   - anchorBot
   - enemy
+  - stair
   layers:
   - Default
   - TransparentFX

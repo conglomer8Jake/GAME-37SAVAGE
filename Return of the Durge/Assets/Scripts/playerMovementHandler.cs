@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class playerMovementHandler : MonoBehaviour
 {
+    public gameManager GM;
     public string recentColl = "";
+    public string spriteDirectoin = "";
     public Transform throwPosRight;
+    public Transform throwPosLeft;
+    public Transform throwPosActual;
     public GameObject throwableSomething;
 
     public float velX, velY;
@@ -25,7 +29,7 @@ public class playerMovementHandler : MonoBehaviour
     public bool wDown, aDown, sDown, dDown;
     void Start()
     {
-
+        GM = GameObject.FindObjectOfType<gameManager>();
     }
     void Update()
     {
@@ -155,8 +159,11 @@ public class playerMovementHandler : MonoBehaviour
         //Throwing something
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            throwPosCheck();
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(throwableSomething, throwPosRight.position, Quaternion.identity);
+            mousePosX = mousePos.x;
+            mousePosY = mousePos.y;
+            Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
         }
         //Flip sprite when mouse is to left or right
         flipSprite();
@@ -177,20 +184,30 @@ public class playerMovementHandler : MonoBehaviour
         if (direction.x <= 0)
         {
             this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            spriteDirectoin = "left";
         }
         else if (direction.x >= 0)
         {
             this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            spriteDirectoin = "right";
         }
     }
-    public void OnCollisionEnter2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        /*
-        if (!other.gameObject.CompareTag("stairs") && !other.gameObject.CompareTag("north") && !other.gameObject.CompareTag("south") && !other.gameObject.CompareTag("east") && !other.gameObject.CompareTag("west"))
+        if (other.gameObject.CompareTag("stair"))
         {
-            health--;
-            Destroy(other.gameObject);
+            GM.newLevel();
         }
-        */
+    }
+    public void throwPosCheck()
+    {
+        if (spriteDirectoin == "left")
+        {
+            throwPosActual = throwPosLeft;
+        }
+        if (spriteDirectoin == "right")
+        {
+            throwPosActual = throwPosRight;
+        }
     }
 }

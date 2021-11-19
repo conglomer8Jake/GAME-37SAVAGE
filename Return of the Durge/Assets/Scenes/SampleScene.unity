@@ -330,8 +330,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc95e2f78cc94f4fbbc133cface3fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   recentColl: 
+  spriteDirectoin: 
   throwPosRight: {fileID: 0}
+  throwPosLeft: {fileID: 0}
+  throwPosActual: {fileID: 0}
   throwableSomething: {fileID: 0}
   velX: 0
   velY: 0
@@ -481,9 +485,9 @@ PrefabInstance:
     - {fileID: 7671307914611391756, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
     - {fileID: 1230270283367612222, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
---- !u!4 &1035682995 stripped
+--- !u!4 &1051819218 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8323150420728137130, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 634091039418023866, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
   m_PrefabInstance: {fileID: 1164856378}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1164856378
@@ -493,6 +497,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 634091039418023866, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.655
+      objectReference: {fileID: 0}
     - target: {fileID: 4912965813436922584, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
       propertyPath: roomCenter
       value: 
@@ -506,9 +514,13 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8323150420285520782, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
+      propertyPath: throwPosLeft
+      value: 
+      objectReference: {fileID: 1051819218}
+    - target: {fileID: 8323150420285520782, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
       propertyPath: throwPosRight
       value: 
-      objectReference: {fileID: 1035682995}
+      objectReference: {fileID: 1653416756}
     - target: {fileID: 8323150420285520782, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
       propertyPath: throwableSomething
       value: 
@@ -598,6 +610,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0dbeb962f1d2314fa181dadc519cb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1653416756 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2245902451561375899, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
+  m_PrefabInstance: {fileID: 1164856378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119614841
 GameObject:
   m_ObjectHideFlags: 0

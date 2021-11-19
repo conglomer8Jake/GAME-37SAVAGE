@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -504,5 +505,10 @@ public class gameManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void newLevel()
+    {
+        SceneManager.LoadScene(vH.level);
+        vH.level++;
     }
 }
