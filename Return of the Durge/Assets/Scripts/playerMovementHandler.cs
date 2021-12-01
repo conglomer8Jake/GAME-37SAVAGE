@@ -199,6 +199,14 @@ public class playerMovementHandler : MonoBehaviour
             GM.newLevel();
         }
     }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("particle"))
+        {
+            health--;
+            Destroy(other.gameObject);
+        }
+    }
     public void throwPosCheck()
     {
         if (spriteDirectoin == "left")

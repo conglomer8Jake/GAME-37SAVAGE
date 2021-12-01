@@ -32,7 +32,7 @@ public class FlockerScript : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        FlockingTarget = GameObject.FindGameObjectWithTag("Player");
+        reTargetPlayer();
 	}
 	
 	// Update is called once per frame
@@ -108,5 +108,23 @@ public class FlockerScript : MonoBehaviour {
 
         desiredDirection.Normalize();
         transform.position += desiredDirection * SpeedPerSecond * Time.deltaTime;
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("pBullet"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void reTargetPlayer()
+    {
+        if (this.gameObject.CompareTag("DummyThicc"))
+        {
+            FlockingTarget = GameObject.FindGameObjectWithTag("ChrisChan");
+        }
+        else 
+        {
+            FlockingTarget = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 }

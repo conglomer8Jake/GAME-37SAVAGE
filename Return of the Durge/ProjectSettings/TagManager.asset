@@ -30,6 +30,12 @@ TagManager:
   - anchorBot
   - enemy
   - stair
+  - particle
+  - pBullet
+  - DummyThicc
+  - E
+  - ChrisChan
+  - Ryan
   layers:
   - Default
   - TransparentFX
