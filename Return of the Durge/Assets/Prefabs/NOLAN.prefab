@@ -162,7 +162,7 @@ MonoBehaviour:
   throwableSomething: {fileID: 187038295888517174, guid: 7fd08c5f38f7e29409088dd4e2aadfae, type: 3}
   velX: 0
   velY: 0
-  speed: 5
+  speed: 3
   dashSpeed: 3
   dashCooldown: 0
   mousePosX: 0

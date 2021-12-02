@@ -11,47 +11,6 @@ public class gameManager : MonoBehaviour
     public GameObject roomCenter;
     public GameObject player;
 
-    public TileBase L1;
-    public TileBase L2;
-    public TileBase L3;
-    public TileBase L4;
-    public TileBase L5;
-    public TileBase L6;
-    public TileBase L7;
-    public TileBase L8;
-    public TileBase L9;
-    public TileBase L10;
-    public TileBase L11;
-    public TileBase L12;
-    public TileBase L13;
-    public TileBase L14;
-    public TileBase L15;
-    public TileBase L16;
-    public TileBase L17;
-    public TileBase L18;
-    public TileBase L19;
-    public TileBase L20;
-    public TileBase L21;
-    public TileBase L22;
-    public TileBase L23;
-    public TileBase L24;
-    public TileBase L25;
-    public TileBase L26;
-    public TileBase L27;
-    public TileBase L28;
-    public TileBase L29;
-    public TileBase L30;
-    public TileBase L41;
-    public TileBase L42;
-    public TileBase L43;
-    public TileBase L44;
-    public TileBase L45;
-    public TileBase L46;
-    public TileBase L47;
-    public TileBase L48;
-    public TileBase L49;
-    public TileBase L40;
-
     public const int COLUMN_COUNT = 7;
     public const int ROW_COUNT = 7;
 
