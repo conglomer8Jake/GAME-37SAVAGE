@@ -24,7 +24,7 @@ public class bossScript : MonoBehaviour
     
     public int health;
 
-    public float coolDownTimer = 15.0f;
+    float coolDownTimer = 10.0f;
     void Start()
     {
         {
@@ -79,7 +79,12 @@ public class bossScript : MonoBehaviour
             if (coolDownTimer <= 0 && selfState == "calmMode")
             {
                 calmMode();
-                coolDownTimer = 15.0f;
+                coolDownTimer = 10.0f;
+            }
+            if (coolDownTimer <= 0 && selfState == "panicMode")
+            {
+                calmMode();
+                coolDownTimer = 7.0f;
             }
         }
         if (currentBoss == boss.DummyThicc)
@@ -89,7 +94,12 @@ public class bossScript : MonoBehaviour
             if (coolDownTimer <= 0 && selfState == "calmMode")
             {
                 calmMode();
-                coolDownTimer = 15.0f;
+                coolDownTimer = 10.0f;
+            }
+            if (coolDownTimer <= 0 && selfState == "panicMode")
+            {
+                calmMode();
+                coolDownTimer = 7.0f;
             }
         }
     }
@@ -132,9 +142,14 @@ public class bossScript : MonoBehaviour
     }
     public void chrisSlam()
     {
+        Debug.Log("slam");
         //play the slam animation
-        //check if sprite overlaps with the player
+        //create slam object with collider and check for collision
         //if so, knock player back X amount away from the boss
+        Invoke("callReTarget", 1.5f);
+    }
+    public void callReTarget()
+    {
         this.gameObject.GetComponent<FlockerScript>().reTargetPlayer();
     }
 }

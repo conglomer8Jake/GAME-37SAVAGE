@@ -624,11 +624,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5024636991560386575, guid: 8f0d6fbd00d70a246905837ca177f8cf, type: 3}
       propertyPath: coolDownTimer
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2003118065885446056, guid: 8f0d6fbd00d70a246905837ca177f8cf, type: 3}
       propertyPath: CurrentFlockingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259049813426221927, guid: 8f0d6fbd00d70a246905837ca177f8cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3310364638898551138, guid: 8f0d6fbd00d70a246905837ca177f8cf, type: 3}
       propertyPath: m_Name
