@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca09ac66a29221c40ba4ab0469fcc115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healingCode: {fileID: 0}
+  healingCode: {fileID: 8479863154195231563, guid: 6a6262d23046e4943a6f8d67bfb1ba3f, type: 3}
 --- !u!114 &-6713893507209862198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +119,6 @@ MonoBehaviour:
   currentMode: 
   selfState: 
   health: 0
-  speed: 0
-  coolDownTimer: 0
 --- !u!114 &647042250414227429
 MonoBehaviour:
   m_ObjectHideFlags: 0
