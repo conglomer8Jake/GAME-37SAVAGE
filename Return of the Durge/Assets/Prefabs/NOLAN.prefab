@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8323150420285520781}
   m_Layer: 0
   m_Name: NOLAN
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,10 +156,10 @@ MonoBehaviour:
   GM: {fileID: 0}
   recentColl: 
   spriteDirectoin: 
-  throwPosRight: {fileID: 0}
-  throwPosLeft: {fileID: 0}
+  throwPosRight: {fileID: 2245902451561375899}
+  throwPosLeft: {fileID: 634091039418023866}
   throwPosActual: {fileID: 0}
-  throwableSomething: {fileID: 0}
+  throwableSomething: {fileID: 187038295888517174, guid: 7fd08c5f38f7e29409088dd4e2aadfae, type: 3}
   velX: 0
   velY: 0
   speed: 5

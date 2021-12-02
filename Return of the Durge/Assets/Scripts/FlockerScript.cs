@@ -32,7 +32,7 @@ public class FlockerScript : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        reTargetPlayer();
+        Invoke("reTargetPlayer", 0.1f);
 	}
 	
 	// Update is called once per frame
@@ -125,6 +125,7 @@ public class FlockerScript : MonoBehaviour {
         else 
         {
             FlockingTarget = GameObject.FindGameObjectWithTag("Player");
+            Debug.Log("wut");
         }
     }
 }

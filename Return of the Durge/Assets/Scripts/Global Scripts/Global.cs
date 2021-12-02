@@ -8,7 +8,7 @@ public class Global : ScriptableObject
 
 
     public int numRooms;
-    public int level = 1;
+    public int level = 0;
 
     public void restart()
     {
@@ -18,6 +18,7 @@ public class Global : ScriptableObject
     public void gameStart()
     {
         //Build the grid on game start
+        gM = GameObject.FindObjectOfType<gameManager>();
         for (int row = 0; row < 7; row++)
         {
             for (int col = 0; col < 7; col++)
