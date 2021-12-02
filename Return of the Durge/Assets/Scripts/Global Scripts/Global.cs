@@ -9,11 +9,12 @@ public class Global : ScriptableObject
 
     public int numRooms;
     public int level = 0;
-
+    public int bossNumGen;
     public void restart()
     {
         numRooms = 1;
         level = 1;
+        bossNumGen = -1;
     }
     public void gameStart()
     {

@@ -38,7 +38,7 @@ public class centerScript : MonoBehaviour
         if (bossSpawnChance >= 1.0f)
         {
             int rand = Random.Range(0, 1);
-            if (rand == 0)
+            if (rand == 0 && vH.bossNumGen != 0)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -46,8 +46,9 @@ public class centerScript : MonoBehaviour
                 float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                vH.bossNumGen = 0;
             }
-            if (rand == 1)
+            if (rand == 1 && vH.bossNumGen != 1)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -56,6 +57,7 @@ public class centerScript : MonoBehaviour
                 float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
             }
+            vH.bossNumGen = 1;
         }
         else
         {
