@@ -13,6 +13,7 @@ public class Global : ScriptableObject
     public void restart()
     {
         numRooms = 1;
+        level = 1;
     }
     public void gameStart()
     {

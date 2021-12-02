@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
     public Global vH;
     public listOfRooms lOR;
     public GameObject roomCenter;
+    public GameObject player;
 
     public TileBase L1;
     public TileBase L2;
@@ -78,6 +79,7 @@ public class gameManager : MonoBehaviour
     public bool rightRes;
     void Start()
     {
+        Instantiate(player, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
         roomCenter = GameObject.FindGameObjectWithTag("center");
         for (int row = 0; row < ROW_COUNT; row++)
         {
