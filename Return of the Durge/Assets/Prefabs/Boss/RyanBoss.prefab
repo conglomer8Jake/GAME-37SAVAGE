@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8217099718063081332}
   - component: {fileID: 3554270348180874460}
+  - component: {fileID: -3081693880443596914}
   m_Layer: 0
   m_Name: RyanBoss
   m_TagString: Untagged
@@ -83,3 +84,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3081693880443596914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedPerSecond: 4
+  FlockingTarget: {fileID: 0}
+  CurrentFlockingMode: 0
+  DesiredDistanceFromTarget_Min: 3.5
+  DesiredDistanceFromTarget_Max: 4.5
+  FlockingDistance: 1
+  AvoidWalls: 1

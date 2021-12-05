@@ -7,6 +7,8 @@ public class ninjaDurgy : MonoBehaviour
     public GameObject Ninja;
     public ninjaDurgy ninjaScript;
     public ParticleSystem ninjaSystem;
+    public AudioSource ninjaSource;
+    public AudioClip ninjaThrow, ninjaPoof, ninjaDeath;
 
     public float shootTimer = 6.0f;
     public bool timerOn;
@@ -48,9 +50,13 @@ public class ninjaDurgy : MonoBehaviour
     {
         ninjaSystem.GetComponentInChildren<ParticleSystem>().Play();
         anim.SetBool("isShooting", true);
+        ninjaSource.clip = ninjaThrow;
+        ninjaSource.Play();
     }
     public void disappear()
     {
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        ninjaSource.clip = ninjaPoof;
+        ninjaSource.Play();
     }
 }

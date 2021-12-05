@@ -18,8 +18,6 @@ public class FlockerScript : MonoBehaviour {
     public float DesiredDistanceFromTarget_Min = 3.5f;
     public float DesiredDistanceFromTarget_Max = 4.5f;
     public MaintainDistance FlockingDistance = MaintainDistance.MidRange;
-
-
     public enum MaintainDistance
     {
         ShortRange,
@@ -32,7 +30,8 @@ public class FlockerScript : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        Invoke("reTargetPlayer", 0.1f);
+        reTargetPlayer();
+        //Invoke("reTargetPlayer", 0.1f);
 	}
 	
 	// Update is called once per frame

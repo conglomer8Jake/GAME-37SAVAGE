@@ -6,11 +6,15 @@ public class towerDurgy : MonoBehaviour
 {
     public playerMovementHandler pMH;
     public FlockerScript fS;
-
+    public AudioClip death, fire;
+    public AudioSource tower;
+    public ParticleSystem PS;
     public int health = 5;
     void Start()
     {
+        tower = GetComponent<AudioSource>();
         pMH = GameObject.FindObjectOfType<playerMovementHandler>();
+        PS = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame

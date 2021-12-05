@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8454278345830595142}
   - component: {fileID: 8782217060886834898}
   - component: {fileID: -5826390292091541942}
-  - component: {fileID: 4216440878144535304}
   - component: {fileID: 5353583103409883192}
   - component: {fileID: 6945934105259981035}
   m_Layer: 0
@@ -170,20 +169,6 @@ MonoBehaviour:
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
   AvoidHazards: 1
---- !u!114 &4216440878144535304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702261587484493795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043fd87949b8a114fbc38aaa6eedff2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathSound: {fileID: 5353583103409883192}
-  shootSound: {fileID: 6945934105259981035}
 --- !u!82 &5353583103409883192
 AudioSource:
   m_ObjectHideFlags: 0

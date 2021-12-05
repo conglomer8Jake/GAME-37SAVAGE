@@ -10,7 +10,7 @@ public class AimAtPlayer : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
+		reTarget();
 	}
 
 	// Update is called once per frame
@@ -23,5 +23,8 @@ public class AimAtPlayer : MonoBehaviour
 
 		transform.right = direction;
 	}
-
+	public void reTarget()
+    {
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
 }

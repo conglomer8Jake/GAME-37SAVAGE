@@ -240,32 +240,26 @@ public class gameManager : MonoBehaviour
                 if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
                 {
                     topRes = false;
-                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
                 {
                     topRes = true;
-                    Debug.Log("checkPass");
                 }
                 if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
                 {
                     rightRes = false;
-                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
                 {
                     rightRes = true;
-                    Debug.Log("checkPass");
                 }
                 if (roomMap[playerPosY, playerPosX - 1, 0].Contains("F") || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
                 {
                     leftRes = false;
-                    Debug.Log("checkPassF");
                 }
                 else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
                 {
                     leftRes = true;
-                    Debug.Log("checkPass");
                 }
             }
             //Add rooms to the restricted room list

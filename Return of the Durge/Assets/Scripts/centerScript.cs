@@ -40,10 +40,11 @@ public class centerScript : MonoBehaviour
     }
     public void bossSpawnCheck()
     {
-        if (bossSpawnChance >= 1.0f)
+        if (bossSpawnChance >= 1.0f || gM.numDoorsActive == 0)
         {
-            int rand = Random.Range(0, 1);
-            if (rand == 0 && vH.bossNumGen != 0 || gM.numDoorsActive == 0)
+            Debug.Log("BOSS INCOMING");
+            int rand = Random.Range(0, 10);
+            if (rand >= 5 && vH.bossNumGen != 0)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -53,7 +54,7 @@ public class centerScript : MonoBehaviour
                 Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
                 vH.bossNumGen = 0;
             }
-            if (rand == 1 && vH.bossNumGen != 1 || gM.numDoorsActive == 0)
+            if (rand < 5 && vH.bossNumGen != 1)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -73,6 +74,7 @@ public class centerScript : MonoBehaviour
     {
         gM.playerPosX = gridPosX;
         gM.playerPosY = gridPosY;
+        gM.roomCenter = this.gameObject;
     }
     public void spawnEnemies()
     {

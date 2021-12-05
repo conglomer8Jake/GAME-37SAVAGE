@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class shamanDurgy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ParticleSystem PS;
+    public AudioSource shamSource;
+    public AudioClip shamShoot, shamDeath;
     void Start()
     {
-        
+        PS = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (PS.isPlaying)
+        {
+            shamSource.clip = shamShoot;
+            shamSource.Play();
+            Debug.Log("SUI");
+        }
     }
 }
