@@ -28,6 +28,7 @@ public class gameManager : MonoBehaviour
     public int playerPosX = 3;
     public int playerPosY = 3;
     public int enemiesAlive = 0;
+    public int numDoorsActive;
 
     public float roomGenCooldown = 5.0f;
 

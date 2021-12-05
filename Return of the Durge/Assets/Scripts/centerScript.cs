@@ -13,18 +13,23 @@ public class centerScript : MonoBehaviour
     public int gridPosY;
     public int gridPosX;
     public float bossSpawnChance;
+    public GameObject[] numDoorsW, numDoorsE, numDoorsN, numDoorsS;
     void Start()
     {
+        gM = GameObject.FindObjectOfType<gameManager>();
         bossSpawnChance = 0.00000001f*(10.0f*Mathf.Exp(vH.numRooms));
         topRight = GameObject.FindGameObjectWithTag("anchorTop");
         topLeft = GameObject.FindGameObjectWithTag("anchorLeft");
         botRight = GameObject.FindGameObjectWithTag("anchorBot");
-        gM = GameObject.FindObjectOfType<gameManager>();
         gM.roomCenter = this.gameObject;
         gM.neighborRoomCheck();
         bossSpawnCheck();
         gridPosX = gM.playerPosX;
         gridPosY = gM.playerPosY;
+    }
+    public void Update()
+    {
+        doorCheck();
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,7 +43,7 @@ public class centerScript : MonoBehaviour
         if (bossSpawnChance >= 1.0f)
         {
             int rand = Random.Range(0, 1);
-            if (rand == 0 && vH.bossNumGen != 0)
+            if (rand == 0 && vH.bossNumGen != 0 || gM.numDoorsActive == 0)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -48,7 +53,7 @@ public class centerScript : MonoBehaviour
                 Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
                 vH.bossNumGen = 0;
             }
-            if (rand == 1 && vH.bossNumGen != 1)
+            if (rand == 1 && vH.bossNumGen != 1 || gM.numDoorsActive == 0)
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -86,5 +91,13 @@ public class centerScript : MonoBehaviour
         Destroy(topRight);
         Destroy(topLeft);
         Destroy(botRight);
+    }
+    public void doorCheck()
+    {
+        numDoorsE = GameObject.FindGameObjectsWithTag("east");
+        numDoorsW = GameObject.FindGameObjectsWithTag("west");
+        numDoorsN = GameObject.FindGameObjectsWithTag("north");
+        numDoorsS = GameObject.FindGameObjectsWithTag("south");
+        gM.numDoorsActive = numDoorsE.Length + numDoorsN.Length + numDoorsS.Length + numDoorsW.Length;
     }
 }

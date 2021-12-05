@@ -90,6 +90,7 @@ public class roomGenerationScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && gM.roomMadeRecent)
         {
             pMH.recentColl = direction;
+            gM.numDoorsActive--;
             Destroy(this.gameObject);
         }
     }

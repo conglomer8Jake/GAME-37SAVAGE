@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3447226184608556897}
   - component: {fileID: 2178330119872268031}
   - component: {fileID: 8199396055665771954}
+  - component: {fileID: 3223433413805327883}
   m_Layer: 0
   m_Name: EliBoss
   m_TagString: E
@@ -103,3 +104,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3223433413805327883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517231257722845666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedPerSecond: 4
+  FlockingTarget: {fileID: 0}
+  CurrentFlockingMode: 0
+  DesiredDistanceFromTarget_Min: 3.5
+  DesiredDistanceFromTarget_Max: 4.5
+  FlockingDistance: 2
+  AvoidWalls: 1

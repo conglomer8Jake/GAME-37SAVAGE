@@ -30077,6 +30077,10 @@ MonoBehaviour:
   gridPosY: 0
   gridPosX: 0
   bossSpawnChance: 0
+  numDoorsW: []
+  numDoorsE: []
+  numDoorsN: []
+  numDoorsS: []
 --- !u!1001 &1561969185822070017
 PrefabInstance:
   m_ObjectHideFlags: 0
