@@ -21,6 +21,7 @@ public class bloatedDurgy : MonoBehaviour
     public float DesiredDistanceFromTarget_Max = 4.5f;
 
     public bool AvoidHazards = true;
+    
 
     // Use this for initialization
     void Start()
@@ -106,4 +107,5 @@ public class bloatedDurgy : MonoBehaviour
             health--;
         }
     }
+ 
 }
