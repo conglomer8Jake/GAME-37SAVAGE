@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8217099718063081332}
   - component: {fileID: 3554270348180874460}
   - component: {fileID: -3081693880443596914}
+  - component: {fileID: 5864578441559365771}
   m_Layer: 0
   m_Name: RyanBoss
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ae816ce39a235f4ca84ee2f46da77dc, type: 3}
+  m_Sprite: {fileID: 1199105455312480478, guid: 3bdef0b0d8d33aa41b8b1100005aaa8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,3 +104,22 @@ MonoBehaviour:
   DesiredDistanceFromTarget_Max: 4.5
   FlockingDistance: 1
   AvoidWalls: 1
+--- !u!95 &5864578441559365771
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d0fa5f48bf604349a7acafd71746df4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
