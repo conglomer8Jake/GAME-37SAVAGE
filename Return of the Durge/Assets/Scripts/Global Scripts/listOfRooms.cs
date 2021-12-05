@@ -5,7 +5,6 @@ using UnityEngine;
 public class listOfRooms : ScriptableObject
 {
     public List<GameObject> rooms;
-    public int numDoorsActive;
     public List<GameObject> potentialRooms;
 
     public GameObject R4;
