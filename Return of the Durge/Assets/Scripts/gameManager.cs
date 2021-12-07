@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
     public listOfRooms lOR;
     public GameObject roomCenter;
     public GameObject player;
+    public GameObject[] numEnemies;
 
     public const int COLUMN_COUNT = 7;
     public const int ROW_COUNT = 7;
@@ -105,6 +106,8 @@ public class gameManager : MonoBehaviour
     }
     public void Update()
     {
+        numEnemies = GameObject.FindGameObjectsWithTag("enemy");
+        enemiesAlive = numEnemies.Length;
         if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Pause");
