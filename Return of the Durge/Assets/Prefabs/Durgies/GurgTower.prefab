@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4605450455694604706}
   - component: {fileID: 4222145923705412855}
   - component: {fileID: -5014895104093877024}
+  - component: {fileID: 5275579392362850060}
   m_Layer: 0
   m_Name: GurgTower
   m_TagString: enemy
@@ -126,6 +127,7 @@ MonoBehaviour:
   fS: {fileID: 0}
   death: {fileID: 8300000, guid: 144c5d1f6d71a2644a6fae11e1f3ed6c, type: 3}
   fire: {fileID: 8300000, guid: 0324b67975633da4e9d8fdea26777004, type: 3}
+  tower: {fileID: 0}
   PS: {fileID: 0}
   health: 5
 --- !u!58 &8713010897710739007
@@ -200,7 +202,7 @@ AudioSource:
   m_GameObject: {fileID: 2515197058134203551}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: bf8cad78bb69b1842bb53aa3103d7f2c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -212,7 +214,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -278,6 +280,31 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &5275579392362850060
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515197058134203551}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
       inSlope: 0
       outSlope: 0
       tangentMode: 0

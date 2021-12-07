@@ -4896,6 +4896,7 @@ GameObject:
   - component: {fileID: -66009446553808110}
   - component: {fileID: 1938163879710249778}
   - component: {fileID: 5290385239205549129}
+  - component: {fileID: 5489657501041906616}
   m_Layer: 0
   m_Name: Default
   m_TagString: enemy
@@ -5065,7 +5066,7 @@ AudioSource:
   m_GameObject: {fileID: 8235186827894968431}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: bf8cad78bb69b1842bb53aa3103d7f2c, type: 2}
   m_audioClip: {fileID: 8300000, guid: f8322561211986d4aa36ff1d0085676d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -5173,7 +5174,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5239,6 +5240,31 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &5489657501041906616
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235186827894968431}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.22727273
       inSlope: 0
       outSlope: 0
       tangentMode: 0
