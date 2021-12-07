@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5024636991560386575}
   - component: {fileID: -2003118065885446056}
   - component: {fileID: 5609754737602853358}
+  - component: {fileID: 264727954047745153}
   m_Layer: 0
   m_Name: chrisTEST
   m_TagString: ChrisChan
@@ -103,13 +104,18 @@ MonoBehaviour:
   currentPartnerBoss: 3
   partnerBossObject: {fileID: 0}
   player: {fileID: 0}
-  prevPlayPos: {fileID: 0}
+  stairs: {fileID: 0}
   target: {x: 0, y: 0}
   currentMode: 
   selfState: 
   health: 50
-  pPPX: 0
-  pPPY: 0
+  coolDownTimer: 10
+  abilityUsed: 0
+  chrisAlive: 0
+  jakeAlive: 0
+  ryanAlive: 0
+  elijahAlive: 1
+  partnerAlive: 0
 --- !u!114 &-2003118065885446056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 0
@@ -141,6 +148,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2047684ddc5f97d4480c105d08c192ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &264727954047745153
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310364638898551138}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1153527084102663280
 PrefabInstance:
   m_ObjectHideFlags: 0

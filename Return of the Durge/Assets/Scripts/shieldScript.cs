@@ -11,7 +11,7 @@ public class shieldScript : MonoBehaviour
     void Update()
     {
         changeOpacity();
-            if (combatTimer <= 0)
+            if (combatTimer <= 0 && !fullCap)
             {
             damagedRecent = false;
             }
@@ -21,9 +21,10 @@ public class shieldScript : MonoBehaviour
             }
             if (damagedRecent)
             {
+            combatTimer = 15.0f;
                 cooldown();
             }
-            if (shieldStrength <= 10)
+            if (shieldStrength < 10)
             {
                 fullCap = false;
             }
@@ -47,13 +48,10 @@ public class shieldScript : MonoBehaviour
             shieldStrength--;
             damagedRecent = true;
         }
-        if (!this.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("pBullet"))
         {
-            if (other.gameObject.CompareTag("pBullet"))
-            {
-                shieldStrength--;
-                damagedRecent = true;
-            }
+            shieldStrength--;
+            damagedRecent = true;
         }
     }
     public void changeOpacity()

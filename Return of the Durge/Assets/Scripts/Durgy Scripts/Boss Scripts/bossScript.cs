@@ -16,6 +16,7 @@ public class bossScript : MonoBehaviour
 
     public GameObject partnerBossObject;
     public GameObject player;
+    public GameObject stairs;
 
     public Vector2 target;
 
@@ -26,6 +27,8 @@ public class bossScript : MonoBehaviour
 
     public float coolDownTimer = 10.0f;
     public bool abilityUsed = false;
+    public bool chrisAlive, jakeAlive, ryanAlive, elijahAlive = true;
+    public bool partnerAlive;
     void Start()
     {
         {
@@ -35,24 +38,28 @@ public class bossScript : MonoBehaviour
         if (this.gameObject.CompareTag("E"))
         {
             currentBoss = boss.E;
+            health = 50;
             partnerBossObject = GameObject.FindGameObjectWithTag("Ryan");
             currentPartnerBoss = boss.Ryan;
         }
         if (this.gameObject.CompareTag("Ryan"))
         {
             currentBoss = boss.Ryan;
+            health = 15;
             partnerBossObject = GameObject.FindGameObjectWithTag("E");
             currentPartnerBoss = boss.E;
         }
         if (this.gameObject.CompareTag("ChrisChan"))
         {
             currentBoss = boss.ChrisChan;
+            health = 40;
             partnerBossObject = GameObject.FindGameObjectWithTag("DummyThicc");
             currentPartnerBoss = boss.DummyThicc;
         }
         if (this.gameObject.CompareTag("DummyThicc"))
         {
             currentBoss = boss.DummyThicc;
+            health = 20;
             partnerBossObject = GameObject.FindGameObjectWithTag("ChrisChan");
             currentPartnerBoss = boss.ChrisChan;
         }
@@ -66,15 +73,6 @@ public class bossScript : MonoBehaviour
         }
         if (currentBoss == boss.E)
         {
-            health = 50;
-        }
-        if (currentBoss == boss.Ryan)
-        {
-            health = 15;
-        }
-        if (currentBoss == boss.ChrisChan)
-        {
-            health = 40;
             coolDownTimer -= 1 * Time.deltaTime;
             if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
@@ -85,11 +83,76 @@ public class bossScript : MonoBehaviour
             {
                 calmMode();
                 coolDownTimer = 5.0f;
+            }
+            if (health <= 0)
+            {
+                if (!partnerAlive)
+                {
+                    Instantiate(stairs, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+        if (currentBoss == boss.Ryan)
+        {
+            coolDownTimer -= 1 * Time.deltaTime;
+            if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
+            {
+                calmMode();
+                coolDownTimer = 10.0f;
+            }
+            if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
+            {
+                calmMode();
+                coolDownTimer = 5.0f;
+            }
+            if (health <= 0)
+            {
+                if (!partnerAlive)
+                {
+                    Instantiate(stairs, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+        if (currentBoss == boss.ChrisChan)
+        {
+            
+            coolDownTimer -= 1 * Time.deltaTime;
+            if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
+            {
+                calmMode();
+                coolDownTimer = 10.0f;
+            }
+            if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
+            {
+                calmMode();
+                coolDownTimer = 5.0f;
+            }
+            if (health <= 0)
+            {
+                if (!partnerAlive)
+                {
+                    Instantiate(stairs, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
+                    Destroy(this.gameObject);
+                }
             }
         }
         if (currentBoss == boss.DummyThicc)
         {
-            health = 20;
+            
             coolDownTimer -= 1 * Time.deltaTime;
             if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
@@ -101,7 +164,20 @@ public class bossScript : MonoBehaviour
                 calmMode();
                 coolDownTimer = 5.0f;
             }
+            if (health <= 0)
+            {
+                if (!partnerAlive)
+                {
+                    Instantiate(stairs, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
+                    Destroy(this.gameObject);
+                }
+            }
         }
+
     }
     //FOR TESTING ONLY
     public void newStart()
@@ -174,5 +250,12 @@ public class bossScript : MonoBehaviour
     {
         this.gameObject.GetComponent<FlockerScript>().reTargetPlayer();
         abilityUsed = false;
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("pBullet"))
+        {
+            health--;
+        }
     }
 }

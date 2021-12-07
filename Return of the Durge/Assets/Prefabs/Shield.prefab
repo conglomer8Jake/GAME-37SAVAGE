@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3273796177074893972}
   - component: {fileID: 4411379518542548759}
   - component: {fileID: -8270397411120988866}
+  - component: {fileID: 1337366087775846853}
   m_Layer: 0
   m_Name: Shield
   m_TagString: stair
@@ -100,3 +101,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1337366087775846853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348447119571542523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1268aa547dfdd4d90cf761c4b3b92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedRecent: 0
+  fullCap: 1
+  shieldStrength: 10
+  combatTimer: 15
