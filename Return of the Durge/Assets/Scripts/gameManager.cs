@@ -37,6 +37,8 @@ public class gameManager : MonoBehaviour
     public bool leftRes;
     public bool downRes;
     public bool rightRes;
+
+    public bool topNull, rightNull, botNull, leftNull;
     void Start()
     {
         Instantiate(player, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
@@ -113,7 +115,7 @@ public class gameManager : MonoBehaviour
             lOR.potentialRooms.Clear();
         }
     }
-    private void DebugOutRoomArray()
+    public void DebugOutRoomArray()
     {
         string outputString = "Map\n";
         for (int row = 0; row < ROW_COUNT; row++)
@@ -142,41 +144,73 @@ public class gameManager : MonoBehaviour
     public void neighborRoomCheck()
     {
         lOR.potentialRooms.Clear();
+        topNull = false;
+        botNull = false;
+        rightNull = false;
+        leftNull = false;
         //checking room's neighbors 
         if (directionGenerated == "right")
             {
             //check up, right, down
             {
-                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
+                if (playerPosY == 0)
                 {
-                    topRes = false;
+                    topNull = true;
                 }
-                else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
+                else
                 {
-                    topRes = true;
+                    topNull = false;
+                    if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4" && !topNull)
+                    {
+                        topRes = false;
+                    }
+                    else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D") && !topNull)
+                    {
+                        topRes = true;
+                    }
+                }        
+                if (playerPosX == 6)
+                {
+                    rightNull = true;
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                else
                 {
-                    rightRes = false;
+                    rightNull = false;
+                    if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                    {
+                        rightRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L") && !rightNull)
+                    {
+                        rightRes = true;
+                    }
                 }
-                else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
+                if (playerPosY == 6)
                 {
-                    rightRes = true;
+                    botNull = true;
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                else
                 {
-                    downRes = false;
-                }
-                else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U"))
-                {
-                    downRes = true;
+                    botNull = false;
+                    if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                    {
+                        downRes = false;
+                    }
+                    else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U") && !botNull)
+                    {
+                        downRes = true;
+                    }
                 }
             }
             //Add rooms to the restricted room list 
             {
-                if (playerPosX == 5)
+                if (playerPosX == 6)
                 {
                     lOR.potentialRooms.Add(lOR.R1L);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                    lOR.potentialRooms.Add(lOR.R2DL);
+                    lOR.potentialRooms.Add(lOR.R3ULD);
+                    return;
                 }
                 if (topRes && rightRes && downRes)
                 {
@@ -237,39 +271,64 @@ public class gameManager : MonoBehaviour
         {
             //check, up, right, left
             {
-                if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
+                if (playerPosY == 0)
                 {
-                    topRes = false;
+                    topNull = true;
                 }
-                else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
+                else
                 {
-                    topRes = true;
+                    topNull = false;
+                    if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4" && !topNull)
+                    {
+                        topRes = false;
+                    }
+                    else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D") && !topNull)
+                    {
+                        topRes = true;
+                    }
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                if (playerPosX == 6)
                 {
-                    rightRes = false;
+                    rightNull = true;
                 }
-                else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
+                else
                 {
-                    rightRes = true;
+                    rightNull = false;
+                    if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                    {
+                        rightRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L") && !rightNull)
+                    {
+                        rightRes = true;
+                    }
                 }
-                if (roomMap[playerPosY, playerPosX - 1, 0].Contains("F") || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                if (playerPosX == 0)
                 {
-                    leftRes = false;
+                    leftNull = true;
                 }
-                else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
+                else
                 {
-                    leftRes = true;
+                    leftNull = false;
+                    if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                    {
+                        leftRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R") && !leftNull)
+                    {
+                        leftRes = true;
+                    }
                 }
             }
             //Add rooms to the restricted room list
             {
-                if (playerPosY == 1)
+                if (playerPosY == 0)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
                     lOR.potentialRooms.Add(lOR.R2DL);
                     lOR.potentialRooms.Add(lOR.R2DR);
                     lOR.potentialRooms.Add(lOR.R3DLR);
+                    return;
                 }
                 if (topRes && rightRes && leftRes)
                 {
@@ -277,7 +336,6 @@ public class gameManager : MonoBehaviour
                 }
                 if (!topRes && !rightRes && !leftRes)
                 {
-                    Debug.Log("roomsAdded");
                     lOR.potentialRooms.Add(lOR.R1D);
                     lOR.potentialRooms.Add(lOR.R2DL);
                     lOR.potentialRooms.Add(lOR.R2DR);
@@ -329,37 +387,64 @@ public class gameManager : MonoBehaviour
         {
             //check up, left, down
             {
-
-                if (roomMap[playerPosY - 1, playerPosX, 0] == "F" || roomMap[playerPosY - 1, playerPosX, 0] == "R4")
+                if (playerPosY == 0)
                 {
-                    topRes = false;
+                    topNull = true;
                 }
-                else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D"))
+                else
                 {
-                    topRes = true;
+                    topNull = false;
+                    if (roomMap[playerPosY - 1, playerPosX, 0].Contains("F") || roomMap[playerPosY - 1, playerPosX, 0] == "R4" && !topNull)
+                    {
+                        topRes = false;
+                    }
+                    else if (roomMap[playerPosY - 1, playerPosX, 0].Contains("R3ULR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UL") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2UR") || roomMap[playerPosY - 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY - 1, playerPosX, 0].Contains("R1D") && !topNull)
+                    {
+                        topRes = true;
+                    }
                 }
-                if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                if (playerPosX == 0)
                 {
-                    leftRes = false;
+                    leftNull = true;
                 }
-                else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
+                else
                 {
-                    leftRes = true;
+                    leftNull = false;
+                    if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                    {
+                        leftRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R") && !leftNull)
+                    {
+                        leftRes = true;
+                    }
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                if (playerPosY == 6)
                 {
-                    downRes = false;
+                    botNull = true;
                 }
-                else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U"))
+                else
                 {
-                    downRes = true;
+                    botNull = false;
+                    if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                    {
+                        downRes = false;
+                    }
+                    else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U") && !botNull)
+                    {
+                        downRes = true;
+                    }
                 }
             }
             //Add rooms to the restricted room list
             {
-                if (playerPosX == 1)
+                if (playerPosX == 0)
                 {
                     lOR.potentialRooms.Add(lOR.R1R);
+                    lOR.potentialRooms.Add(lOR.R2DR);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3URD);
+                    return;
                 }
                 if (topRes && leftRes && downRes)
                 {
@@ -419,36 +504,64 @@ public class gameManager : MonoBehaviour
         {
             //check left, down, right
             {
-                if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                if (playerPosX == 0)
                 {
-
+                    leftNull = true;
                 }
-                else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R"))
+                else
                 {
-                    leftRes = true;
+                    leftNull = false;
+                    if (roomMap[playerPosY, playerPosX - 1, 0] == "F" || roomMap[playerPosY, playerPosX - 1, 0] == "R4")
+                    {
+                        leftRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX - 1, 0].Contains("R3ULD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2UL") || roomMap[playerPosY, playerPosX - 1, 0].Contains("R2DL") || !roomMap[playerPosY, playerPosX - 1, 0].Contains("R1R") && !leftNull)
+                    {
+                        leftRes = true;
+                    }
                 }
-                if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                if (playerPosY == 6)
                 {
-                    downRes = false;
+                    botNull = true;
                 }
-                else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U"))
+                else
                 {
-                    downRes = true;
+                    botNull = false;
+                    if (roomMap[playerPosY + 1, playerPosX, 0].Contains("F") || roomMap[playerPosY + 1, playerPosX, 0] == "R4")
+                    {
+                        downRes = false;
+                    }
+                    else if (roomMap[playerPosY + 1, playerPosX, 0].Contains("R3DLR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DL") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2DR") || roomMap[playerPosY + 1, playerPosX, 0].Contains("R2LR") || !roomMap[playerPosY + 1, playerPosX, 0].Contains("R1U") && !botNull)
+                    {
+                        downRes = true;
+                    }
                 }
-                if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                if (playerPosX == 6)
                 {
-                    rightRes = false;
+                    rightNull = true;
                 }
-                else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L"))
+                else
                 {
-                    rightRes = true;
+                    rightNull = false;
+                    if (roomMap[playerPosY, playerPosX + 1, 0].Contains("F") || roomMap[playerPosY, playerPosX + 1, 0] == "R4")
+                    {
+                        rightRes = false;
+                    }
+                    else if (roomMap[playerPosY, playerPosX + 1, 0].Contains("R3URD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UD") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2UR") || roomMap[playerPosY, playerPosX + 1, 0].Contains("R2DR") || !roomMap[playerPosY, playerPosX + 1, 0].Contains("R1L") && !rightNull)
+                    {
+                        rightRes = true;
+                    }
                 }
             }
             //Add rooms to the restriced room list
             {
-                if (playerPosY == 5)
+                if (playerPosY == 6)
                 {
                     lOR.potentialRooms.Add(lOR.R1U);
+                    lOR.potentialRooms.Add(lOR.R2UL);
+                    lOR.potentialRooms.Add(lOR.R2UR);
+                    lOR.potentialRooms.Add(lOR.R3ULR);
+                    return;
                 }
                 if (leftRes && downRes && rightRes)
                 {

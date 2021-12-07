@@ -30,8 +30,9 @@ public class FlockerScript : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        reTargetPlayer();
-        //Invoke("reTargetPlayer", 0.1f);
+
+        //reTargetPlayer();
+        Invoke("reTargetPlayer", 0.1f);
 	}
 	
 	// Update is called once per frame

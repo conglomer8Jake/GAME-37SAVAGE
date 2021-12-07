@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1815681567307282030}
   - component: {fileID: -5024636991560386575}
   - component: {fileID: -2003118065885446056}
+  - component: {fileID: 5609754737602853358}
   m_Layer: 0
   m_Name: chrisTEST
   m_TagString: ChrisChan
@@ -102,12 +103,13 @@ MonoBehaviour:
   currentPartnerBoss: 3
   partnerBossObject: {fileID: 0}
   player: {fileID: 0}
+  prevPlayPos: {fileID: 0}
   target: {x: 0, y: 0}
   currentMode: 
   selfState: 
   health: 50
-  speed: 0
-  coolDownTimer: 0
+  pPPX: 0
+  pPPY: 0
 --- !u!114 &-2003118065885446056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +129,18 @@ MonoBehaviour:
   DesiredDistanceFromTarget_Max: 4.5
   FlockingDistance: 1
   AvoidWalls: 1
+--- !u!114 &5609754737602853358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310364638898551138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2047684ddc5f97d4480c105d08c192ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1153527084102663280
 PrefabInstance:
   m_ObjectHideFlags: 0

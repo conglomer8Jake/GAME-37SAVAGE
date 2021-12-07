@@ -8,5 +8,6 @@ public class dummyThiccBOSS : MonoBehaviour
     public void healChris()
     {
         Instantiate(healingCode, this.gameObject.transform.position, Quaternion.identity);
+        this.gameObject.GetComponent<FlockerScript>().reTargetPlayer();
     }
 }

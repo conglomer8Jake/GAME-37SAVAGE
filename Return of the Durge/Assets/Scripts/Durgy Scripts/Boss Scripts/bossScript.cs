@@ -16,6 +16,7 @@ public class bossScript : MonoBehaviour
 
     public GameObject partnerBossObject;
     public GameObject player;
+    public GameObject prevPlayPos;
 
     public Vector2 target;
 
@@ -24,12 +25,12 @@ public class bossScript : MonoBehaviour
     
     public int health;
 
-    float coolDownTimer = 10.0f;
+    public float coolDownTimer = 10.0f;
+    public bool abilityUsed = false;
     void Start()
     {
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            selfState = "calmMode";
+            Invoke("newStart", 0.1f);
         }
 
         if (this.gameObject.CompareTag("E"))
@@ -76,32 +77,38 @@ public class bossScript : MonoBehaviour
         {
             health = 40;
             coolDownTimer -= 1 * Time.deltaTime;
-            if (coolDownTimer <= 0 && selfState == "calmMode")
+            if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
                 calmMode();
                 coolDownTimer = 10.0f;
             }
-            if (coolDownTimer <= 0 && selfState == "panicMode")
+            if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
             {
                 calmMode();
-                coolDownTimer = 7.0f;
+                coolDownTimer = 5.0f;
             }
         }
         if (currentBoss == boss.DummyThicc)
         {
             health = 20;
             coolDownTimer -= 1 * Time.deltaTime;
-            if (coolDownTimer <= 0 && selfState == "calmMode")
+            if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
                 calmMode();
                 coolDownTimer = 10.0f;
             }
-            if (coolDownTimer <= 0 && selfState == "panicMode")
+            if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
             {
                 calmMode();
-                coolDownTimer = 7.0f;
+                coolDownTimer = 5.0f;
             }
         }
+    }
+    //FOR TESTING ONLY
+    public void newStart()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        selfState = "calmMode";
     }
     public void calmMode()
     {
@@ -114,8 +121,18 @@ public class bossScript : MonoBehaviour
                 //ability 1
                 break;
             case boss.ChrisChan:
-                this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
-                chrisSlam();
+                int chrisRand = Random.Range(0, 10);
+                if (chrisRand >= 5)
+                {
+                    this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
+                    chrisSlam();
+                    abilityUsed = true;
+                } else if (chrisRand < 5 && chrisRand >= 2)
+                {
+                    this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
+                    chrisSlash();
+                    abilityUsed = true;
+                } 
                 break;
             case boss.DummyThicc:
                 this.gameObject.GetComponent<dummyThiccBOSS>().healChris();
@@ -148,8 +165,15 @@ public class bossScript : MonoBehaviour
         //if so, knock player back X amount away from the boss
         Invoke("callReTarget", 1.5f);
     }
+    public void chrisSlash()
+    {
+        Debug.Log("slash");
+        //play anim
+        Invoke("callReTarget", 1.5f);
+    }
     public void callReTarget()
     {
         this.gameObject.GetComponent<FlockerScript>().reTargetPlayer();
+        abilityUsed = false;
     }
 }

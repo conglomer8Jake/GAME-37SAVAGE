@@ -61,22 +61,21 @@ public class roomGenerationScript : MonoBehaviour
             if (direction == "right")
             {
                 gM.directionGenerated = "right";
-                gM.updateMap();
+                //gM.updateMap();
             }
             if (direction == "left")
             {
                 gM.directionGenerated = "left";
-                gM.updateMap();
+                //gM.updateMap();
             }
             if (direction == "up")
             {
                 gM.directionGenerated = "up";
-                gM.updateMap();
+                //gM.updateMap();
             }
             if (direction == "down")
             {
                 gM.directionGenerated = "down";
-                gM.updateMap();
             }
             gM.neighborRoomCheck();
             randNum = Random.Range(0, lOR.potentialRooms.Count);
@@ -84,6 +83,7 @@ public class roomGenerationScript : MonoBehaviour
             roomGenerated = lOR.potentialRooms[randNum];
             gM.roomCode = lOR.potentialRooms[randNum].tag;
             vH.numRooms++;
+            gM.updateMap();
             gM.roomMadeRecent = true;
             Destroy(this.gameObject);
         }

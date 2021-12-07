@@ -18,9 +18,11 @@ public class centerScript : MonoBehaviour
     {
         gM = GameObject.FindObjectOfType<gameManager>();
         bossSpawnChance = 0.00000001f*(10.0f*Mathf.Exp(vH.numRooms));
+        /*
         topRight = GameObject.FindGameObjectWithTag("anchorTop");
         topLeft = GameObject.FindGameObjectWithTag("anchorLeft");
         botRight = GameObject.FindGameObjectWithTag("anchorBot");
+        */
         gM.roomCenter = this.gameObject;
         gM.neighborRoomCheck();
         bossSpawnCheck();
@@ -75,6 +77,7 @@ public class centerScript : MonoBehaviour
         gM.playerPosX = gridPosX;
         gM.playerPosY = gridPosY;
         gM.roomCenter = this.gameObject;
+        gM.DebugOutRoomArray();
     }
     public void spawnEnemies()
     {
@@ -90,9 +93,11 @@ public class centerScript : MonoBehaviour
                 gM.enemiesAlive++;
             }
         }
+        /*
         Destroy(topRight);
         Destroy(topLeft);
         Destroy(botRight);
+        */
     }
     public void doorCheck()
     {

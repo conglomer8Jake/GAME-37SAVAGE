@@ -127,8 +127,8 @@ MonoBehaviour:
   DummyThicc: {fileID: 6352653670489923600, guid: da1330e1e03a6364f9738cdde56120db, type: 3}
   E: {fileID: 7517231257722845666, guid: 9668f6853d1a2d246848ac90138802bf, type: 3}
   Ryan: {fileID: 2456720972189606737, guid: c46302542e24402418cd4191fde58136, type: 3}
-  topRight: {fileID: 0}
-  topLeft: {fileID: 0}
+  topRight: {fileID: 314152601983037180}
+  topLeft: {fileID: 667244883395070999}
   botRight: {fileID: 0}
   lOE: {fileID: 11400000, guid: d8ead6e413c29574585f3b538409fe3b, type: 2}
   vH: {fileID: 11400000, guid: 60e56a557c3ead044907529c0f434433, type: 2}
@@ -136,6 +136,10 @@ MonoBehaviour:
   gridPosY: 0
   gridPosX: 0
   bossSpawnChance: 0
+  numDoorsW: []
+  numDoorsE: []
+  numDoorsN: []
+  numDoorsS: []
 --- !u!1 &6401939947457530209
 GameObject:
   m_ObjectHideFlags: 0
@@ -29421,5 +29425,15 @@ PrefabInstance:
 --- !u!4 &4896640733455064483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 313172964842370368, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
+  m_PrefabInstance: {fileID: 5164716089038563555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &314152601983037180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4895652264252130847, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
+  m_PrefabInstance: {fileID: 5164716089038563555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &667244883395070999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5687560641046815988, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
   m_PrefabInstance: {fileID: 5164716089038563555}
   m_PrefabAsset: {fileID: 0}

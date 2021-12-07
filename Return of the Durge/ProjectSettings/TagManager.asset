@@ -36,6 +36,8 @@ TagManager:
   - E
   - ChrisChan
   - Ryan
+  - palceHolder
+  - healing
   layers:
   - Default
   - TransparentFX
