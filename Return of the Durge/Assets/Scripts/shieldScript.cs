@@ -10,7 +10,11 @@ public class shieldScript : MonoBehaviour
     public float combatTimer = 15.0f;
     void Update()
     {
-            changeOpacity();
+        changeOpacity();
+            if (combatTimer <= 0)
+            {
+            damagedRecent = false;
+            }
             if (!damagedRecent && !fullCap)
             {
                 recharge();
@@ -38,10 +42,18 @@ public class shieldScript : MonoBehaviour
     }
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("particlee"))
+        if (other.gameObject.CompareTag("particle"))
         {
             shieldStrength--;
             damagedRecent = true;
+        }
+        if (!this.gameObject.CompareTag("Player"))
+        {
+            if (other.gameObject.CompareTag("pBullet"))
+            {
+                shieldStrength--;
+                damagedRecent = true;
+            }
         }
     }
     public void changeOpacity()

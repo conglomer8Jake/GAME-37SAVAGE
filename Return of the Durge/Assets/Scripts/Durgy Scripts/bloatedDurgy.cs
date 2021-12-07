@@ -4,91 +4,17 @@ using UnityEngine;
 
 public class bloatedDurgy : MonoBehaviour
 {
-    public enum FlockingMode
-    {
-        ChaseTarget,
-        FleeTarget,
-        MaintainDistance,
-        DoNothing,
-    }
     public int health = 1;
-    public float SpeedPerSecond = 4.0f;
     public float randNum;
-    public GameObject FlockingTarget;
     public GameObject swarmDurgies;
-    public FlockingMode CurrentFlockingMode = FlockingMode.ChaseTarget;
-    public float DesiredDistanceFromTarget_Min = 3.5f;
-    public float DesiredDistanceFromTarget_Max = 4.5f;
-
-    public bool AvoidHazards = true;
-    
-
     // Use this for initialization
     void Start()
     {
-        FlockingTarget = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 desiredDirection = new Vector3();
-
-        Vector3 vectorToTarget = FlockingTarget.transform.position - transform.position;
-        float distanceToTarget = vectorToTarget.magnitude;
-
-        switch (CurrentFlockingMode)
-        {
-            case FlockingMode.ChaseTarget:
-                desiredDirection = vectorToTarget;          //Move towards target
-                break;
-            case FlockingMode.FleeTarget:
-                desiredDirection = -vectorToTarget;
-                break;
-            case FlockingMode.MaintainDistance:
-                {
-                    if (distanceToTarget < DesiredDistanceFromTarget_Min)
-                    {
-                        desiredDirection = -vectorToTarget;
-                    }
-                    else if (distanceToTarget > DesiredDistanceFromTarget_Max)
-                    {
-                        desiredDirection = vectorToTarget;
-                    }
-                }
-                break;
-            case FlockingMode.DoNothing:
-                desiredDirection = Vector3.zero;
-                break;
-        }
-        /*
-        if (AvoidHazards)
-        {
-            HazardScript[] hazards = FindObjectsOfType<HazardScript>();
-
-            Vector3 avoidanceVector = Vector3.zero;
-            for (int i = 0; i < hazards.Length; ++i)
-            {
-                Vector3 vectorToHazard = hazards[i].transform.position - transform.position;
-                if (vectorToHazard.magnitude < 4.0f)
-                {
-                    Vector3 vectorAwayFromHazard = -vectorToHazard;
-                    avoidanceVector += vectorAwayFromHazard;
-                }
-            }
-
-            if (avoidanceVector != Vector3.zero)
-            {
-                desiredDirection.Normalize();
-                avoidanceVector.Normalize();
-                desiredDirection = desiredDirection * 0.5f + avoidanceVector * 0.5f;
-            }
-        }
-        */
-        desiredDirection.Normalize();
-        transform.position += desiredDirection * SpeedPerSecond * Time.deltaTime;
-        
-        //explodes on death, spawns swarmDurgy(ies?)
         if (health <= 0)
         {
            for (int i = 0; i < 4; i++)
@@ -103,6 +29,10 @@ public class bloatedDurgy : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
+        {
+            health--;
+        }
+        if (other.gameObject.CompareTag("pBullet"))
         {
             health--;
         }

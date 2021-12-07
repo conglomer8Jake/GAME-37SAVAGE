@@ -64,8 +64,9 @@ public class centerScript : MonoBehaviour
                 float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                vH.bossNumGen = 1;
             }
-            vH.bossNumGen = 1;
+
         }
         else
         {

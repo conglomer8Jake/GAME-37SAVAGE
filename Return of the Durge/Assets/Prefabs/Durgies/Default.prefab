@@ -4897,6 +4897,7 @@ GameObject:
   - component: {fileID: 1938163879710249778}
   - component: {fileID: 5290385239205549129}
   - component: {fileID: 5489657501041906616}
+  - component: {fileID: 5940530269489657620}
   m_Layer: 0
   m_Name: Default
   m_TagString: enemy
@@ -5003,6 +5004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 0
@@ -5274,6 +5276,24 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5940530269489657620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235186827894968431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166007e3e37439d46ae64acb7120dd77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedPerSecond: 4
+  FlockingTarget: {fileID: 0}
+  CurrentFlockingMode: 0
+  DesiredDistanceFromTarget_Min: 3.5
+  DesiredDistanceFromTarget_Max: 4.5
+  AvoidHazards: 1
 --- !u!1 &8235186828384255127
 GameObject:
   m_ObjectHideFlags: 0

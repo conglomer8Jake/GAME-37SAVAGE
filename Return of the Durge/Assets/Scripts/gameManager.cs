@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
     public string roomCode;
     public string playerPos;
 
+    public int worldState = -1;
     public int vertical, horizontal;
     public int rowsGenerated;
     public int colsGenerated;
@@ -104,6 +105,12 @@ public class gameManager : MonoBehaviour
     }
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Pause");
+            worldState *= -1;
+            worldStateChecker();
+        }
         if (roomMadeRecent)
         {
             roomGenCooldown -= 1 * Time.deltaTime;
@@ -621,5 +628,15 @@ public class gameManager : MonoBehaviour
     {
         SceneManager.LoadScene(vH.level);
         vH.level++;
+    }
+    public void worldStateChecker()
+    {
+        if (worldState == 1)
+        {
+            //playerState
+        } else if (worldState == -1)
+        {
+            //Menustate
+        }
     }
 }

@@ -16,7 +16,6 @@ public class bossScript : MonoBehaviour
 
     public GameObject partnerBossObject;
     public GameObject player;
-    public GameObject prevPlayPos;
 
     public Vector2 target;
 

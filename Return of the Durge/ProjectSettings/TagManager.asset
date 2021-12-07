@@ -38,6 +38,7 @@ TagManager:
   - Ryan
   - palceHolder
   - healing
+  - shield
   layers:
   - Default
   - TransparentFX

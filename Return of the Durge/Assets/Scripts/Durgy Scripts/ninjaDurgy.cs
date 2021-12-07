@@ -12,6 +12,7 @@ public class ninjaDurgy : MonoBehaviour
 
     public float shootTimer = 6.0f;
     public bool timerOn;
+    public int health = 5;
     void Start()
     {
         ninjaScript = GameObject.FindObjectOfType<ninjaDurgy>();
@@ -40,6 +41,10 @@ public class ninjaDurgy : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
+        if (health <= 5)
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void shadowWalk()
     {
@@ -58,5 +63,12 @@ public class ninjaDurgy : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         ninjaSource.clip = ninjaPoof;
         ninjaSource.Play();
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("pBullet"))
+        {
+            health--;
+        }
     }
 }

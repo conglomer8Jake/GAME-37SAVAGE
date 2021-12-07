@@ -4894,6 +4894,7 @@ GameObject:
   - component: {fileID: 7357257707647534535}
   - component: {fileID: 2163912656473907070}
   - component: {fileID: 289478934586955008}
+  - component: {fileID: 5200305901348148590}
   m_Layer: 0
   m_Name: Spin
   m_TagString: enemy
@@ -4999,6 +5000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 2
@@ -5053,3 +5055,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5200305901348148590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357257707647534531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166007e3e37439d46ae64acb7120dd77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5

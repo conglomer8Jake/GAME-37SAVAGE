@@ -27,6 +27,10 @@ public class bulletScript : MonoBehaviour
         {
             selfDestroy();
         }
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("pBullet"))
+        {
+            selfDestroy();
+        }
     }
     public void selfDestroy()
     {

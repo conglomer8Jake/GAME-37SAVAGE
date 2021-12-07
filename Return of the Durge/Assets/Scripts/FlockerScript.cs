@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlockerScript : MonoBehaviour {
-
+    public gameManager gM;
     public enum FlockingMode
     {
         ChaseTarget,
@@ -26,17 +26,32 @@ public class FlockerScript : MonoBehaviour {
     }
 
     public bool AvoidWalls = true;
-
     // Use this for initialization
     void Start () 
     {
-
         //reTargetPlayer();
         Invoke("reTargetPlayer", 0.1f);
+        gM = GameObject.FindObjectOfType<gameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (gM.worldState == -1)
+        {
+            gamePaused();
+            for (int i = 0; i == 1; i++)
+            {
+                gamePaused();
+                Debug.Log("paused");
+            }
+        } else if (gM.worldState == 1)
+        {
+            reTargetPlayer();
+            for (int i = 0; i == 1; i++)
+            {
+                reTargetPlayer();
+            }
+        }
         Vector3 desiredDirection = new Vector3();
  
         Vector3 vectorToTarget = FlockingTarget.transform.position - transform.position;
@@ -113,7 +128,7 @@ public class FlockerScript : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("pBullet"))
         {
-            Destroy(this.gameObject);
+            this.gameObject.GetComponent<bossScript>().health--;
         }
     }
     public void reTargetPlayer()
@@ -125,7 +140,22 @@ public class FlockerScript : MonoBehaviour {
         else 
         {
             FlockingTarget = GameObject.FindGameObjectWithTag("Player");
-            Debug.Log("wut");
+        }
+        if (this.gameObject.CompareTag("enemy"))
+        {
+            FlockingTarget = GameObject.FindGameObjectWithTag("Player");
+            if (this.gameObject.GetComponentInChildren<ParticleSystem>() != null)
+            {
+                this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            }
+        }
+    }
+    public void gamePaused()
+    {
+        FlockingTarget = this.gameObject;
+        if (this.gameObject.GetComponentInChildren<ParticleSystem>() != null)
+        {
+            this.gameObject.GetComponentInChildren<ParticleSystem>().Pause();
         }
     }
 }

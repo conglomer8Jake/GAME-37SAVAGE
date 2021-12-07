@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5562549228911737241}
   - component: {fileID: 6384798076059552255}
   - component: {fileID: 843583166482378899}
+  - component: {fileID: -1943456774079834919}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: enemy
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 2
@@ -162,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f911e2d10b5c67143a6a58c2f300c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  Ninja: {fileID: 0}
+  anim: {fileID: 2287540301783429588}
+  Ninja: {fileID: 2287540301783429589}
   ninjaScript: {fileID: 0}
   ninjaSystem: {fileID: 0}
   ninjaSource: {fileID: 6384798076059552255}
@@ -319,6 +321,28 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1943456774079834919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287540301783429589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f911e2d10b5c67143a6a58c2f300c2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  Ninja: {fileID: 0}
+  ninjaScript: {fileID: 0}
+  ninjaSystem: {fileID: 0}
+  ninjaSource: {fileID: 0}
+  ninjaThrow: {fileID: 0}
+  ninjaPoof: {fileID: 0}
+  ninjaDeath: {fileID: 0}
+  shootTimer: 6
+  timerOn: 0
 --- !u!1 &2735853560940964988
 GameObject:
   m_ObjectHideFlags: 0

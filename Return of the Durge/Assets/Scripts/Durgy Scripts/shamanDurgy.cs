@@ -7,6 +7,7 @@ public class shamanDurgy : MonoBehaviour
     public ParticleSystem PS;
     public AudioSource shamSource;
     public AudioClip shamShoot, shamDeath;
+    public int health = 5;
     void Start()
     {
         PS = gameObject.GetComponentInChildren<ParticleSystem>();
@@ -19,7 +20,17 @@ public class shamanDurgy : MonoBehaviour
         {
             shamSource.clip = shamShoot;
             shamSource.Play();
-            Debug.Log("SUI");
+        }
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("pBullet"))
+        {
+            health--;
         }
     }
 }
