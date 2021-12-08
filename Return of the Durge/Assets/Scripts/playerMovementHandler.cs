@@ -11,6 +11,7 @@ public class playerMovementHandler : MonoBehaviour
     public Transform throwPosLeft;
     public Transform throwPosActual;
     public GameObject throwableSomething;
+    public Animator Nolanator;
 
     public float velX, velY;
     public float speed = 2.0f;
@@ -102,6 +103,7 @@ public class playerMovementHandler : MonoBehaviour
                     if (wDown == false && aDown == false && sDown == false && dDown == false)
                     {
                         GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
+                        isMoving = false;
                     }
                 }
                 //UP
@@ -177,6 +179,17 @@ public class playerMovementHandler : MonoBehaviour
         }
         //Flip sprite when mouse is to left or right
         flipSprite();
+
+        if (isMoving == true)
+        {
+            Nolanator.SetBool("isWalking", true);
+            Nolanator.Play("Nolan_Walk");
+        }
+        if (isMoving != true)
+        {
+            Nolanator.SetBool("isWalking", false);
+            Nolanator.Play("Nolan_Idle");
+        }
     }
     public void resetSpeed()
     {

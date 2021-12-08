@@ -218,6 +218,7 @@ MonoBehaviour:
   throwPosLeft: {fileID: 634091039418023866}
   throwPosActual: {fileID: 0}
   throwableSomething: {fileID: 187038295888517174, guid: 7fd08c5f38f7e29409088dd4e2aadfae, type: 3}
+  Nolanator: {fileID: 8323150420285520785}
   velX: 0
   velY: 0
   speed: 3
