@@ -127,7 +127,10 @@ public class FlockerScript : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("pBullet"))
         {
-            this.gameObject.GetComponent<bossScript>().health--;
+            if (this.gameObject.GetComponent<bossScript>() != null)
+            {
+                this.gameObject.GetComponent<bossScript>().health--;
+            }
         }
     }
     public void reTargetPlayer()
