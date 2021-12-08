@@ -133,7 +133,7 @@ public class FlockerScript : MonoBehaviour {
     }
     public void reTargetPlayer()
     {
-        if (this.gameObject.CompareTag("DummyThicc") && !(this.gameObject.GetComponent<bossScript>().chrisAlive))
+        if (this.gameObject.CompareTag("DummyThicc") && this.gameObject.GetComponent<bossScript>().partnerAlive)
         {
             FlockingTarget = GameObject.FindGameObjectWithTag("ChrisChan");
         }

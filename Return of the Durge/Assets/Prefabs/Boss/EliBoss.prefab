@@ -97,6 +97,8 @@ GameObject:
   - component: {fileID: 2178330119872268031}
   - component: {fileID: 8199396055665771954}
   - component: {fileID: 3223433413805327883}
+  - component: {fileID: 7075507601603754125}
+  - component: {fileID: 2550889571896061710}
   m_Layer: 0
   m_Name: EliBoss
   m_TagString: E
@@ -198,7 +200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7517231257722845666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
@@ -206,11 +208,65 @@ MonoBehaviour:
   gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
-  CurrentFlockingMode: 0
+  CurrentFlockingMode: 2
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
   FlockingDistance: 2
   AvoidWalls: 1
+--- !u!61 &7075507601603754125
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517231257722845666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8, y: 1.8}
+    newSize: {x: 1.8, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1.8}
+  m_EdgeRadius: 0
+--- !u!114 &2550889571896061710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517231257722845666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2632c32604fee444898c454bf6c7470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBoss: 0
+  currentPartnerBoss: 0
+  partnerBossObject: {fileID: 0}
+  player: {fileID: 0}
+  stairs: {fileID: 8479863154195231563, guid: 6a6262d23046e4943a6f8d67bfb1ba3f, type: 3}
+  target: {x: 0, y: 0}
+  currentMode: 
+  selfState: 
+  health: 0
+  coolDownTimer: 10
+  abilityUsed: 0
+  chrisAlive: 0
+  jakeAlive: 0
+  ryanAlive: 0
+  elijahAlive: 1
+  partnerAlive: 1
 --- !u!1 &7956216669012485335
 GameObject:
   m_ObjectHideFlags: 0

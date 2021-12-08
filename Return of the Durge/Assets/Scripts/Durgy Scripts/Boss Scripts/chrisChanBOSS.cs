@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class chrisChanBOSS : MonoBehaviour
 {
-    public void OnCollisionEnter2D(Collision2D other)
-    {   /*
-        if (other.gameObject.CompareTag("placeHolder"))
+    public GameObject[] jakeBoss;
+    public void Update()
+    {
+        jakeBoss = GameObject.FindGameObjectsWithTag("DummyThicc");
+        if (jakeBoss.Length <= 0)
         {
-            this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
-            Destroy(other.gameObject);
-            this.gameObject.GetComponent<bossScript>().callReTarget();
+            this.gameObject.GetComponent<bossScript>().partnerAlive = false;
         }
-        */
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
         if (other.gameObject.CompareTag("healing"))
         {
             this.gameObject.GetComponent<bossScript>().health++;

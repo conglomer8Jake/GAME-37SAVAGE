@@ -69,7 +69,10 @@ public class bossScript : MonoBehaviour
         if (health <= health / 2)
         {
             selfState = "panicMode";
-            partnerBossObject.GetComponent<bossScript>().selfState = "panicMode";
+            if (partnerAlive)
+            {
+                partnerBossObject.GetComponent<bossScript>().selfState = "panicMode";
+            }
         }
         if (currentBoss == boss.E)
         {
@@ -77,7 +80,7 @@ public class bossScript : MonoBehaviour
             if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
                 calmMode();
-                coolDownTimer = 10.0f;
+                coolDownTimer = 12.5f;
             }
             if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
             {
@@ -86,15 +89,7 @@ public class bossScript : MonoBehaviour
             }
             if (health <= 0)
             {
-                if (!partnerAlive)
-                {
-                    Instantiate(stairs, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
-                    Destroy(this.gameObject);
-                }
+                bossDeath();
             }
         }
         if (currentBoss == boss.Ryan)
@@ -103,7 +98,7 @@ public class bossScript : MonoBehaviour
             if (coolDownTimer <= 0 && selfState == "calmMode" && !abilityUsed)
             {
                 calmMode();
-                coolDownTimer = 10.0f;
+                coolDownTimer = 15.0f;
             }
             if (coolDownTimer <= 0 && selfState == "panicMode" && !abilityUsed)
             {
@@ -112,15 +107,7 @@ public class bossScript : MonoBehaviour
             }
             if (health <= 0)
             {
-                if (!partnerAlive)
-                {
-                    Instantiate(stairs, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
-                    Destroy(this.gameObject);
-                }
+                bossDeath();
             }
         }
         if (currentBoss == boss.ChrisChan)
@@ -139,15 +126,7 @@ public class bossScript : MonoBehaviour
             }
             if (health <= 0)
             {
-                if (!partnerAlive)
-                {
-                    Instantiate(stairs, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
-                    Destroy(this.gameObject);
-                }
+                bossDeath();
             }
         }
         if (currentBoss == boss.DummyThicc)
@@ -166,18 +145,23 @@ public class bossScript : MonoBehaviour
             }
             if (health <= 0)
             {
-                if (!partnerAlive)
-                {
-                    Instantiate(stairs, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
-                    Destroy(this.gameObject);
-                }
+                bossDeath();
             }
         }
 
+    }
+    public void bossDeath()
+    {
+        if (!partnerAlive)
+        {
+            Instantiate(stairs, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            partnerBossObject.GetComponent<bossScript>().partnerAlive = false;
+            Destroy(this.gameObject);
+        }
     }
     //FOR TESTING ONLY
     public void newStart()
@@ -190,11 +174,13 @@ public class bossScript : MonoBehaviour
         switch (currentBoss)
         {
             case boss.E:
-                int eliRand = Random.Range(0, 25);
+                int eliRand = Random.Range(0, 5);
                 if (eliRand <= 5)
                 {
-                    //Attack 1 with spiral particles
+                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
+                    this.gameObject.GetComponentInChildren<ParticleSystem>().Play(); 
                     abilityUsed = true;
+                    Invoke("callReTarget", 7.4f);
                 }
                 else if (eliRand > 5 && eliRand <= 10)
                 {
@@ -211,7 +197,17 @@ public class bossScript : MonoBehaviour
                 break;
             case boss.Ryan:
                 int ryanRand = Random.Range(0, 10);
-
+                if (ryanRand >= 7)
+                {
+                    this.gameObject.GetComponent<ryanScript>().prepAttack();
+                    this.gameObject.GetComponent<ryanScript>().attack = "dashAttack";
+                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond *= 0.75f;
+                } else
+                {
+                    this.gameObject.GetComponent<ryanScript>().prepAttack();
+                    this.gameObject.GetComponent<ryanScript>().attack = "slashStorm";
+                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond *= 2.0f;
+                }
                 break;
             case boss.ChrisChan:
                 int chrisRand = Random.Range(0, 10);
@@ -267,6 +263,10 @@ public class bossScript : MonoBehaviour
     public void callReTarget()
     {
         this.gameObject.GetComponent<FlockerScript>().reTargetPlayer();
+        if (this.gameObject.CompareTag("E"))
+        {
+            this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 4.0f;
+        }
         abilityUsed = false;
     }
     public void OnCollisionEnter2D(Collision2D other)

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 3554270348180874460}
   - component: {fileID: -3081693880443596914}
   - component: {fileID: 5864578441559365771}
+  - component: {fileID: 8479596953663752464}
+  - component: {fileID: 4931300177801072254}
+  - component: {fileID: 7011967930703833169}
   m_Layer: 0
   m_Name: RyanBoss
   m_TagString: Ryan
@@ -97,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 0
@@ -123,3 +127,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8479596953663752464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf723f24d0d6824b9a4e3ede9bff5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 0}
+  attack: 
+--- !u!61 &4931300177801072254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.150769, y: 1.7999998}
+    newSize: {x: 3.15, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.150769, y: 1.7999998}
+  m_EdgeRadius: 0
+--- !u!114 &7011967930703833169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2632c32604fee444898c454bf6c7470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBoss: 0
+  currentPartnerBoss: 0
+  partnerBossObject: {fileID: 0}
+  player: {fileID: 0}
+  stairs: {fileID: 8479863154195231563, guid: 6a6262d23046e4943a6f8d67bfb1ba3f, type: 3}
+  target: {x: 0, y: 0}
+  currentMode: 
+  selfState: 
+  health: 0
+  coolDownTimer: 10
+  abilityUsed: 0
+  chrisAlive: 0
+  jakeAlive: 0
+  ryanAlive: 0
+  elijahAlive: 1
+  partnerAlive: 1
