@@ -230,6 +230,11 @@ public class playerMovementHandler : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    public void OnParticleCollision(GameObject other)
+    {
+        health--;
+        Debug.Log("Smacked");
+    }
     public void throwPosCheck()
     {
         if (spriteDirectoin == "left")

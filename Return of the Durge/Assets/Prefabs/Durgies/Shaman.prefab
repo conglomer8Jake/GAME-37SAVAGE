@@ -4260,8 +4260,7 @@ ParticleSystem:
     exit: 1
     colliderQueryMode: 2
     radiusScale: 1
-    primitives:
-    - {fileID: 0}
+    primitives: []
   SubModule:
     serializedVersion: 2
     enabled: 0
