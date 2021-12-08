@@ -227,14 +227,17 @@ public class playerMovementHandler : MonoBehaviour
         if (other.gameObject.CompareTag("particle"))
         {
             health--;
-            Destroy(other.gameObject);
+            Debug.Log("Smoocked");
+            //Destroy(other.gameObject);
         }
     }
-    public void OnParticleCollision(GameObject other)
+    void OnParticleCollision(GameObject other)
     {
         health--;
         Debug.Log("Smacked");
+        //Destroy(other);
     }
+
     public void throwPosCheck()
     {
         if (spriteDirectoin == "left")

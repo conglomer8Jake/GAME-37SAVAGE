@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6350606632835516561}
   - component: {fileID: 5766794466952278446}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: roomPlacer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634091039418023866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: throwPosLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8323150420285520782}
   - component: {fileID: 8323150420285520780}
   - component: {fileID: 8323150420285520781}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NOLAN
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 8323150420728137128}
   - component: {fileID: 8323150420728137129}
   - component: {fileID: 8323150420728137127}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pixel Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 7685304526739652796}
   - component: {fileID: 5692608789266624511}
   - component: {fileID: 3318428517590976890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2245902451561375899}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: throwPosRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,6 +523,14 @@ PrefabInstance:
     - target: {fileID: 2348447119571542523, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348447119571542523, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348447119571542523, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3273796177074893972, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
       propertyPath: m_RootOrder

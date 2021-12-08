@@ -5278,5 +5278,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b350acdbd36901d4d9cd065ef4e86490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  targetToFace: {fileID: 0}
+  player: {fileID: 8323150420285520786, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
+  targetToFace: {fileID: 8323150420285520783, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
