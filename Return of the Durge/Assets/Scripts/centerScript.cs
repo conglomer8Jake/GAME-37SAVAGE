@@ -70,7 +70,7 @@ public class centerScript : MonoBehaviour
         }
         else
         {
-            Invoke("spawnEnemies", 10.0f);
+            Invoke("spawnEnemies", 5.0f);
         }
     }
     public void gridPositionCheck()

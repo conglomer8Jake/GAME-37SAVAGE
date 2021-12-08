@@ -642,4 +642,8 @@ public class gameManager : MonoBehaviour
             //Menustate
         }
     }
+    public void endGameLevel()
+    {
+        SceneManager.LoadScene("endScene");
+    }
 }

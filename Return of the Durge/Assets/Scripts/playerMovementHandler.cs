@@ -34,6 +34,10 @@ public class playerMovementHandler : MonoBehaviour
     }
     void Update()
     {
+        if (health <= 0)
+        {
+            GM.endGameLevel();
+        }
         if(GM.worldState != -1){
             //Dash Cooldown
             if (dashCooldownOff == false && isDashing)
@@ -234,7 +238,6 @@ public class playerMovementHandler : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         health--;
-        Debug.Log("Smacked");
         //Destroy(other);
     }
 
