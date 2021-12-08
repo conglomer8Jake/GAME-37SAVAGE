@@ -190,10 +190,28 @@ public class bossScript : MonoBehaviour
         switch (currentBoss)
         {
             case boss.E:
-                //ability 1
+                int eliRand = Random.Range(0, 25);
+                if (eliRand <= 5)
+                {
+                    //Attack 1 with spiral particles
+                    abilityUsed = true;
+                }
+                else if (eliRand > 5 && eliRand <= 10)
+                {
+                    //Attack 2 with burst particles at player, variation 1 (easy)
+                    abilityUsed = true;
+                }
+                else if (eliRand > 10 && eliRand <= 15)
+                {
+                    //Attack 2 with burst particles at player, variation 2 (hard)
+                    abilityUsed = true;
+                }
+
+
                 break;
             case boss.Ryan:
-                //ability 1
+                int ryanRand = Random.Range(0, 10);
+
                 break;
             case boss.ChrisChan:
                 int chrisRand = Random.Range(0, 10);
