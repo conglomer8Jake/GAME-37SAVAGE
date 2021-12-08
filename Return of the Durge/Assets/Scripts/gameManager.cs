@@ -23,7 +23,7 @@ public class gameManager : MonoBehaviour
     public string roomCode;
     public string playerPos;
 
-    public int worldState = -1;
+    public int worldState = 1;
     public int vertical, horizontal;
     public int rowsGenerated;
     public int colsGenerated;

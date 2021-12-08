@@ -47,49 +47,11 @@ MonoBehaviour:
   lOR: {fileID: 11400000, guid: 17affe910f635a547989848d5b572c6d, type: 2}
   roomCenter: {fileID: 0}
   player: {fileID: 8323150420285520786, guid: f9db833be87eab24eb5e21c2a0dc579a, type: 3}
-  L1: {fileID: 0}
-  L2: {fileID: 0}
-  L3: {fileID: 0}
-  L4: {fileID: 0}
-  L5: {fileID: 0}
-  L6: {fileID: 0}
-  L7: {fileID: 0}
-  L8: {fileID: 0}
-  L9: {fileID: 0}
-  L10: {fileID: 0}
-  L11: {fileID: 0}
-  L12: {fileID: 0}
-  L13: {fileID: 0}
-  L14: {fileID: 0}
-  L15: {fileID: 0}
-  L16: {fileID: 0}
-  L17: {fileID: 0}
-  L18: {fileID: 0}
-  L19: {fileID: 0}
-  L20: {fileID: 0}
-  L21: {fileID: 0}
-  L22: {fileID: 0}
-  L23: {fileID: 0}
-  L24: {fileID: 0}
-  L25: {fileID: 0}
-  L26: {fileID: 0}
-  L27: {fileID: 0}
-  L28: {fileID: 0}
-  L29: {fileID: 0}
-  L30: {fileID: 0}
-  L41: {fileID: 0}
-  L42: {fileID: 0}
-  L43: {fileID: 0}
-  L44: {fileID: 0}
-  L45: {fileID: 0}
-  L46: {fileID: 0}
-  L47: {fileID: 0}
-  L48: {fileID: 0}
-  L49: {fileID: 0}
-  L40: {fileID: 0}
+  numEnemies: []
   directionGenerated: 
   roomCode: 
   playerPos: 
+  worldState: 1
   vertical: 0
   horizontal: 0
   rowsGenerated: 0
@@ -97,9 +59,14 @@ MonoBehaviour:
   playerPosX: 3
   playerPosY: 3
   enemiesAlive: 0
+  numDoorsActive: 0
   roomGenCooldown: 5
   roomMadeRecent: 0
   topRes: 0
   leftRes: 0
   downRes: 0
   rightRes: 0
+  topNull: 0
+  rightNull: 0
+  botNull: 0
+  leftNull: 0

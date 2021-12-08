@@ -29,8 +29,7 @@ public class FlockerScript : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        //reTargetPlayer();
-        Invoke("reTargetPlayer", 0.1f);
+        reTargetPlayer();
         gM = GameObject.FindObjectOfType<gameManager>();
 	}
 	
