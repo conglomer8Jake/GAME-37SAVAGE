@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 12390708731277631}
   - component: {fileID: 7980108880197189802}
   - component: {fileID: 7443604653721147024}
+  - component: {fileID: -8963801832333812999}
   - component: {fileID: 1279874660735440898}
   - component: {fileID: 7554929778416018576}
   - component: {fileID: 8830318021211164271}
@@ -157,6 +158,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8963801832333812999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12390708731277624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83400c359f8f6e24ebae6e1e6f0f6b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 0}
+  SpeedPerSecond: 4
+  FlockingTarget: {fileID: 0}
+  CurrentFlockingMode: 2
+  DesiredDistanceFromTarget_Min: 1
+  DesiredDistanceFromTarget_Max: 2.8
+  FlockingDistance: 1
+  AvoidWalls: 1
 --- !u!114 &1279874660735440898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +194,7 @@ MonoBehaviour:
   shamSource: {fileID: 7554929778416018576}
   shamShoot: {fileID: 8300000, guid: da0cc71e1be1f6541b976c2df222190d, type: 3}
   shamDeath: {fileID: 8300000, guid: 7de47a827ce3da24394c7131c838107b, type: 3}
+  health: 5
 --- !u!82 &7554929778416018576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -420,7 +442,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5799143202528318627}
   serializedVersion: 8
-  lengthInSec: 4
+  lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -1044,10 +1066,10 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -7.5}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1127,7 +1149,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.25
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -1184,7 +1206,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 15
       mode: 3
       spread: 0
       speed:
@@ -1356,7 +1378,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 1
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1406,9 +1428,9 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 4
+      cycleCount: 5
       repeatInterval: 0.3
-      probability: 1
+      probability: 0.5
   SizeModule:
     enabled: 0
     curve:

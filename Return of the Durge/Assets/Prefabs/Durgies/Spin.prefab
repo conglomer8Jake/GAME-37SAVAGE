@@ -5004,8 +5004,8 @@ MonoBehaviour:
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
   CurrentFlockingMode: 2
-  DesiredDistanceFromTarget_Min: 3.5
-  DesiredDistanceFromTarget_Max: 4.5
+  DesiredDistanceFromTarget_Min: 1
+  DesiredDistanceFromTarget_Max: 1.8
   FlockingDistance: 2
   AvoidWalls: 1
 --- !u!50 &2163912656473907070

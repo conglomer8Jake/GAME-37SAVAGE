@@ -174,6 +174,7 @@ MonoBehaviour:
   ninjaDeath: {fileID: 0}
   shootTimer: 6
   timerOn: 0
+  health: 5
 --- !u!61 &-5562549228911737241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2287540301783429589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f911e2d10b5c67143a6a58c2f300c2ef, type: 3}
   m_Name: 
@@ -343,6 +344,7 @@ MonoBehaviour:
   ninjaDeath: {fileID: 0}
   shootTimer: 6
   timerOn: 0
+  health: 5
 --- !u!1 &2735853560940964988
 GameObject:
   m_ObjectHideFlags: 0

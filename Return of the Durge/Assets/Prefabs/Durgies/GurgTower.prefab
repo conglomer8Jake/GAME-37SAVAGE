@@ -441,7 +441,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4469633472934665830}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 6
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -1377,7 +1377,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 8
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1427,9 +1427,9 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 4
+      cycleCount: 12
       repeatInterval: 0.3
-      probability: 1
+      probability: 0.5
   SizeModule:
     enabled: 0
     curve:
@@ -5292,4 +5292,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c656c9e3004514cb342c1c8a80d9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 180
+  RotationSpeed: 45
