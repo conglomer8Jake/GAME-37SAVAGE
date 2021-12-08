@@ -3735,7 +3735,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3788,7 +3788,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3843,7 +3843,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 72
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -3851,7 +3851,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 2
     inside: 1
     outside: 0
@@ -5288,12 +5288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166007e3e37439d46ae64acb7120dd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedPerSecond: 4
-  FlockingTarget: {fileID: 0}
-  CurrentFlockingMode: 0
-  DesiredDistanceFromTarget_Min: 3.5
-  DesiredDistanceFromTarget_Max: 4.5
-  AvoidHazards: 1
+  health: 5
 --- !u!1 &8235186828384255127
 GameObject:
   m_ObjectHideFlags: 0

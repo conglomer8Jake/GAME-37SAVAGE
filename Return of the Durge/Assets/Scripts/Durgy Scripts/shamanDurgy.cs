@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class shamanDurgy : MonoBehaviour
 {
-    public ParticleSystem PS;
+    //public ParticleSystem PS;
+    //Particle system keeps breaking because of this???
     public AudioSource shamSource;
     public AudioClip shamShoot, shamDeath;
     public int health = 5;
     void Start()
     {
-        PS = gameObject.GetComponentInChildren<ParticleSystem>();
+        //PS = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
 
     void Update()
     {
-        if (PS.isPlaying)
+        /*if (PS.isPlaying)
         {
             shamSource.clip = shamShoot;
             shamSource.Play();
         }
+        */
         if (health <= 0)
         {
             Destroy(this.gameObject);
