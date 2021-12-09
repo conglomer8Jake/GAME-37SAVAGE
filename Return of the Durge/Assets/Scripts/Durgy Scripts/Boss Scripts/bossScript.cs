@@ -176,7 +176,7 @@ public class bossScript : MonoBehaviour
         switch (currentBoss)
         {
             case boss.E:
-                int eliRand = Random.Range(0, 5);
+                int eliRand = Random.Range(0, 25);
                 if (eliRand <= 5)
                 {
                     this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
@@ -184,7 +184,7 @@ public class bossScript : MonoBehaviour
                     abilityUsed = true;
                     Invoke("callReTarget", 7.4f);
                 }
-                else if (eliRand > 5 && eliRand <= 10)
+                /*else if (eliRand > 5 && eliRand <= 10)
                 {
                     //Attack 2 with burst particles at player, variation 1 (easy)
                     abilityUsed = true;
@@ -193,6 +193,14 @@ public class bossScript : MonoBehaviour
                 {
                     //Attack 2 with burst particles at player, variation 2 (hard)
                     abilityUsed = true;
+                }*/
+                else if (eliRand > 5 && eliRand <= 20)
+                {
+                    //Instantiate Hurt Things
+                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
+                    this.gameObject.GetComponent<eScript>().SplurshAttack();
+                    abilityUsed = true;
+                    Invoke("callReTarget", 7.4f);
                 }
 
 

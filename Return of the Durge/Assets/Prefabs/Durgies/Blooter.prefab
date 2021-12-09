@@ -167,8 +167,9 @@ MonoBehaviour:
   randNum: 0
   bloaterSource: {fileID: 5353583103409883192}
   bloaterShoot: {fileID: 8300000, guid: 8877fb018bcce794ca7d8e99f40ce032, type: 3}
-  bloaterDeath: {fileID: 8300000, guid: bd52341516044884ba622b46f0a993ce, type: 3}
+  bloatersDeath: {fileID: 8300000, guid: bd52341516044884ba622b46f0a993ce, type: 3}
   swarmDurgies: {fileID: 8235186827894968431, guid: 6f2f446dd33ef984da92f5e4d3e470c4, type: 3}
+  deathSoundObject: {fileID: 2607747690828362493, guid: 9a9c46e4e9d92034c8089f944186e051, type: 3}
 --- !u!82 &5353583103409883192
 AudioSource:
   m_ObjectHideFlags: 0

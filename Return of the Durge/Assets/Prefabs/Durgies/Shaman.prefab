@@ -195,6 +195,7 @@ MonoBehaviour:
   shamShoot: {fileID: 8300000, guid: da0cc71e1be1f6541b976c2df222190d, type: 3}
   shamDeath: {fileID: 8300000, guid: 7de47a827ce3da24394c7131c838107b, type: 3}
   health: 5
+  deathSoundObject: {fileID: 2180727148969149605, guid: 216d215ed0d010c44abe545f5cb88028, type: 3}
 --- !u!82 &7554929778416018576
 AudioSource:
   m_ObjectHideFlags: 0
