@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2753509212760936482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5129109886401234636}
+  m_Layer: 0
+  m_Name: throwPosDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5129109886401234636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753509212760936482}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.094, y: -0.628, z: -0.6166849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8323150420285520783}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3496981549939590968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3368583778252720677}
+  m_Layer: 0
+  m_Name: throwPosUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3368583778252720677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496981549939590968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.078, y: 0.532, z: -0.6166849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8323150420285520783}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3656823807410604652
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +89,7 @@ Transform:
   m_LocalScale: {x: 0.24586, y: 0.24586, z: 0.24586}
   m_Children: []
   m_Father: {fileID: 8323150420285520783}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5766794466952278446
 BoxCollider2D:
@@ -81,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5964467818062231923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.489, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8323150420285520783}
@@ -124,6 +184,8 @@ Transform:
   - {fileID: 7685304526739652796}
   - {fileID: 2245902451561375899}
   - {fileID: 634091039418023866}
+  - {fileID: 3368583778252720677}
+  - {fileID: 5129109886401234636}
   - {fileID: 2914511668693247232}
   - {fileID: 6350606632835516561}
   m_Father: {fileID: 0}
@@ -215,8 +277,10 @@ MonoBehaviour:
   GM: {fileID: 0}
   recentColl: 
   spriteDirectoin: 
-  throwPosRight: {fileID: 2245902451561375899}
   throwPosLeft: {fileID: 634091039418023866}
+  throwPosRight: {fileID: 2245902451561375899}
+  throwPosUp: {fileID: 3368583778252720677}
+  throwPosDown: {fileID: 5129109886401234636}
   throwPosActual: {fileID: 0}
   throwableSomething: {fileID: 187038295888517174, guid: 7fd08c5f38f7e29409088dd4e2aadfae, type: 3}
   Nolanator: {fileID: 8323150420285520785}
@@ -229,7 +293,11 @@ MonoBehaviour:
   mousePosX: 0
   mousePosY: 0
   collCooldown: 3
+  fireCooldown: 0.75
+  shotgunCooldown: 3
   health: 5
+  shotgunRecent: 0
+  fireRecent: 0
   invokeCalled: 0
   dashCooldownOff: 1
   isDashing: 0
@@ -407,13 +475,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323150420728137131}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.081, y: -0.151, z: 0}
   m_LocalScale: {x: 0.9797118, y: 0.9797118, z: 0.9797118}
   m_Children: []
   m_Father: {fileID: 8323150420285520783}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &8323150420728137128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -632,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273796177074893972, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3273796177074893972, guid: 181309331132cd6438ec5a96064cfe00, type: 3}
       propertyPath: m_LocalPosition.x

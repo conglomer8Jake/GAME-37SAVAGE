@@ -7,8 +7,7 @@ public class playerMovementHandler : MonoBehaviour
     public gameManager GM;
     public string recentColl = "";
     public string spriteDirectoin = "";
-    public Transform throwPosRight;
-    public Transform throwPosLeft;
+    public Transform throwPosLeft, throwPosRight, throwPosUp, throwPosDown;
     public Transform throwPosActual;
     public GameObject throwableSomething;
     public Animator Nolanator;
@@ -23,9 +22,11 @@ public class playerMovementHandler : MonoBehaviour
     public float mousePosY;
     public float collCooldown = 3.0f;
     public float fireCooldown = 0.75f;
+    public float shotgunCooldown = 3.0f;
 
     public int health = 5;
 
+    public bool shotgunRecent = false;
     public bool fireRecent = false;
     public bool invokeCalled;
     public bool dashCooldownOff = true;
@@ -168,25 +169,51 @@ public class playerMovementHandler : MonoBehaviour
             velX = GetComponent<Rigidbody2D>().velocity.x;
             velY = GetComponent<Rigidbody2D>().velocity.y;
             //Throwing something
+            {
             if (Input.GetKeyDown(KeyCode.Mouse0) && !fireRecent)
-            {
-                throwPosCheck();
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePosX = mousePos.x;
-                mousePosY = mousePos.y;
-                Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
-                nolanShoot.Play();
-                fireRecent = true;
+                {
+                    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePosX = mousePos.x;
+                    mousePosY = mousePos.y;
+                    throwPosCheck();
+                    Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
+                    nolanShoot.Play();
+                    fireRecent = true;
+                }
+                if (fireRecent)
+                {
+                    fireCooldown -= 1 * Time.deltaTime;
+                }
+                if (fireCooldown <= 0)
+                {
+                    fireRecent = false;
+                    fireCooldown = 0.75f;
+                }
             }
-            if (fireRecent)
             {
-                fireCooldown -= 1 * Time.deltaTime;
-            }
-            if (fireCooldown <= 0)
-            {
-                fireRecent = false;
-                fireCooldown = 0.75f;
-            }
+                if (Input.GetKeyDown(KeyCode.Mouse1) && !shotgunRecent)
+                {
+                    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePosX = mousePos.x;
+                    mousePosY = mousePos.y;
+                    throwPosCheck();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
+                        nolanShoot.Play();
+                        shotgunRecent = true;
+                    }
+                }
+                if (shotgunRecent)
+                {
+                    shotgunCooldown -= 1 * Time.deltaTime;
+                }
+                if (shotgunCooldown <= 0)
+                {
+                    shotgunRecent = false;
+                    shotgunCooldown = 3.0f;
+                }
+            }  
         }
         if (GM.worldState == -1)
         {
@@ -258,13 +285,31 @@ public class playerMovementHandler : MonoBehaviour
 
     public void throwPosCheck()
     {
-        if (spriteDirectoin == "left")
+        if (mousePosX - transform.position.x < 0 && Mathf.Abs(mousePosX) > Mathf.Abs(mousePosY))
+        {
+            throwPosActual = throwPosLeft;
+        }
+        if (mousePosX - transform.position.x > 0 && Mathf.Abs(mousePosX) > Mathf.Abs(mousePosY))
+        {
+            throwPosActual = throwPosRight;
+        }
+        if (mousePosY - transform.position.y < 0 && Mathf.Abs(mousePosY) > Mathf.Abs(mousePosX))
+        {
+            throwPosActual = throwPosDown;
+        }
+        if (mousePosY - transform.position.y > 0 && Mathf.Abs(mousePosY) > Mathf.Abs(mousePosX))
+        {
+            throwPosActual = throwPosUp;
+        }
+
+        /*
+            if (spriteDirectoin == "left")
         {
             throwPosActual = throwPosLeft;
         }
         if (spriteDirectoin == "right")
         {
             throwPosActual = throwPosRight;
-        }
+        } */
     }
 }
