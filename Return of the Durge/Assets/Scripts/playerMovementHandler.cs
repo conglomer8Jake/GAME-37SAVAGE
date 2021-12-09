@@ -284,10 +284,10 @@ public class playerMovementHandler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("stair"))
         {
+            Invoke("callNewLevel", 1.0f);
             speed = 0.0f;
             faded.SetBool("fadeOut", true);
             soundObj.GetComponent<soundScript>().fadeOut();
-            Invoke("callNewLevel", 1.0f);
         }
     }
     public void OnCollisionEnter2D(Collision2D other)
