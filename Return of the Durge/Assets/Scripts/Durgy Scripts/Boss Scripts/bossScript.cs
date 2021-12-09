@@ -180,7 +180,8 @@ public class bossScript : MonoBehaviour
                 if (eliRand <= 5)
                 {
                     this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
-                    this.gameObject.GetComponentInChildren<ParticleSystem>().Play(); 
+                    this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+                    this.gameObject.GetComponentInChildren<AudioSource>().Play();
                     abilityUsed = true;
                     Invoke("callReTarget", 7.4f);
                 }
@@ -216,7 +217,7 @@ public class bossScript : MonoBehaviour
                 {
                     this.gameObject.GetComponent<ryanScript>().prepAttack();
                     this.gameObject.GetComponent<ryanScript>().attack = "slashStorm";
-                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond *= 2.0f;
+                    this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond *= 0.0f;
                 }
                 break;
             case boss.ChrisChan:

@@ -13,6 +13,9 @@ public class eScript : MonoBehaviour
 
     public float slaughtTimer = 5.0f;
     public bool firingOnPlayer = false;
+
+    public AudioSource eSource;
+    public AudioClip eAttack1, eAttack2, eIdle1, eIdle2;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -56,6 +59,7 @@ public class eScript : MonoBehaviour
     {
         anim.SetBool("Finished", false);
         anim.SetBool("AttackAnim1", false);
+        anim.SetBool("AttackAnim2", false);
     }
     public void flipSrite()
     {
@@ -68,18 +72,23 @@ public class eScript : MonoBehaviour
 
     public void SplurshAttack()
     {
-        anim.SetBool("AttackAnim1", true);
+        anim.SetBool("AttackAnim2", true);
+        anim.SetBool("Finished", false);
         InvokeRepeating("FireOnPlayer", 1.0f, 1.0f);
-        Invoke("dont", 5.0f);
+        Invoke("dont", 7.0f);
         firingOnPlayer = true;
-        slaughtTimer = 5.0f;
+        slaughtTimer = 7.0f;
         Debug.Log("Firing On Player");
+        Invoke("revertAnim", 7.0f);
+
+        eSource.clip = eAttack1;
+        eSource.Play();
     }
 
     public void FireOnPlayer()
     {
         GameObject TargetFire = Instantiate(ReticleTarget, Player.transform.position, Quaternion.identity);
-        Destroy(TargetFire, 2.5f);
+        Destroy(TargetFire, 1.3f);
     }
 
     public void dont()
