@@ -39,6 +39,9 @@ TagManager:
   - palceHolder
   - healing
   - shield
+  - rFist
+  - lFist
+  - grant
   layers:
   - Default
   - TransparentFX

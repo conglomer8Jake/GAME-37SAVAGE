@@ -186,12 +186,12 @@ public class playerMovementHandler : MonoBehaviour
 
         if (isMoving == true)
         {
-            Nolanator.SetBool("isWalking", true);
+            Nolanator.SetBool("IsWalking", true);
             Nolanator.Play("Nolan_Walk");
         }
         if (isMoving != true)
         {
-            Nolanator.SetBool("isWalking", false);
+            Nolanator.SetBool("IsWalking", false);
             Nolanator.Play("Nolan_Idle");
         }
     }
