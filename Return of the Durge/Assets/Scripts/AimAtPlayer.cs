@@ -10,8 +10,7 @@ public class AimAtPlayer : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		Invoke("reTarget", 0.1f);//FOR TESTING ONLY
-		//reTarget();
+		reTarget();
 	}
 
 	// Update is called once per frame

@@ -279,6 +279,7 @@ public class playerMovementHandler : MonoBehaviour
     }
     void OnParticleCollision(GameObject other)
     {
+        Debug.Log("OUTCHIE");
         health--;
         //Destroy(other);
     }

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL_Three.unity
     guid: dcd8f6abc45fe4842955a96152f25b52
+  - enabled: 1
+    path: Assets/Scenes/endScene.unity
+    guid: c19da00a270dda74bb8141039c710d18
+  - enabled: 1
+    path: Assets/Scenes/startScene.unity
+    guid: ac75b3766569ac04a8c2c607098b2754
   m_configObjects: {}
