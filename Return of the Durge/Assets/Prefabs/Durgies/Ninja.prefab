@@ -129,7 +129,7 @@ MonoBehaviour:
   CurrentFlockingMode: 2
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
-  FlockingDistance: 2
+  FlockingDistance: 0
   AvoidWalls: 1
 --- !u!50 &6429929193795805564
 Rigidbody2D:
