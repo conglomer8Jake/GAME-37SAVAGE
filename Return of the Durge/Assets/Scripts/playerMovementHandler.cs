@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerMovementHandler : MonoBehaviour
 {
+    public GameObject levelChanger;
     public gameManager GM;
     public string recentColl = "";
     public string spriteDirectoin = "";
@@ -11,6 +12,7 @@ public class playerMovementHandler : MonoBehaviour
     public Transform throwPosActual;
     public GameObject throwableSomething;
     public Animator Nolanator;
+    public Animator faded;
 
     public AudioSource nolanShoot;
 
@@ -36,6 +38,9 @@ public class playerMovementHandler : MonoBehaviour
     void Start()
     {
         GM = GameObject.FindObjectOfType<gameManager>();
+        levelChanger = GameObject.FindGameObjectWithTag("levelChanger");
+        faded = levelChanger.GetComponent<Animator>();
+        faded.SetBool("fadeOut",false);
     }
     void Update()
     {
@@ -265,7 +270,8 @@ public class playerMovementHandler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("stair"))
         {
-            GM.newLevel();
+            faded.SetBool("fadeOut", true);
+            Invoke("callNewLevel", 1.0f);
         }
     }
     public void OnCollisionEnter2D(Collision2D other)
@@ -283,7 +289,6 @@ public class playerMovementHandler : MonoBehaviour
     }
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("OUTCHIE");
         health--;
         //Destroy(other);
     }
@@ -316,5 +321,9 @@ public class playerMovementHandler : MonoBehaviour
         {
             throwPosActual = throwPosRight;
         } */
+    }
+    public void callNewLevel()
+    {
+        GM.newLevel();
     }
 }
