@@ -82,13 +82,12 @@ public class ryanScript : MonoBehaviour
     public void dashAttack()
     {
         Anim.SetBool("DashAttacking", true);
-        ForwardThrust(2.3f);
+        //ForwardThrust(2.3f);
         Invoke("finish", 1.0f);
     }
     public void finish()
     {
         this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 4.0f;
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
         Anim.SetBool("Finished", true);
         Anim.SetBool("SlashStorm", false);
         Anim.SetBool("DashAttacking", false);
