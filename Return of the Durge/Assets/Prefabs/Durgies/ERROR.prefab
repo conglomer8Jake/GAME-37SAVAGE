@@ -188,7 +188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  deathSoundObject: {fileID: 3140352806509137381, guid: 56a96d434e160f349ba4fad31053569d, type: 3}
 --- !u!1 &7980886349604070741
 GameObject:
   m_ObjectHideFlags: 0
