@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7075507601603754125}
   - component: {fileID: 2550889571896061710}
   - component: {fileID: 8985766184482056449}
+  - component: {fileID: 6116002288679379189}
   m_Layer: 0
   m_Name: EliBoss
   m_TagString: E
@@ -289,6 +290,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6116002288679379189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517231257722845666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf61ff805f92fd47b122dd1863437ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  ryan: []
+  anim: {fileID: 0}
+  ReticleTarget: {fileID: 5366855994745710876, guid: dcaa186ccd165fb4498813f93dddf7cb, type: 3}
+  reticleFire: {fileID: 0}
+  slaughtTimer: 5
+  firingOnPlayer: 1
 --- !u!1 &7956216669012485335
 GameObject:
   m_ObjectHideFlags: 0

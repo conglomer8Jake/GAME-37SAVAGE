@@ -7,6 +7,12 @@ public class eScript : MonoBehaviour
     public GameObject Player;
     public GameObject[] ryan;
     public Animator anim;
+
+    public GameObject ReticleTarget;
+    public AudioClip reticleFire;
+
+    public float slaughtTimer = 5.0f;
+    public bool firingOnPlayer = false;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -38,6 +44,7 @@ public class eScript : MonoBehaviour
         {
             flipBack();
         }
+
     }
     public void revertAnim()
     {
@@ -56,5 +63,26 @@ public class eScript : MonoBehaviour
     public void flipBack()
     {
         this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+    }
+
+    public void SplurshAttack()
+    {
+        anim.SetBool("AttackAnim1", true);
+        InvokeRepeating("FireOnPlayer", 1.0f, 1.0f);
+        Invoke("dont", 5.0f);
+        firingOnPlayer = true;
+        slaughtTimer = 5.0f;
+        Debug.Log("Firing On Player");
+    }
+
+    public void FireOnPlayer()
+    {
+        GameObject TargetFire = Instantiate(ReticleTarget, Player.transform.position, Quaternion.identity);
+        Destroy(TargetFire, 2.5f);
+    }
+
+    public void dont()
+    {
+        CancelInvoke("FireOnPlayer");
     }
 }
