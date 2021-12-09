@@ -6,6 +6,8 @@ public class bloatedDurgy : MonoBehaviour
 {
     public int health = 1;
     public float randNum;
+    public AudioSource bloaterSource;
+    public AudioClip bloaterShoot, bloatersDeath;
     public GameObject swarmDurgies;
     // Use this for initialization
     void Start()

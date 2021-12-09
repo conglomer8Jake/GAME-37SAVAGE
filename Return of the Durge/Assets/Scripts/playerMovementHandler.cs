@@ -13,6 +13,8 @@ public class playerMovementHandler : MonoBehaviour
     public GameObject throwableSomething;
     public Animator Nolanator;
 
+    public AudioSource nolanShoot;
+
     public float velX, velY;
     public float speed = 2.0f;
     public float dashSpeed = 3.0f;
@@ -171,6 +173,7 @@ public class playerMovementHandler : MonoBehaviour
                 mousePosX = mousePos.x;
                 mousePosY = mousePos.y;
                 Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
+                nolanShoot.Play();
             }
         }
         if (GM.worldState == -1)
