@@ -7,10 +7,17 @@ public class chrisChanBOSS : MonoBehaviour
     public Animator anim;
     public GameObject[] jakeBoss;
     public GameObject Player;
+    public GameObject lFist, rFist, lFistHome, rFistHome;
+
     public void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         anim = this.gameObject.GetComponent<Animator>();
+
+        lFist = GameObject.FindGameObjectWithTag("chrisFistL");
+        rFist = GameObject.FindGameObjectWithTag("chrisFistR");
+        lFistHome = GameObject.FindGameObjectWithTag("lFistHome");
+        rFistHome = GameObject.FindGameObjectWithTag("rFistHome");
     }
     public void Update()
     {

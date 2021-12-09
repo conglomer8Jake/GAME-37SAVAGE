@@ -276,6 +276,10 @@ public class playerMovementHandler : MonoBehaviour
             Debug.Log("Smoocked");
             //Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("chrisFistL") || other.gameObject.CompareTag("chrisFistR"))
+        {
+            health--;
+        }
     }
     void OnParticleCollision(GameObject other)
     {

@@ -43,6 +43,10 @@ TagManager:
   - lFist
   - grant
   - soundObj
+  - rFistHome
+  - lFistHome
+  - chrisFistL
+  - chrisFistR
   layers:
   - Default
   - TransparentFX
