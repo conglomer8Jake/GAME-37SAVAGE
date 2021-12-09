@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 348661451}
   m_Layer: 0
   m_Name: soundObj
-  m_TagString: Untagged
+  m_TagString: soundObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -371,9 +371,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 947894843}
     - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+      propertyPath: finalTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: b947928322e0be147b940ed82b92d021, type: 3}
+    - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: bossInstaSpawn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+      propertyPath: chrisJakeTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: bd832aa30fe83b44c88fd23c1c526d59, type: 3}
+    - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+      propertyPath: elijahRyanTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: ec7b8c11b8c09a24db89fb14191cfce5, type: 3}
     - target: {fileID: 7565330949215947942, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

@@ -42,6 +42,7 @@ TagManager:
   - rFist
   - lFist
   - grant
+  - soundObj
   layers:
   - Default
   - TransparentFX

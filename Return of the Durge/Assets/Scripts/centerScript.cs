@@ -6,6 +6,7 @@ public class centerScript : MonoBehaviour
 {
     public GameObject ChrisChan, DummyThicc, E, Ryan, Grant;
     public GameObject topRight, topLeft, botRight;
+    public GameObject soundObj;
 
     public listOfEnemies lOE;
     public Global vH;
@@ -15,8 +16,10 @@ public class centerScript : MonoBehaviour
     public float bossSpawnChance;
     public bool bossInstaSpawn = false;
     public GameObject[] numDoorsW, numDoorsE, numDoorsN, numDoorsS;
+    public AudioClip chrisJakeTheme, elijahRyanTheme, finalTheme;
     void Start()
     {
+        soundObj = GameObject.FindGameObjectWithTag("soundObj");
         gM = GameObject.FindObjectOfType<gameManager>();
         bossSpawnChance = 0.000001f*(10.0f*Mathf.Exp(vH.numRooms)*vH.level);
         /*
@@ -55,6 +58,9 @@ public class centerScript : MonoBehaviour
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(Grant, new Vector3(randX, randY, 0), Quaternion.identity);
+                soundObj.GetComponent<AudioSource>().clip = finalTheme;
+                soundObj.GetComponent<AudioSource>().Play();
+
             }
             if (vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
             {
@@ -64,6 +70,8 @@ public class centerScript : MonoBehaviour
                 float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                soundObj.GetComponent<AudioSource>().clip = elijahRyanTheme;
+                soundObj.GetComponent<AudioSource>().Play();
                 vH.bossNumGen = 0;
             }
             if (vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
@@ -74,6 +82,8 @@ public class centerScript : MonoBehaviour
                 float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
                 Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                soundObj.GetComponent<AudioSource>().clip = chrisJakeTheme;
+                soundObj.GetComponent<AudioSource>().Play();
                 vH.bossNumGen = 1;
             }
         }
@@ -87,18 +97,24 @@ public class centerScript : MonoBehaviour
         if (gM.currentScene == "LVL_Three")
         {
             Instantiate(Grant, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+            soundObj.GetComponent<AudioSource>().clip = finalTheme;
+            soundObj.GetComponent<AudioSource>().Play();
         }
         int Rand = Random.Range(0, 10);
         if (Rand >= 5 && vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
         {
             Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+            soundObj.GetComponent<AudioSource>().clip = elijahRyanTheme;
+            soundObj.GetComponent<AudioSource>().Play();
             vH.bossNumGen = 0;
         }
         if (Rand < 5 && vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
         {
             Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+            soundObj.GetComponent<AudioSource>().clip = chrisJakeTheme;
+            soundObj.GetComponent<AudioSource>().Play();
             vH.bossNumGen = 1;
         }
     }

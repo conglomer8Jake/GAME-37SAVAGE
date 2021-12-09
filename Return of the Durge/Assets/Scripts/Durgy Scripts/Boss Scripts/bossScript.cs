@@ -14,6 +14,7 @@ public class bossScript : MonoBehaviour
     public boss currentBoss;
     public boss currentPartnerBoss;
 
+    public GameObject soundObj;
     public GameObject partnerBossObject;
     public GameObject player;
     public GameObject stairs;
@@ -63,6 +64,7 @@ public class bossScript : MonoBehaviour
             partnerBossObject = GameObject.FindGameObjectWithTag("ChrisChan");
             currentPartnerBoss = boss.ChrisChan;
         }
+        soundObj = GameObject.FindGameObjectWithTag("soundObj");
     }
     void Update()
     {
