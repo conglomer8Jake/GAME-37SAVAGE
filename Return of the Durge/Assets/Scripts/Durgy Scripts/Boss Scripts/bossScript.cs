@@ -45,7 +45,7 @@ public class bossScript : MonoBehaviour
         if (this.gameObject.CompareTag("Ryan"))
         {
             currentBoss = boss.Ryan;
-            health = 15;
+            health = 30;
             partnerBossObject = GameObject.FindGameObjectWithTag("E");
             currentPartnerBoss = boss.E;
         }

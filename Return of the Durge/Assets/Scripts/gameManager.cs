@@ -165,7 +165,7 @@ public class gameManager : MonoBehaviour
             {
             //check up, right, down
             {
-                if (playerPosY == 0)
+                if (playerPosY == 1)
                 {
                     topNull = true;
                 }
@@ -181,7 +181,7 @@ public class gameManager : MonoBehaviour
                         topRes = true;
                     }
                 }        
-                if (playerPosX == 6)
+                if (playerPosX == 5)
                 {
                     rightNull = true;
                 }
@@ -197,7 +197,7 @@ public class gameManager : MonoBehaviour
                         rightRes = true;
                     }
                 }
-                if (playerPosY == 6)
+                if (playerPosY == 5)
                 {
                     botNull = true;
                 }
@@ -216,7 +216,7 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list 
             {
-                if (playerPosX == 6)
+                if (playerPosX == 5)
                 {
                     lOR.potentialRooms.Add(lOR.R1L);
                     lOR.potentialRooms.Add(lOR.R2UL);
@@ -283,7 +283,7 @@ public class gameManager : MonoBehaviour
         {
             //check, up, right, left
             {
-                if (playerPosY == 0)
+                if (playerPosY == 1)
                 {
                     topNull = true;
                 }
@@ -299,7 +299,7 @@ public class gameManager : MonoBehaviour
                         topRes = true;
                     }
                 }
-                if (playerPosX == 6)
+                if (playerPosX == 5)
                 {
                     rightNull = true;
                 }
@@ -315,7 +315,7 @@ public class gameManager : MonoBehaviour
                         rightRes = true;
                     }
                 }
-                if (playerPosX == 0)
+                if (playerPosX == 1)
                 {
                     leftNull = true;
                 }
@@ -334,7 +334,7 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list
             {
-                if (playerPosY == 0)
+                if (playerPosY == 1)
                 {
                     lOR.potentialRooms.Add(lOR.R1D);
                     lOR.potentialRooms.Add(lOR.R2DL);
@@ -399,7 +399,7 @@ public class gameManager : MonoBehaviour
         {
             //check up, left, down
             {
-                if (playerPosY == 0)
+                if (playerPosY == 1)
                 {
                     topNull = true;
                 }
@@ -415,7 +415,7 @@ public class gameManager : MonoBehaviour
                         topRes = true;
                     }
                 }
-                if (playerPosX == 0)
+                if (playerPosX == 1)
                 {
                     leftNull = true;
                 }
@@ -431,7 +431,7 @@ public class gameManager : MonoBehaviour
                         leftRes = true;
                     }
                 }
-                if (playerPosY == 6)
+                if (playerPosY == 5)
                 {
                     botNull = true;
                 }
@@ -450,7 +450,7 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restricted room list
             {
-                if (playerPosX == 0)
+                if (playerPosX == 1)
                 {
                     lOR.potentialRooms.Add(lOR.R1R);
                     lOR.potentialRooms.Add(lOR.R2DR);
@@ -516,7 +516,7 @@ public class gameManager : MonoBehaviour
         {
             //check left, down, right
             {
-                if (playerPosX == 0)
+                if (playerPosX == 1)
                 {
                     leftNull = true;
                 }
@@ -532,7 +532,7 @@ public class gameManager : MonoBehaviour
                         leftRes = true;
                     }
                 }
-                if (playerPosY == 6)
+                if (playerPosY == 5)
                 {
                     botNull = true;
                 }
@@ -548,7 +548,7 @@ public class gameManager : MonoBehaviour
                         downRes = true;
                     }
                 }
-                if (playerPosX == 6)
+                if (playerPosX == 5)
                 {
                     rightNull = true;
                 }
@@ -567,7 +567,7 @@ public class gameManager : MonoBehaviour
             }
             //Add rooms to the restriced room list
             {
-                if (playerPosY == 6)
+                if (playerPosY == 5)
                 {
                     lOR.potentialRooms.Add(lOR.R1U);
                     lOR.potentialRooms.Add(lOR.R2UL);

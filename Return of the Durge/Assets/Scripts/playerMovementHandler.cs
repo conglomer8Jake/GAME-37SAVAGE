@@ -22,7 +22,7 @@ public class playerMovementHandler : MonoBehaviour
     public float mousePosX;
     public float mousePosY;
     public float collCooldown = 3.0f;
-    public float fireCooldown = 1.0f;
+    public float fireCooldown = 0.75f;
 
     public int health = 5;
 
@@ -185,7 +185,7 @@ public class playerMovementHandler : MonoBehaviour
             if (fireCooldown <= 0)
             {
                 fireRecent = false;
-                fireCooldown = 1.0f;
+                fireCooldown = 0.75f;
             }
         }
         if (GM.worldState == -1)

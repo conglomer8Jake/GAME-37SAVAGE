@@ -17,7 +17,7 @@ public class centerScript : MonoBehaviour
     void Start()
     {
         gM = GameObject.FindObjectOfType<gameManager>();
-        bossSpawnChance = 0.00000001f*(10.0f*Mathf.Exp(vH.numRooms));
+        bossSpawnChance = 0.000001f*(10.0f*Mathf.Exp(vH.numRooms));
         /*
         topRight = GameObject.FindGameObjectWithTag("anchorTop");
         topLeft = GameObject.FindGameObjectWithTag("anchorLeft");
