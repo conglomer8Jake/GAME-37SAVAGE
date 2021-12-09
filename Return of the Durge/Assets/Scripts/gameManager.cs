@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
     public string directionGenerated;
     public string roomCode;
     public string playerPos;
+    public string currentScene = "";
 
     public int worldState = 1;
     public int vertical, horizontal;
@@ -106,6 +107,7 @@ public class gameManager : MonoBehaviour
     }
     public void Update()
     {
+        currentScene = SceneManager.GetActiveScene().name;
         numEnemies = GameObject.FindGameObjectsWithTag("enemy");
         enemiesAlive = numEnemies.Length;
         if (Input.GetKeyDown(KeyCode.P))
@@ -629,8 +631,18 @@ public class gameManager : MonoBehaviour
     }
     public void newLevel()
     {
-        SceneManager.LoadScene(vH.level);
-        vH.level++;
+        if (currentScene == "SampleScene")
+        {
+            SceneManager.LoadScene("LVL_Forest");
+        }
+        if (currentScene == "LVL_Forest")
+        {
+            SceneManager.LoadScene("LVL_Three");
+        }
+        if (currentScene == "LVL_Three")
+        {
+            SceneManager.LoadScene("endScene");
+        }
     }
     public void worldStateChecker()
     {

@@ -22,9 +22,11 @@ public class playerMovementHandler : MonoBehaviour
     public float mousePosX;
     public float mousePosY;
     public float collCooldown = 3.0f;
+    public float fireCooldown = 1.0f;
 
     public int health = 5;
 
+    public bool fireRecent = false;
     public bool invokeCalled;
     public bool dashCooldownOff = true;
     public bool isDashing = false;
@@ -166,7 +168,7 @@ public class playerMovementHandler : MonoBehaviour
             velX = GetComponent<Rigidbody2D>().velocity.x;
             velY = GetComponent<Rigidbody2D>().velocity.y;
             //Throwing something
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !fireRecent)
             {
                 throwPosCheck();
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -174,6 +176,16 @@ public class playerMovementHandler : MonoBehaviour
                 mousePosY = mousePos.y;
                 Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
                 nolanShoot.Play();
+                fireRecent = true;
+            }
+            if (fireRecent)
+            {
+                fireCooldown -= 1 * Time.deltaTime;
+            }
+            if (fireCooldown <= 0)
+            {
+                fireRecent = false;
+                fireCooldown = 1.0f;
             }
         }
         if (GM.worldState == -1)

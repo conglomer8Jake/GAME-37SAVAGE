@@ -147,4 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pMH: {fileID: 0}
   clickedMousePos: {x: 0, y: 0}
-  speed: 3
+  speed: 8
+  directionPosX: 0
+  directionPosY: 0
