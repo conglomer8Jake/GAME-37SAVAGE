@@ -127,6 +127,7 @@ MonoBehaviour:
   DummyThicc: {fileID: 6352653670489923600, guid: da1330e1e03a6364f9738cdde56120db, type: 3}
   E: {fileID: 7517231257722845666, guid: 9668f6853d1a2d246848ac90138802bf, type: 3}
   Ryan: {fileID: 2456720972189606737, guid: c46302542e24402418cd4191fde58136, type: 3}
+  Grant: {fileID: 630613779595582330, guid: 0397670174f17cf48bcaa587035caf23, type: 3}
   topRight: {fileID: 314152601983037180}
   topLeft: {fileID: 6419955105322886808}
   botRight: {fileID: 667244883395070999}
@@ -136,6 +137,7 @@ MonoBehaviour:
   gridPosY: 0
   gridPosX: 0
   bossSpawnChance: 0
+  bossInstaSpawn: 0
   numDoorsW: []
   numDoorsE: []
   numDoorsN: []

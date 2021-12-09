@@ -14,8 +14,7 @@ public class fistScript : MonoBehaviour
     void Start()
     {
         GS = GameObject.FindObjectOfType<grantScript>();
-        //Player = GameObject.FindGameObjectWithTag("Player");
-        Invoke("reTargetPlayer", 0.1f);
+        Player = GameObject.FindGameObjectWithTag("Player");
         anim = this.gameObject.GetComponent<Animator>();
         target = Player.transform.position;
     }

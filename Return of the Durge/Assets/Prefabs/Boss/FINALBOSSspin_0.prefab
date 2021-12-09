@@ -169,8 +169,8 @@ MonoBehaviour:
   topR: {fileID: 0}
   topL: {fileID: 0}
   botR: {fileID: 0}
-  rFist: {fileID: 0}
-  lFist: {fileID: 0}
+  rFist: {fileID: 1124068329752021776, guid: 2406b1f2ef87f6c4984bb02491b5cb38, type: 3}
+  lFist: {fileID: 1274301070078377400, guid: 2af43494d93d526469310b8afe4cd892, type: 3}
   anim: {fileID: 0}
   health: 75
   fistsActive: 0

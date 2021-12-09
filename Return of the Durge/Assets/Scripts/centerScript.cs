@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class centerScript : MonoBehaviour
 {
-    public GameObject ChrisChan, DummyThicc, E, Ryan;
+    public GameObject ChrisChan, DummyThicc, E, Ryan, Grant;
     public GameObject topRight, topLeft, botRight;
 
     public listOfEnemies lOE;
@@ -50,8 +50,13 @@ public class centerScript : MonoBehaviour
         if (bossSpawnChance >= 1.0f || gM.numDoorsActive == 0 || bossInstaSpawn)
         {
             Debug.Log("BOSS INCOMING");
-            int rand = Random.Range(0, 10);
-            if (rand >= 5 && vH.bossNumGen != 0)
+            if (gM.currentScene == "LVL_Three")
+            {
+                float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
+                float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
+                Instantiate(Grant, new Vector3(randX, randY, 0), Quaternion.identity);
+            }
+            if (vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -61,7 +66,7 @@ public class centerScript : MonoBehaviour
                 Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
                 vH.bossNumGen = 0;
             }
-            if (rand < 5 && vH.bossNumGen != 1)
+            if (vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
             {
                 float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
                 float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
@@ -79,14 +84,17 @@ public class centerScript : MonoBehaviour
     }
     public void bossSpawnInsta()
     {
-        int rand = Random.Range(0, 10);
-        if (rand >= 5 && vH.bossNumGen != 0)
+        if (gM.currentScene == "LVL_Three")
+        {
+            Instantiate(Grant, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+        }
+        if (vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
         {
             Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             vH.bossNumGen = 0;
         }
-        if (rand < 5 && vH.bossNumGen != 1)
+        if (vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
         {
             Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
