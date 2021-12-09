@@ -208,7 +208,7 @@ public class bossScript : MonoBehaviour
                 break;
             case boss.Ryan:
                 int ryanRand = Random.Range(0, 10);
-                if (ryanRand >= 3)
+                if (ryanRand >= 9)
                 {
                     this.gameObject.GetComponent<ryanScript>().prepAttack();
                     this.gameObject.GetComponent<ryanScript>().attack = "dashAttack";
