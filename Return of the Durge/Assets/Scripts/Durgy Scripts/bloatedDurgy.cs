@@ -9,6 +9,7 @@ public class bloatedDurgy : MonoBehaviour
     public AudioSource bloaterSource;
     public AudioClip bloaterShoot, bloatersDeath;
     public GameObject swarmDurgies;
+    public GameObject deathSoundObject;
     // Use this for initialization
     void Start()
     {
@@ -25,6 +26,9 @@ public class bloatedDurgy : MonoBehaviour
                 Instantiate(swarmDurgies, this.gameObject.transform.position, Quaternion.identity);
                 swarmDurgies.GetComponent<Rigidbody2D>().AddForce(new Vector2(randNum, 15.0f));
             }
+            GameObject deathSound = Instantiate(deathSoundObject, this.gameObject.transform.position, Quaternion.identity);
+            Destroy(deathSound, 0.7f);
+
             Destroy(this.gameObject);
         }
     }
