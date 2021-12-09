@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerMovementHandler : MonoBehaviour
 {
+    public GameObject soundObj;
     public GameObject levelChanger;
     public gameManager GM;
     public string recentColl = "";
@@ -38,13 +39,17 @@ public class playerMovementHandler : MonoBehaviour
     void Start()
     {
         speed = 2.0f;
+        soundObj = GameObject.FindGameObjectWithTag("soundObj");
+        soundObj.GetComponent<soundScript>().fadeIn();
         GM = GameObject.FindObjectOfType<gameManager>();
         levelChanger = GameObject.FindGameObjectWithTag("levelChanger");
         faded = levelChanger.GetComponent<Animator>();
+        soundObj = GameObject.FindGameObjectWithTag("soundObj");
         faded.SetBool("fadeOut",false);
     }
     void Update()
     {
+        GM = GameObject.FindObjectOfType<gameManager>();
         if (health <= 0)
         {
             GM.endGameLevel();
@@ -273,6 +278,7 @@ public class playerMovementHandler : MonoBehaviour
         {
             speed = 0.0f;
             faded.SetBool("fadeOut", true);
+            soundObj.GetComponent<soundScript>().fadeOut();
             Invoke("callNewLevel", 1.0f);
         }
     }

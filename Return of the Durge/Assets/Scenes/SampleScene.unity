@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348661452}
   - component: {fileID: 348661451}
+  - component: {fileID: 348661453}
   m_Layer: 0
   m_Name: soundObj
   m_TagString: soundObj
@@ -150,7 +151,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 58380440433be9a4892bc53b41ba3c9c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -250,6 +251,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348661453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348661450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3286279f0a90344b78eddf5487908a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObj: {fileID: 0}
+  isFadingOut: 0
+  isFadingIn: 0
+  audio: {fileID: 0}
 --- !u!1 &385454610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5122306093664037814, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}

@@ -6,14 +6,14 @@ public class grantScript : MonoBehaviour
 {
     public GameObject stairs;
     public GameObject topR, topL, botR;
-    public GameObject rFist, lFist;
+    public centerScript CS;
 
     public Animator anim;
 
     public int health = 75;
     public int fistsActive;
 
-    public float spawnFistTimer = 15.0f;
+    public float spawnTimer = 10.0f;
 
     public string selfState;
     void Start()
@@ -23,12 +23,13 @@ public class grantScript : MonoBehaviour
         topR = GameObject.FindGameObjectWithTag("anchorTop");
         topL = GameObject.FindGameObjectWithTag("anchorLeft");
         botR = GameObject.FindGameObjectWithTag("anchorBot");
+        CS = GameObject.FindObjectOfType<centerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnFistTimer -= 1 * Time.deltaTime;
+        spawnTimer -= 1 * Time.deltaTime;
         if (health <= (36))
         {
             anim.SetBool("isLowHealth", true);
@@ -39,15 +40,10 @@ public class grantScript : MonoBehaviour
             Instantiate(stairs, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
-        if (spawnFistTimer <= 0)
+        if (spawnTimer <= 0)
         {
-            if (fistsActive < 2)
-            {
-                spawnFist();
-            } else
-            {
-                resetFistTimer();
-            }
+            CS.spawnEnemies();
+            spawnTimer = 45.0f;
         }
     }
     public void OnCollisionEnter2D(Collision2D other)
@@ -59,36 +55,8 @@ public class grantScript : MonoBehaviour
             Invoke("resetDamageBool", 1.0f);
         }
     }
-    public void resetFistTimer()
-    {
-        if (selfState == "calm")
-        {
-            spawnFistTimer = 15.0f;
-        } else if (selfState == "panic")
-        {
-            spawnFistTimer = 9.0f;
-        }
-    }
     public void resetDamageBool()
     {
         anim.SetBool("isDamaged", false);
-    }
-    public void spawnFist()
-    {
-        float randX = Random.Range(topL.transform.position.x, topR.transform.position.x);
-        float randY = Random.Range(botR.transform.position.y, topR.transform.position.y);
-        int randFist = Random.Range(0, 10);
-        if (randFist <= 5)
-        {
-            Instantiate(lFist, new Vector2(randX, randY), Quaternion.identity);
-            fistsActive++;
-            resetFistTimer();
-        }
-        else
-        {
-            Instantiate(rFist, new Vector2(randX, randY), Quaternion.identity);
-            fistsActive++;
-            resetFistTimer();
-        }
     }
 }
