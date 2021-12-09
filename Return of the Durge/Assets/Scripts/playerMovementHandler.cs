@@ -15,7 +15,9 @@ public class playerMovementHandler : MonoBehaviour
     public Animator Nolanator;
     public Animator faded;
 
+    public Animator gunAnims;
     public AudioSource nolanShoot;
+    public AudioClip defaultShot, shotgunShot;
 
     public float velX, velY;
     public float speed = 2.0f;
@@ -183,11 +185,14 @@ public class playerMovementHandler : MonoBehaviour
             {
             if (Input.GetKeyDown(KeyCode.Mouse0) && !fireRecent)
                 {
+                    gunAnims.SetTrigger("Firing");
+
                     Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePosX = mousePos.x;
                     mousePosY = mousePos.y;
                     throwPosCheck();
                     Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
+                    nolanShoot.clip = defaultShot;
                     nolanShoot.Play();
                     fireRecent = true;
                 }
@@ -204,6 +209,8 @@ public class playerMovementHandler : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse1) && !shotgunRecent)
                 {
+                    gunAnims.SetTrigger("Firing");
+
                     Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePosX = mousePos.x;
                     mousePosY = mousePos.y;
@@ -211,6 +218,7 @@ public class playerMovementHandler : MonoBehaviour
                     for (int i = 0; i < 5; i++)
                     {
                         Instantiate(throwableSomething, throwPosActual.position, Quaternion.identity);
+                        nolanShoot.clip = shotgunShot;
                         nolanShoot.Play();
                         shotgunRecent = true;
                     }

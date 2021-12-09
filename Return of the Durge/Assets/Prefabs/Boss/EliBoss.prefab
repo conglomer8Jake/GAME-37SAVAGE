@@ -255,6 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBoss: 0
   currentPartnerBoss: 0
+  soundObj: {fileID: 0}
   partnerBossObject: {fileID: 0}
   player: {fileID: 0}
   stairs: {fileID: 8479863154195231563, guid: 6a6262d23046e4943a6f8d67bfb1ba3f, type: 3}
@@ -309,6 +310,11 @@ MonoBehaviour:
   reticleFire: {fileID: 0}
   slaughtTimer: 5
   firingOnPlayer: 1
+  eSource: {fileID: 0}
+  eAttack1: {fileID: 0}
+  eAttack2: {fileID: 0}
+  eIdle1: {fileID: 0}
+  eIdle2: {fileID: 0}
 --- !u!1 &7956216669012485335
 GameObject:
   m_ObjectHideFlags: 0

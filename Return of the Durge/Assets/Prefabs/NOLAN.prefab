@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc95e2f78cc94f4fbbc133cface3fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundObj: {fileID: 0}
+  levelChanger: {fileID: 0}
   GM: {fileID: 0}
   recentColl: 
   spriteDirectoin: 
@@ -284,7 +286,11 @@ MonoBehaviour:
   throwPosActual: {fileID: 0}
   throwableSomething: {fileID: 187038295888517174, guid: 7fd08c5f38f7e29409088dd4e2aadfae, type: 3}
   Nolanator: {fileID: 8323150420285520785}
+  faded: {fileID: 0}
+  gunAnims: {fileID: 8323150420728137129}
   nolanShoot: {fileID: 7648580700118636506}
+  defaultShot: {fileID: 8300000, guid: 15e6a97c48183154690d5962529f4804, type: 3}
+  shotgunShot: {fileID: 8300000, guid: a4d0e7a86ba4bbb48aab46a32181f2d3, type: 3}
   velX: 0
   velY: 0
   speed: 3
