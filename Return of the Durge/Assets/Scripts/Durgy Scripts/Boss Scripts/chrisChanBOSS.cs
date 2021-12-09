@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class chrisChanBOSS : MonoBehaviour
 {
+    public Animator anim;
     public GameObject[] jakeBoss;
+    public GameObject Player;
+    public void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        anim = this.gameObject.GetComponent<Animator>();
+    }
     public void Update()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         jakeBoss = GameObject.FindGameObjectsWithTag("DummyThicc");
         if (jakeBoss.Length <= 0)
         {
@@ -22,5 +30,45 @@ public class chrisChanBOSS : MonoBehaviour
         {
 
         }
+    }
+    public void jumpKick()
+    {
+        anim.SetBool("JumpAttacking", true);
+        Invoke("kicking", 1.5f);
+    }
+    public void jumpSlam()
+    {
+        anim.SetBool("JumpAttacking", true);
+        Invoke("slamming", 1.5f);
+    }
+    public void kicking()
+    {
+        anim.SetBool("Kicking", true);
+        if (Player.transform.position.x > transform.position.x)
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0.0f));
+        } else if (Player.transform.position.x < transform.position.x)
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0.0f));
+        }
+        Invoke("finished", 1.5f);
+    }
+    public void slamming()
+    {
+        anim.SetBool("Slamming", true);
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, -500.0f));
+        Invoke("finished", 1.5f);
+    }
+    public void finished()
+    {
+        anim.SetBool("Finished", true);
+        anim.SetBool("Slamming", false);
+        anim.SetBool("Kicking", false);
+        anim.SetBool("JumpAttacking", false);
+        Invoke("finisher", 0.1f);
+    }
+    public void finisher()
+    {
+        anim.SetBool("Finished", false);
     }
 }

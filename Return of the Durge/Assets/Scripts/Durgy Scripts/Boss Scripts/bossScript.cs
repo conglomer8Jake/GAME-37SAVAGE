@@ -211,15 +211,14 @@ public class bossScript : MonoBehaviour
                 break;
             case boss.ChrisChan:
                 int chrisRand = Random.Range(0, 10);
-                if (chrisRand >= 5)
+                if (chrisRand <= 3)
                 {
                     this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
-                    chrisSlam();
+                    this.gameObject.GetComponent<chrisChanBOSS>().jumpSlam();
                     abilityUsed = true;
-                } else if (chrisRand < 5 && chrisRand >= 2)
-                {
+                } else {
                     this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
-                    chrisSlash();
+                    this.gameObject.GetComponent<chrisChanBOSS>().jumpKick();
                     abilityUsed = true;
                 } 
                 break;
@@ -245,20 +244,6 @@ public class bossScript : MonoBehaviour
                 //Jake's functionality
                 break;
         }
-    }
-    public void chrisSlam()
-    {
-        Debug.Log("slam");
-        //play the slam animation
-        //create slam object with collider and check for collision
-        //if so, knock player back X amount away from the boss
-        Invoke("callReTarget", 1.5f);
-    }
-    public void chrisSlash()
-    {
-        Debug.Log("slash");
-        //play anim
-        Invoke("callReTarget", 1.5f);
     }
     public void callReTarget()
     {

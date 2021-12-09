@@ -146,7 +146,7 @@ MonoBehaviour:
   gM: {fileID: 0}
   SpeedPerSecond: 4
   FlockingTarget: {fileID: 0}
-  CurrentFlockingMode: 0
+  CurrentFlockingMode: 2
   DesiredDistanceFromTarget_Min: 3.5
   DesiredDistanceFromTarget_Max: 4.5
   FlockingDistance: 1

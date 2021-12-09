@@ -88,13 +88,14 @@ public class centerScript : MonoBehaviour
         {
             Instantiate(Grant, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
         }
-        if (vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
+        int Rand = Random.Range(0, 10);
+        if (Rand >= 5 && vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
         {
             Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             vH.bossNumGen = 0;
         }
-        if (vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
+        if (Rand < 5 && vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
         {
             Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
