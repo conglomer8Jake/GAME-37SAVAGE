@@ -101,7 +101,8 @@ public class centerScript : MonoBehaviour
             soundObj.GetComponent<AudioSource>().Play();
         }
         int Rand = Random.Range(0, 10);
-        if (Rand >= 5 && vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
+        //if (Rand >= 5 && vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
+        if (gM.currentScene == "SampleScene")
         {
             Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
@@ -109,7 +110,8 @@ public class centerScript : MonoBehaviour
             soundObj.GetComponent<AudioSource>().Play();
             vH.bossNumGen = 0;
         }
-        if (Rand < 5 && vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
+        //if (Rand < 5 && vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
+        if (gM.currentScene == "LVL_Forest")
         {
             Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
