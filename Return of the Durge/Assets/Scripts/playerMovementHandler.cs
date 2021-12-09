@@ -37,6 +37,7 @@ public class playerMovementHandler : MonoBehaviour
     public bool wDown, aDown, sDown, dDown;
     void Start()
     {
+        speed = 2.0f;
         GM = GameObject.FindObjectOfType<gameManager>();
         levelChanger = GameObject.FindGameObjectWithTag("levelChanger");
         faded = levelChanger.GetComponent<Animator>();
@@ -270,6 +271,7 @@ public class playerMovementHandler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("stair"))
         {
+            speed = 0.0f;
             faded.SetBool("fadeOut", true);
             Invoke("callNewLevel", 1.0f);
         }
