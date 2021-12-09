@@ -42,7 +42,6 @@ public class playerMovementHandler : MonoBehaviour
     {
         speed = 2.0f;
         soundObj = GameObject.FindGameObjectWithTag("soundObj");
-        soundObj.GetComponent<soundScript>().fadeIn();
         GM = GameObject.FindObjectOfType<gameManager>();
         levelChanger = GameObject.FindGameObjectWithTag("levelChanger");
         faded = levelChanger.GetComponent<Animator>();
