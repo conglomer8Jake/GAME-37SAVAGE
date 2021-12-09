@@ -20,6 +20,14 @@ public class chrisChanBOSS : MonoBehaviour
         {
             this.gameObject.GetComponent<bossScript>().partnerAlive = false;
         }
+        if (transform.position.x > Player.transform.position.x)
+        {
+            flipSrite();
+        }
+        if (transform.position.x < Player.transform.position.x)
+        {
+            flipBack();
+        }
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
@@ -70,5 +78,13 @@ public class chrisChanBOSS : MonoBehaviour
     public void finisher()
     {
         anim.SetBool("Finished", false);
+    }
+    public void flipSrite()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+    }
+    public void flipBack()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
     }
 }

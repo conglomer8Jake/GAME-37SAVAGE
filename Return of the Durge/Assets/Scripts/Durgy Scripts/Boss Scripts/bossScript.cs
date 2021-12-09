@@ -216,10 +216,12 @@ public class bossScript : MonoBehaviour
                     this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
                     this.gameObject.GetComponent<chrisChanBOSS>().jumpSlam();
                     abilityUsed = true;
+                    Invoke("callReTarget", 5.0f);
                 } else {
                     this.gameObject.GetComponent<FlockerScript>().FlockingTarget = this.gameObject;
                     this.gameObject.GetComponent<chrisChanBOSS>().jumpKick();
                     abilityUsed = true;
+                    Invoke("callReTarget", 5.0f);
                 } 
                 break;
             case boss.DummyThicc:
