@@ -41,7 +41,7 @@ public class ninjaDurgy : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
-        if (health <= 5)
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
