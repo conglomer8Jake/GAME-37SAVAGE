@@ -16,6 +16,7 @@ public class ryanScript : MonoBehaviour
     private void Update()
     {
         eBoss = GameObject.FindGameObjectsWithTag("E");
+        Player = GameObject.FindGameObjectWithTag("Player");
         if (eBoss.Length <= 0)
         {
             this.gameObject.GetComponent<bossScript>().partnerAlive = false;

@@ -17,6 +17,7 @@ public class fistScript : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         anim = this.gameObject.GetComponent<Animator>();
         target = Player.transform.position;
+        Invoke("selfDestroy", 3.5f);
     }
 
     void Update()
@@ -93,5 +94,9 @@ public class fistScript : MonoBehaviour
         {
             health--;
         }
+    }
+    public void selfDestroy()
+    {
+
     }
 }
