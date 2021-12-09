@@ -176,8 +176,8 @@ public class bossScript : MonoBehaviour
         switch (currentBoss)
         {
             case boss.E:
-                int eliRand = Random.Range(0, 25);
-                if (eliRand <= 5)
+                int eliRand = Random.Range(0, 20);
+                if (eliRand <= 10)
                 {
                     this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
                     this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
@@ -195,7 +195,7 @@ public class bossScript : MonoBehaviour
                     //Attack 2 with burst particles at player, variation 2 (hard)
                     abilityUsed = true;
                 }*/
-                else if (eliRand > 5 && eliRand <= 20)
+                else if (eliRand > 10 && eliRand <= 20)
                 {
                     //Instantiate Hurt Things
                     this.gameObject.GetComponent<FlockerScript>().SpeedPerSecond = 0;
@@ -208,7 +208,7 @@ public class bossScript : MonoBehaviour
                 break;
             case boss.Ryan:
                 int ryanRand = Random.Range(0, 10);
-                if (ryanRand >= 7)
+                if (ryanRand >= 3)
                 {
                     this.gameObject.GetComponent<ryanScript>().prepAttack();
                     this.gameObject.GetComponent<ryanScript>().attack = "dashAttack";
