@@ -39007,7 +39007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5122306093664037814}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.42, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 29.033655, y: 29.033655, z: 60.146446}
   m_Children: []
   m_Father: {fileID: 2444789346025113846}
@@ -39090,6 +39090,7 @@ MonoBehaviour:
   gridPosY: 0
   gridPosX: 0
   bossSpawnChance: 0
+  bossInstaSpawn: 0
   numDoorsW: []
   numDoorsE: []
   numDoorsN: []
