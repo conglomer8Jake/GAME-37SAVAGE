@@ -23,6 +23,7 @@ public class eScript : MonoBehaviour
     void Update()
     {
         ryan = GameObject.FindGameObjectsWithTag("Ryan");
+        Player = GameObject.FindGameObjectWithTag("Player");
         if (ryan.Length <= 0)
         {
             this.gameObject.GetComponent<bossScript>().partnerAlive = false;
