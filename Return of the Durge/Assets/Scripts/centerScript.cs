@@ -82,22 +82,14 @@ public class centerScript : MonoBehaviour
         int rand = Random.Range(0, 10);
         if (rand >= 5 && vH.bossNumGen != 0)
         {
-            float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-            float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-            Instantiate(E, new Vector3(randX, randY, 0), Quaternion.identity);
-            float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-            float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-            Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
+            Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+            Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             vH.bossNumGen = 0;
         }
         if (rand < 5 && vH.bossNumGen != 1)
         {
-            float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-            float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-            Instantiate(ChrisChan, new Vector3(randX, randY, 0), Quaternion.identity);
-            float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-            float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-            Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
+            Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+            Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
             vH.bossNumGen = 1;
         }
     }
