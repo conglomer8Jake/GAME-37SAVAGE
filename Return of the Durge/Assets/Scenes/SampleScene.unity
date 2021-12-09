@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: topRight
       value: 
       objectReference: {fileID: 947894843}
+    - target: {fileID: 7321949417095952350, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
+      propertyPath: bossInstaSpawn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7565330949215947942, guid: 647e5fa3b6a6f244385e66c1674a7585, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

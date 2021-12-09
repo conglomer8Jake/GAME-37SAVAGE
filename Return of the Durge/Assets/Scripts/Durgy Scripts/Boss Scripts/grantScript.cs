@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class grantScript : MonoBehaviour
 {
+    public GameObject stairs;
     public GameObject topR, topL, botR;
     public GameObject rFist, lFist;
 
@@ -35,6 +36,7 @@ public class grantScript : MonoBehaviour
         }
         if (health <= 0)
         {
+            Instantiate(stairs, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         if (spawnFistTimer <= 0)

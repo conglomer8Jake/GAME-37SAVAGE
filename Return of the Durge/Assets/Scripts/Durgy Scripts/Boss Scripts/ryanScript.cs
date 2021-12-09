@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ryanScript : MonoBehaviour
 {
+    public GameObject Player;
     public GameObject[] eBoss;
     public Animator Anim;
     public string attack;
     private void Start()
     {
         Anim = this.gameObject.GetComponent<Animator>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
     {
@@ -17,6 +19,14 @@ public class ryanScript : MonoBehaviour
         if (eBoss.Length <= 0)
         {
             this.gameObject.GetComponent<bossScript>().partnerAlive = false;
+        }
+        if (transform.position.x > Player.transform.position.x)
+        {
+            flipSrite();
+        }
+        if (transform.position.x < Player.transform.position.x)
+        {
+            flipBack();
         }
     }
     public void prepAttack()
@@ -53,5 +63,13 @@ public class ryanScript : MonoBehaviour
         Anim.SetBool("SlashStorm", false);
         Anim.SetBool("DashAttacking", false);
         Anim.SetBool("IsAttacking", false);
+    }
+    public void flipSrite()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+    }
+    public void flipBack()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
     }
 }

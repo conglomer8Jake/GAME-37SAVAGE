@@ -13,6 +13,7 @@ public class centerScript : MonoBehaviour
     public int gridPosY;
     public int gridPosX;
     public float bossSpawnChance;
+    public bool bossInstaSpawn = false;
     public GameObject[] numDoorsW, numDoorsE, numDoorsN, numDoorsS;
     void Start()
     {
@@ -42,7 +43,7 @@ public class centerScript : MonoBehaviour
     }
     public void bossSpawnCheck()
     {
-        if (bossSpawnChance >= 1.0f || gM.numDoorsActive == 0)
+        if (bossSpawnChance >= 1.0f || gM.numDoorsActive == 0 || bossInstaSpawn)
         {
             Debug.Log("BOSS INCOMING");
             int rand = Random.Range(0, 10);
@@ -66,7 +67,6 @@ public class centerScript : MonoBehaviour
                 Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
                 vH.bossNumGen = 1;
             }
-
         }
         else
         {

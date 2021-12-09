@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class eScript : MonoBehaviour
 {
+    public GameObject Player;
     public GameObject[] ryan;
     public Animator anim;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     
@@ -28,6 +30,14 @@ public class eScript : MonoBehaviour
             {
                 anim.SetBool("AttackAnim1", false);
             }
+        if (transform.position.x > Player.transform.position.x)
+        {
+            flipSrite();
+        }
+        if (transform.position.x < Player.transform.position.x)
+        {
+            flipBack();
+        }
     }
     public void revertAnim()
     {
@@ -38,5 +48,13 @@ public class eScript : MonoBehaviour
     {
         anim.SetBool("Finished", false);
         anim.SetBool("AttackAnim1", false);
+    }
+    public void flipSrite()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+    }
+    public void flipBack()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
     }
 }

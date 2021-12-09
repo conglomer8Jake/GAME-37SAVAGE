@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 630613779595582334}
   - component: {fileID: 630613779595582333}
   - component: {fileID: 630613779595582332}
+  - component: {fileID: 1340597792551261285}
   m_Layer: 0
   m_Name: FINALBOSSspin_0
   m_TagString: Untagged
@@ -164,5 +165,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d1b7dcd71b04346982efcb2d49e922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stairs: {fileID: 8479863154195231563, guid: 6a6262d23046e4943a6f8d67bfb1ba3f, type: 3}
+  topR: {fileID: 0}
+  topL: {fileID: 0}
+  botR: {fileID: 0}
+  rFist: {fileID: 0}
+  lFist: {fileID: 0}
   anim: {fileID: 0}
   health: 75
+  fistsActive: 0
+  spawnFistTimer: 15
+  selfState: 
+--- !u!50 &1340597792551261285
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630613779595582330}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

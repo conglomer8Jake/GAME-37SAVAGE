@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8479596953663752464}
   - component: {fileID: 4931300177801072254}
   - component: {fileID: 7011967930703833169}
+  - component: {fileID: 3220618773398760153}
   m_Layer: 0
   m_Name: RyanBoss
   m_TagString: Ryan
@@ -139,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf723f24d0d6824b9a4e3ede9bff5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  eBoss: []
   Anim: {fileID: 0}
   attack: 
 --- !u!61 &4931300177801072254
@@ -195,3 +198,24 @@ MonoBehaviour:
   ryanAlive: 0
   elijahAlive: 1
   partnerAlive: 1
+--- !u!50 &3220618773398760153
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456720972189606737}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
