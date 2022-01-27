@@ -266,8 +266,8 @@ public class playerMovementHandler : MonoBehaviour
         //Change the sprite of the player depending on mouse position
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-
+        // Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        Vector2 direction = mousePosition - transform.position;
         if (direction.x <= 0)
         {
             this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
@@ -326,16 +326,6 @@ public class playerMovementHandler : MonoBehaviour
         {
             throwPosActual = throwPosUp;
         }
-
-        /*
-            if (spriteDirectoin == "left")
-        {
-            throwPosActual = throwPosLeft;
-        }
-        if (spriteDirectoin == "right")
-        {
-            throwPosActual = throwPosRight;
-        } */
     }
     public void callNewLevel()
     {

@@ -108,8 +108,10 @@ public class gameManager : MonoBehaviour
     public void Update()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        /*
         numEnemies = GameObject.FindGameObjectsWithTag("enemy");
         enemiesAlive = numEnemies.Length;
+        */
         if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Pause");
