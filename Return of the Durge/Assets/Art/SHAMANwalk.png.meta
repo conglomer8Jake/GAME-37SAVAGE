@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SHAMANwalk_0: -5586399640376102408
+      SHAMANwalk_6: 8753722917491926254
+      SHAMANwalk_7: -883465940723655155
+      SHAMANwalk_1: -5854003590558560712
+      SHAMANwalk_4: -5860218021427831351
+      SHAMANwalk_3: 4265081319456305735
+      SHAMANwalk_5: 2057028479224554956
+      SHAMANwalk_2: -3247427149670670009
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

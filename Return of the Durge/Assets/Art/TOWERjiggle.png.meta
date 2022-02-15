@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      durgytowerSPRITE_3: -7538554016938853701
+      durgytowerSPRITE_4: 8556697626986925062
+      durgytowerSPRITE_7: -8112309128911972679
+      durgytowerSPRITE_2: 5795613792361729893
+      durgytowerSPRITE_6: 4167811697789562270
+      durgytowerSPRITE_0: 7351245034512514337
+      durgytowerSPRITE_1: -418210910193906574
+      durgytowerSPRITE_5: -8239345909399205798
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

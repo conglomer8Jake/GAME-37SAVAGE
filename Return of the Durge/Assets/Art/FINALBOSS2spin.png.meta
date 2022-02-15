@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FINALBOSS2spin_2: 2837938688192306055
+      FINALBOSS2spin_4: -2653137151780484772
+      FINALBOSS2spin_0: -4589200062502261682
+      FINALBOSS2spin_1: 51631402173755240
+      FINALBOSS2spin_5: -1605196589830370125
+      FINALBOSS2spin_3: -7954083577831760707
+      FINALBOSS2spin_7: 7194268403599628236
+      FINALBOSS2spin_6: 2821003987127715778
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

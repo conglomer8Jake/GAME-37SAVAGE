@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      3DTopMudground(WIP)_1: -7145366931632980084
+      3DTopMudground(WIP)_3: -1266665859391541309
+      3DTopMudground(WIP)_2: 8177049418109013915
+      3DTopMudground(WIP)_7: 2227296779272810716
+      3DTopMudground(WIP)_5: 1126871281755813197
+      3DTopMudground(WIP)_4: 8189660127687640534
+      3DTopMudground(WIP)_8: 3842630309848481706
+      3DTopMudground(WIP)_0: 1303386463442590446
+      3DTopMudground(WIP)_6: 8026692799672431475
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

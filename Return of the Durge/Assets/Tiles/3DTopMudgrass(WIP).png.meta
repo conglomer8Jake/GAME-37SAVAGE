@@ -180,6 +180,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1360,6 +1361,59 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      3DTopMudgrass(WIP)_47: 5618124880158861515
+      3DTopMudgrass(WIP)_14: 7978296700291574142
+      3DTopMudgrass(WIP)_12: 732994773623786877
+      3DTopMudgrass(WIP)_22: -6792366372635467135
+      3DTopMudgrass(WIP)_34: -9055861683124136025
+      3DTopMudgrass(WIP)_4: 4590703474806422288
+      3DTopMudgrass(WIP)_23: -2986918802241053018
+      3DTopMudgrass(WIP)_13: -2245716159684557344
+      3DTopMudgrass(WIP)_36: 5406101098510067135
+      3DTopMudgrass(WIP)_39: 6806378812662900560
+      3DTopMudgrass(WIP)_20: -8408288123468400773
+      3DTopMudgrass(WIP)_49: -9193517892863264980
+      3DTopMudgrass(WIP)_16: -2882245933716482737
+      3DTopMudgrass(WIP)_0: 1116550147147081136
+      3DTopMudgrass(WIP)_5: -3922904714283079459
+      3DTopMudgrass(WIP)_45: -7410544109866650106
+      3DTopMudgrass(WIP)_19: 4640534898389081009
+      3DTopMudgrass(WIP)_18: 5637562163340231369
+      3DTopMudgrass(WIP)_3: 320460280839294201
+      3DTopMudgrass(WIP)_6: 3699230346383974849
+      3DTopMudgrass(WIP)_26: 5153110231692343311
+      3DTopMudgrass(WIP)_42: -6687000585181534736
+      3DTopMudgrass(WIP)_38: -3590363330722232700
+      3DTopMudgrass(WIP)_32: -1077974364345244091
+      3DTopMudgrass(WIP)_41: -4558089646287265932
+      3DTopMudgrass(WIP)_11: 4773462372010251094
+      3DTopMudgrass(WIP)_21: 767954460330109242
+      3DTopMudgrass(WIP)_43: -5190600301843956334
+      3DTopMudgrass(WIP)_35: -799262848947983648
+      3DTopMudgrass(WIP)_33: -2961118422537404823
+      3DTopMudgrass(WIP)_48: 7854031144134294381
+      3DTopMudgrass(WIP)_8: 6569968818716280032
+      3DTopMudgrass(WIP)_17: -585752626704266306
+      3DTopMudgrass(WIP)_27: 434548952482457481
+      3DTopMudgrass(WIP)_24: -8207431476325495231
+      3DTopMudgrass(WIP)_7: -6715239485872798579
+      3DTopMudgrass(WIP)_10: -1873635660353530777
+      3DTopMudgrass(WIP)_28: -4789772918819864
+      3DTopMudgrass(WIP)_9: 3216969433702720342
+      3DTopMudgrass(WIP)_25: -1623457379082831160
+      3DTopMudgrass(WIP)_29: -6419929098252545914
+      3DTopMudgrass(WIP)_51: 8362514967994154957
+      3DTopMudgrass(WIP)_40: 213395452275348974
+      3DTopMudgrass(WIP)_50: -230247193026622767
+      3DTopMudgrass(WIP)_1: 6070829320241576812
+      3DTopMudgrass(WIP)_30: 7457581445930906213
+      3DTopMudgrass(WIP)_2: -1841123097680809907
+      3DTopMudgrass(WIP)_44: -5571464133215923298
+      3DTopMudgrass(WIP)_37: -1827316051149913736
+      3DTopMudgrass(WIP)_15: -6396500395990758899
+      3DTopMudgrass(WIP)_31: 5200779557482171025
+      3DTopMudgrass(WIP)_46: 3509344440697973923
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -592,6 +593,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RyanBossSpritesheet_13: -1522547741694571331
+      RyanBossSpritesheet_11: 7999401516528649898
+      RyanBossSpritesheet_9: -6471534609723201745
+      RyanBossSpritesheet_10: -8897307358050064813
+      RyanBossSpritesheet_18: 1016518055427701646
+      RyanBossSpritesheet_8: 6741153349268435428
+      RyanBossSpritesheet_2: 1542646127327744104
+      RyanBossSpritesheet_6: -7246505294540588023
+      RyanBossSpritesheet_0: 1199105455312480478
+      RyanBossSpritesheet_5: -2387179488247790195
+      RyanBossSpritesheet_12: -1007962093318395543
+      RyanBossSpritesheet_15: -1173988342388250773
+      RyanBossSpritesheet_19: -6766611355709610920
+      RyanBossSpritesheet_4: 5984345267241069771
+      RyanBossSpritesheet_3: 1470251644413384774
+      RyanBossSpritesheet_17: -1628488653615419383
+      RyanBossSpritesheet_14: 4192517962306546928
+      RyanBossSpritesheet_7: 7360174120950957025
+      RyanBossSpritesheet_16: -2408995079271902522
+      RyanBossSpritesheet_1: -8146301160326277519
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

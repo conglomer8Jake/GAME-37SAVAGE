@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EliBossSprite_2: -4912875852306860971
+      EliBossSprite_4: -4729903390996770967
+      EliBossSprite_5: -548228524385605480
+      EliBossSprite_6: 6235239541796694863
+      EliBossSprite_0: -2502361375156280337
+      EliBossSprite_3: -527593278198817870
+      EliBossSprite_8: -8918725159188446924
+      EliBossSprite_7: 7018934380870495166
+      EliBossSprite_1: 3514475896616041315
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

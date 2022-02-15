@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Nolan_Idle_4: 7257887851471355983
+      Nolan_Idle_5: 6378882723312855216
+      Nolan_Idle_6: 1311199474587780276
+      Nolan_Idle_2: 7545722040523722711
+      Nolan_Idle_0: -581187227739198038
+      Nolan_Idle_7: 8164883364756277065
+      Nolan_Idle_1: -7284521121995121259
+      Nolan_Idle_3: 6769301642304351788
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

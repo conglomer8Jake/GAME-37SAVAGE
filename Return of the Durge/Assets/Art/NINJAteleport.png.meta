@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -400,6 +401,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      NINJAteleport_1: 3790753271145526672
+      NINJAteleport_10: -90355530551028481
+      NINJAteleport_4: -1119007694356121547
+      NINJAteleport_2: 7256344400428479556
+      NINJAteleport_5: -7425255810821326514
+      NINJAteleport_9: 7529638334162888651
+      NINJAteleport_6: 7907308065175266086
+      NINJAteleport_7: 7272349326384256852
+      NINJAteleport_3: 7861363973275089590
+      NINJAteleport_11: 2140349441985886631
+      NINJAteleport_8: -6929220161362054851
+      NINJAteleport_0: 343455254279501267
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

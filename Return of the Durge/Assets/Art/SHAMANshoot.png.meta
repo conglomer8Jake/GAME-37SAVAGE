@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -352,6 +353,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SHAMANshoot_3: -5478624853474816490
+      SHAMANshoot_7: 5291015336587758141
+      SHAMANshoot_1: -4995272129071891144
+      SHAMANshoot_5: -4003215879271471458
+      SHAMANshoot_2: 1645537572658259864
+      SHAMANshoot_9: -7942439953710676267
+      SHAMANshoot_6: -4801590028747467500
+      SHAMANshoot_8: -9164687629393799141
+      SHAMANshoot_0: 190856658164930607
+      SHAMANshoot_4: 1149615128716312966
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

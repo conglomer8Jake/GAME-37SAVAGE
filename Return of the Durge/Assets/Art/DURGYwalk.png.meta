@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      durgywalkSPRITE_5: -2620368907041359450
+      durgywalkSPRITE_0: -919192909068291561
+      durgywalkSPRITE_1: -5303385836721995808
+      durgywalkSPRITE_6: -8311552284289403756
+      durgywalkSPRITE_2: 9124322352200271149
+      durgywalkSPRITE_4: -3148352430997935063
+      durgywalkSPRITE_7: -7902447201365948718
+      durgywalkSPRITE_3: -3421590947855456771
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

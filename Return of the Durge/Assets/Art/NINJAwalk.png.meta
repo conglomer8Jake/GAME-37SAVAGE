@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      NINJAwalk_2: -5499901940853891864
+      NINJAwalk_4: 6612985098538434333
+      NINJAwalk_6: -6552316274152785761
+      NINJAwalk_3: 6275765784811326201
+      NINJAwalk_5: -5867575697328816202
+      NINJAwalk_7: 3089037063525483325
+      NINJAwalk_1: -4337736206210164920
+      NINJAwalk_0: -781176786390011451
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

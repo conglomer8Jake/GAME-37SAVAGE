@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Gun_Pixel_4: -1684715670069446998
+      Gun_Pixel_6: 4109916613226986328
+      Gun_Pixel_5: 5583017955424929706
+      Gun_Pixel_2: 8663202920668519515
+      Gun_Pixel_1: 7719067102321512581
+      Gun_Pixel_0: -5415590851818842078
+      Gun_Pixel_7: 5300771125746895083
+      Gun_Pixel_3: 5046078273874581822
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
