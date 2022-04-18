@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 923754010064216782}
   m_RootOrder: 0
@@ -27352,6 +27353,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 923754010064216782}
   m_RootOrder: 2
@@ -38790,6 +38792,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.51842284, y: -1.8087233, z: 22.116747}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 923754009765001891}
   - {fileID: 923754010380239970}
@@ -38837,6 +38840,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 923754010064216782}
   m_RootOrder: 1
@@ -38955,6 +38959,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 923754010064216782}
   - {fileID: 4248447863078921243}
@@ -39009,6 +39014,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 29.033655, y: 29.033655, z: 60.146446}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2444789346025113846}
   m_RootOrder: 1
@@ -39085,6 +39091,7 @@ MonoBehaviour:
   topRight: {fileID: 8332427889796098795}
   topLeft: {fileID: 3379634874533405327}
   botRight: {fileID: 9132214327801661440}
+  soundObj: {fileID: 0}
   lOE: {fileID: 11400000, guid: d8ead6e413c29574585f3b538409fe3b, type: 2}
   vH: {fileID: 11400000, guid: 60e56a557c3ead044907529c0f434433, type: 2}
   gM: {fileID: 0}
@@ -39096,6 +39103,9 @@ MonoBehaviour:
   numDoorsE: []
   numDoorsN: []
   numDoorsS: []
+  chrisJakeTheme: {fileID: 0}
+  elijahRyanTheme: {fileID: 0}
+  finalTheme: {fileID: 0}
 --- !u!61 &2353261522228935604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39311,6 +39321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
+--- !u!1 &3379634874533405327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2212537130341273211, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
+  m_PrefabInstance: {fileID: 3481954103331876084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3750091020090481076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 313172964842370368, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
@@ -39319,11 +39334,6 @@ Transform:
 --- !u!1 &8332427889796098795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4895652264252130847, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
-  m_PrefabInstance: {fileID: 3481954103331876084}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3379634874533405327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2212537130341273211, guid: 6a776991fbdc9b248ab517758db30d59, type: 3}
   m_PrefabInstance: {fileID: 3481954103331876084}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9132214327801661440 stripped

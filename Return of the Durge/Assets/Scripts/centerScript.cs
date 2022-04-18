@@ -33,14 +33,6 @@ public class centerScript : MonoBehaviour
         gridPosX = gM.playerPosX;
         gridPosY = gM.playerPosY;
     }
-    public void Update()
-    {
-        doorCheck();
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            bossSpawnInsta();
-        }
-    }
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -50,38 +42,27 @@ public class centerScript : MonoBehaviour
     }
     public void bossSpawnCheck()
     {
-        if (bossSpawnChance >= 1.0f || gM.numDoorsActive == 0 || bossInstaSpawn)
+        if (vH.numRooms >= 4)
         {
-            Debug.Log("BOSS INCOMING");
             if (gM.currentScene == "LVL_Three")
             {
-                float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-                float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-                Instantiate(Grant, new Vector3(randX, randY, 0), Quaternion.identity);
+                Instantiate(Grant, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
                 soundObj.GetComponent<AudioSource>().clip = finalTheme;
                 soundObj.GetComponent<AudioSource>().Play();
-
             }
-            if (vH.bossNumGen != 0 && gM.currentScene != "LVL_Three")
+            int Rand = Random.Range(0, 10);
+            if (gM.currentScene == "SampleScene")
             {
-                float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-                float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-                Instantiate(E, new Vector3(randX, randY, 0), Quaternion.identity);
-                float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-                float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-                Instantiate(Ryan, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                Instantiate(E, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+                Instantiate(Ryan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
                 soundObj.GetComponent<AudioSource>().clip = elijahRyanTheme;
                 soundObj.GetComponent<AudioSource>().Play();
                 vH.bossNumGen = 0;
             }
-            if (vH.bossNumGen != 1 && gM.currentScene != "LVL_Three")
+            if (gM.currentScene == "LVL_Forest")
             {
-                float randY = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-                float randX = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-                Instantiate(ChrisChan, new Vector3(randX, randY, 0), Quaternion.identity);
-                float randY2 = Random.Range(botRight.transform.position.y, topRight.transform.position.y);
-                float randX2 = Random.Range(topLeft.transform.position.x, topRight.transform.position.x);
-                Instantiate(DummyThicc, new Vector3(randX2, randY2, 0), Quaternion.identity);
+                Instantiate(ChrisChan, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
+                Instantiate(DummyThicc, new Vector3(gM.roomCenter.transform.position.x, gM.roomCenter.transform.position.y, 0), Quaternion.identity);
                 soundObj.GetComponent<AudioSource>().clip = chrisJakeTheme;
                 soundObj.GetComponent<AudioSource>().Play();
                 vH.bossNumGen = 1;

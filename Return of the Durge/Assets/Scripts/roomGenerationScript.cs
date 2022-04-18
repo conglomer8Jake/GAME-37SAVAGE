@@ -58,6 +58,7 @@ public class roomGenerationScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !gM.roomMadeRecent && gM.enemiesAlive == 0)
         {
+            Debug.Log("collided");
             if (direction == "right")
             {
                 gM.directionGenerated = "right";
